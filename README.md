@@ -174,7 +174,7 @@ bib_df |>
     ## Warning: Removed 3 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ## Tipo de jornal por ano
 
@@ -219,7 +219,7 @@ bib_df |>
        color = "Revista científica")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ## Tamanho do título por ano
 
@@ -236,8 +236,7 @@ bib_df |>
   geom_line(linewidth = 1) +
   labs(x = "Ano",
        y = "Quantidade de palavras") +
-  scale_x_continuous(breaks = seq(1910, 2025, 15)) +
-  scale_y_continuous(breaks = seq(0, 30, 2))
+  scale_x_continuous(breaks = seq(1910, 2025, 15))
 ```
 
     ## Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
@@ -251,7 +250,7 @@ bib_df |>
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ## Histogrma da quantidade de palavras
 
@@ -266,7 +265,7 @@ bib_df |>
        y = "Contagem")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ## Tamanho do resumo por ano
 
@@ -283,8 +282,7 @@ bib_df |>
   geom_line(linewidth = 1) +
   labs(x = "Ano",
        y = "Quantidade de palavras") +
-  scale_x_continuous(breaks = seq(1910, 2025, 15)) +
-  scale_y_continuous(breaks = seq(0, 30, 2))
+  scale_x_continuous(breaks = seq(1910, 2025, 15))
 ```
 
     ## Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
@@ -298,7 +296,7 @@ bib_df |>
     ## Warning: Removed 18 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## Histogrma da quantidade de palavras
 
@@ -315,4 +313,4 @@ bib_df |>
     ## Warning: Removed 201 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
