@@ -6,17 +6,6 @@ library(RefManageR)
 library(tidyverse)
 ```
 
-    ## ── Attaching core tidyverse packages ─────────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-    ## ✔ forcats   1.0.1     ✔ stringr   1.6.0
-    ## ✔ ggplot2   4.0.1     ✔ tibble    3.3.0
-    ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-    ## ✔ purrr     1.1.0     
-    ## ── Conflicts ───────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
 # Dados
 
 ## Importando
@@ -30,16 +19,7 @@ bib <- RefManageR::ReadBib("library.bib", check = FALSE)
 ``` r
 bib_df <- bib |>
   tibble::as.tibble()
-```
 
-    ## Warning: `as.tibble()` was deprecated in tibble 2.0.0.
-    ## ℹ Please use `as_tibble()` instead.
-    ## ℹ The signature and semantics have changed, see `?as_tibble`.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-``` r
 bib_df
 ```
 
@@ -97,8 +77,8 @@ bib_df |> dplyr::glimpse()
 theme_set(theme_bw() +
             theme(axis.text = element_text(color = "black", size = 15),
                   axis.title = element_text(color = "black", size = 15),
-                  egend.text = element_text(color = "black", size = 15),
-                  egend.title = element_text(color = "black", size = 15),
+                  legend.text = element_text(color = "black", size = 15),
+                  legend.title = element_text(color = "black", size = 15),
                   panel.border = element_rect(color = "black", linewidth = 1)))
 ```
 
@@ -119,16 +99,10 @@ bib_df |>
        color = "Tipo de bibliografia")
 ```
 
-    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
-    ## element hierarchy.
-
-    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
-    ## element hierarchy.
-
     ## Warning: Removed 3 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ## Tipo de jornal por ano
 
@@ -173,13 +147,7 @@ bib_df |>
        color = "Revista científica")
 ```
 
-    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
-    ## element hierarchy.
-
-    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
-    ## element hierarchy.
-
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ## Tamanho do título por ano
 
@@ -207,16 +175,10 @@ bib_df |>
     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
     ## generated.
 
-    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
-    ## element hierarchy.
-
-    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
-    ## element hierarchy.
-
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ## Histogrma da quantidade de palavras
 
@@ -231,13 +193,7 @@ bib_df |>
        y = "Contagem")
 ```
 
-    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
-    ## element hierarchy.
-
-    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
-    ## element hierarchy.
-
-![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ## Tamanho do resumo por ano
 
@@ -265,18 +221,12 @@ bib_df |>
     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
     ## generated.
 
-    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
-    ## element hierarchy.
-
-    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
-    ## element hierarchy.
-
     ## Warning: Removed 18 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
-## Histogrma da quantidade de palavras
+## Histogrma da quantidade de palavras nos abstracts
 
 ``` r
 bib_df |>
@@ -291,10 +241,4 @@ bib_df |>
     ## Warning: Removed 201 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
-    ## element hierarchy.
-
-    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
-    ## element hierarchy.
-
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
