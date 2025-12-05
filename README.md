@@ -6,7 +6,18 @@ library(RefManageR)
 library(tidyverse)
 ```
 
-# Data
+    ## ── Attaching core tidyverse packages ─────────────────────────── tidyverse 2.0.0 ──
+    ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+    ## ✔ forcats   1.0.1     ✔ stringr   1.6.0
+    ## ✔ ggplot2   4.0.1     ✔ tibble    3.3.0
+    ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+    ## ✔ purrr     1.1.0     
+    ## ── Conflicts ───────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+# Dados
 
 ## Importando
 
@@ -19,7 +30,16 @@ bib <- RefManageR::ReadBib("library.bib", check = FALSE)
 ``` r
 bib_df <- bib |>
   tibble::as.tibble()
+```
 
+    ## Warning: `as.tibble()` was deprecated in tibble 2.0.0.
+    ## ℹ Please use `as_tibble()` instead.
+    ## ℹ The signature and semantics have changed, see `?as_tibble`.
+    ## This warning is displayed once every 8 hours.
+    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+    ## generated.
+
+``` r
 bib_df
 ```
 
@@ -71,88 +91,16 @@ bib_df |> dplyr::glimpse()
     ## $ note      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
     ## $ school    <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
 
-# Setando temas-
-
-theme_set(theme_bw() +
+# Setando temas
 
 ``` r
-theme(axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      egend.text = element_text(color = "black", size = 15),
-      egend.title = element_text(color = "black", size = 15),
-      panel.border = element_rect(color = "black", linewidth = 1))
+theme_set(theme_bw() +
+            theme(axis.text = element_text(color = "black", size = 15),
+                  axis.title = element_text(color = "black", size = 15),
+                  egend.text = element_text(color = "black", size = 15),
+                  egend.title = element_text(color = "black", size = 15),
+                  panel.border = element_rect(color = "black", linewidth = 1)))
 ```
-
-    ## <theme> List of 5
-    ##  $ axis.title  : <ggplot2::element_text>
-    ##   ..@ family       : NULL
-    ##   ..@ face         : NULL
-    ##   ..@ italic       : chr NA
-    ##   ..@ fontweight   : num NA
-    ##   ..@ fontwidth    : num NA
-    ##   ..@ colour       : chr "black"
-    ##   ..@ size         : num 15
-    ##   ..@ hjust        : NULL
-    ##   ..@ vjust        : NULL
-    ##   ..@ angle        : NULL
-    ##   ..@ lineheight   : NULL
-    ##   ..@ margin       : NULL
-    ##   ..@ debug        : NULL
-    ##   ..@ inherit.blank: logi FALSE
-    ##  $ axis.text   : <ggplot2::element_text>
-    ##   ..@ family       : NULL
-    ##   ..@ face         : NULL
-    ##   ..@ italic       : chr NA
-    ##   ..@ fontweight   : num NA
-    ##   ..@ fontwidth    : num NA
-    ##   ..@ colour       : chr "black"
-    ##   ..@ size         : num 15
-    ##   ..@ hjust        : NULL
-    ##   ..@ vjust        : NULL
-    ##   ..@ angle        : NULL
-    ##   ..@ lineheight   : NULL
-    ##   ..@ margin       : NULL
-    ##   ..@ debug        : NULL
-    ##   ..@ inherit.blank: logi FALSE
-    ##  $ panel.border: <ggplot2::element_rect>
-    ##   ..@ fill         : NULL
-    ##   ..@ colour       : chr "black"
-    ##   ..@ linewidth    : num 1
-    ##   ..@ linetype     : NULL
-    ##   ..@ linejoin     : NULL
-    ##   ..@ inherit.blank: logi FALSE
-    ##  $ egend.text  : <ggplot2::element_text>
-    ##   ..@ family       : NULL
-    ##   ..@ face         : NULL
-    ##   ..@ italic       : chr NA
-    ##   ..@ fontweight   : num NA
-    ##   ..@ fontwidth    : num NA
-    ##   ..@ colour       : chr "black"
-    ##   ..@ size         : num 15
-    ##   ..@ hjust        : NULL
-    ##   ..@ vjust        : NULL
-    ##   ..@ angle        : NULL
-    ##   ..@ lineheight   : NULL
-    ##   ..@ margin       : NULL
-    ##   ..@ debug        : NULL
-    ##   ..@ inherit.blank: logi FALSE
-    ##  $ egend.title : <ggplot2::element_text>
-    ##   ..@ family       : NULL
-    ##   ..@ face         : NULL
-    ##   ..@ italic       : chr NA
-    ##   ..@ fontweight   : num NA
-    ##   ..@ fontwidth    : num NA
-    ##   ..@ colour       : chr "black"
-    ##   ..@ size         : num 15
-    ##   ..@ hjust        : NULL
-    ##   ..@ vjust        : NULL
-    ##   ..@ angle        : NULL
-    ##   ..@ lineheight   : NULL
-    ##   ..@ margin       : NULL
-    ##   ..@ debug        : NULL
-    ##   ..@ inherit.blank: logi FALSE
-    ##  @ complete: logi FALSE
-    ##  @ validate: logi TRUE
 
 # Análises
 
@@ -171,10 +119,16 @@ bib_df |>
        color = "Tipo de bibliografia")
 ```
 
+    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
+    ## element hierarchy.
+
+    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
+    ## element hierarchy.
+
     ## Warning: Removed 3 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ## Tipo de jornal por ano
 
@@ -219,7 +173,13 @@ bib_df |>
        color = "Revista científica")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
+    ## element hierarchy.
+
+    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
+    ## element hierarchy.
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ## Tamanho do título por ano
 
@@ -247,10 +207,16 @@ bib_df |>
     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
     ## generated.
 
+    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
+    ## element hierarchy.
+
+    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
+    ## element hierarchy.
+
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ## Histogrma da quantidade de palavras
 
@@ -265,7 +231,13 @@ bib_df |>
        y = "Contagem")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
+    ## element hierarchy.
+
+    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
+    ## element hierarchy.
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ## Tamanho do resumo por ano
 
@@ -293,10 +265,16 @@ bib_df |>
     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
     ## generated.
 
+    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
+    ## element hierarchy.
+
+    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
+    ## element hierarchy.
+
     ## Warning: Removed 18 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ## Histogrma da quantidade de palavras
 
@@ -313,4 +291,10 @@ bib_df |>
     ## Warning: Removed 201 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+    ## Warning in plot_theme(plot): The `egend.text` theme element is not defined in the
+    ## element hierarchy.
+
+    ## Warning in plot_theme(plot): The `egend.title` theme element is not defined in the
+    ## element hierarchy.
+
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->

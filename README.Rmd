@@ -17,7 +17,7 @@ library(RefManageR)
 library(tidyverse)
 ```
 
-# Data
+# Dados
 
 ## Importando
 
@@ -36,16 +36,15 @@ bib_df
 bib_df |> dplyr::glimpse()
 ```
 
-# Setando temas-
-
-theme_set(theme_bw() +
+# Setando temas
 
 ```{r}
-theme(axis.text = element_text(color = "black", size = 15),
-      axis.title = element_text(color = "black", size = 15),
-      egend.text = element_text(color = "black", size = 15),
-      egend.title = element_text(color = "black", size = 15),
-      panel.border = element_rect(color = "black", linewidth = 1))
+theme_set(theme_bw() +
+            theme(axis.text = element_text(color = "black", size = 15),
+                  axis.title = element_text(color = "black", size = 15),
+                  egend.text = element_text(color = "black", size = 15),
+                  egend.title = element_text(color = "black", size = 15),
+                  panel.border = element_rect(color = "black", linewidth = 1)))
 ```
 
 # Análises
