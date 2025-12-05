@@ -102,7 +102,7 @@ bib_df |>
     ## Warning: Removed 3 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ## Tipo de jornal por ano
 
@@ -147,7 +147,7 @@ bib_df |>
        color = "Revista científica")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ## Tamanho do título por ano
 
@@ -178,9 +178,9 @@ bib_df |>
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
-## Histogrma da quantidade de palavras
+## Histogrma da quantidade de palavras dos títulos
 
 ``` r
 bib_df |>
@@ -188,12 +188,11 @@ bib_df |>
                   stringr::str_count(stringr::boundary("word"))) |>
   ggplot(aes(observado)) +
   geom_histogram(color = "black", binwidth = 1) +
-  scale_x_continuous(breaks = seq(0, 30, 2)) +
   labs(x = "Quantidade de palavras",
        y = "Contagem")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## Tamanho do resumo por ano
 
@@ -224,7 +223,7 @@ bib_df |>
     ## Warning: Removed 18 rows containing missing values or values outside the scale range
     ## (`geom_line()`).
 
-![](README_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ## Histogrma da quantidade de palavras nos abstracts
 
@@ -241,4 +240,4 @@ bib_df |>
     ## Warning: Removed 201 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](README_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->

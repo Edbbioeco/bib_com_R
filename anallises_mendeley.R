@@ -8,7 +8,7 @@ library(tidyverse)
 
 ## Importando ----
 
-bib <- RefManageR::ReadBib("library.bib")
+bib <- RefManageR::ReadBib("library.bib", check = FALSE)
 
 ## Visualizando ----
 
