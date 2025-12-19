@@ -86,8 +86,7 @@ bib_df |>
   geom_line(linewidth = 1) +
   labs(x = "Ano",
        y = "Quantidade de palavras") +
-  scale_x_continuous(breaks = seq(1910, 2025, 15)) +
-  scale_y_continuous(breaks = seq(0, 30, 2))
+  scale_x_continuous(breaks = seq(1910, 2025, 15))
 
 ## Histogrma da quantidade de palavras ----
 
@@ -96,7 +95,6 @@ bib_df |>
                   stringr::str_count(stringr::boundary("word"))) |>
   ggplot(aes(observado)) +
   geom_histogram(color = "black", binwidth = 1) +
-  scale_x_continuous(breaks = seq(0, 30, 2)) +
   labs(x = "Quantidade de palavras",
        y = "Contagem")
 
@@ -113,9 +111,7 @@ bib_df |>
   ggplot(aes(year, quantidade)) +
   geom_line(linewidth = 1) +
   labs(x = "Ano",
-       y = "Quantidade de palavras") +
-  scale_x_continuous(breaks = seq(1910, 2025, 15)) +
-  scale_y_continuous(breaks = seq(0, 30, 2))
+       y = "Quantidade de palavras")
 
 ## Histogrma da quantidade de palavras ----
 
@@ -126,3 +122,8 @@ bib_df |>
   geom_histogram(color = "black", binwidth = 10) +
   labs(x = "Quantidade de palavras",
        y = "Contagem")
+
+# Exportando ----
+
+bib_df |>
+  writexl::write_xlsx("referencias.xlsx")

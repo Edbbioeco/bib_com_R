@@ -39,15 +39,26 @@ bib_df |> dplyr::glimpse()
 # Setando temas
 
 ```{r}
-theme_set(theme_bw() +
+theme_set(theme_classic() +
             theme(axis.text = element_text(color = "black", size = 15),
                   axis.title = element_text(color = "black", size = 15),
                   legend.text = element_text(color = "black", size = 15),
-                  legend.title = element_text(color = "black", size = 15),
-                  panel.border = element_rect(color = "black", linewidth = 1)))
+                  legend.title = element_text(color = "black", size = 15)))
 ```
 
 # Análises
+
+## Histograma dos anos mais frequentes 
+
+```{r}
+bib_df |>
+  dplyr::mutate(year = year |>
+                  as.numeric()) |>
+  ggplot(aes(year)) +
+  geom_histogram(color = "black", binwidth = 1) +
+  labs(x = "Ano",
+       y = "Quantidade")
+```
 
 ## Tipo de referência por ano
 
