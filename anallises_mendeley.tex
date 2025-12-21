@@ -1,0 +1,3251 @@
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage[sc]{mathpazo}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\makeatother
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+
+
+
+
+
+
+The results below are generated from an R script.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Pacotes ----}
+
+\hlkwd{library}\hldef{(RefManageR)}
+
+\hlkwd{library}\hldef{(tidyverse)}
+
+\hlcom{# Dados ----}
+
+\hlcom{## Importando ----}
+
+\hldef{bib} \hlkwb{<-} \hldef{RefManageR}\hlopt{::}\hlkwd{ReadBib}\hldef{(}\hlsng{"library.bib"}\hldef{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dice1945' \ (line12) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Keeney2007' \ (line20) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1996' \ (line30) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Li1993' \ (line41) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hutchinson1953' \ (line53) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Macarthur2024' \ (line60) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dejong1975' \ (line76) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Whittaker1960' \ (line86) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line94) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Whittaker1965' \ (line111) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Preston1948' \ (line120) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Burnham1978' \ (line128) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1984' \ (line148) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dejong1975' \ (line157) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1996' \ (line167) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Shannon1948' \ (line177) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Legendre1989' \ (line184) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line193) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line212) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Walker1992' \ (line215) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hecnar1997' \ (line225) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line249) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Pianka1973' \ (line252) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Rosseel2012' \ (line261) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line269) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Biodiversity1996' \ (line272) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line282) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'AndradeMaia2020' \ (line286) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line310) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line333) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line348) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line394) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line413) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line416) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Campos2017' \ (line420) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line427) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'WickhamRStudio2014' \ (line430) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line438) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'DeGroot2002' \ (line487) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line498) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Campos2017' \ (line514) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line521) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line524) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line545) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line549) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Author1992' \ (line570) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'SanchesMelo2008' \ (line579) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Lacy1993' \ (line589) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Williamson1991' \ (line598) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dejong1975' \ (line616) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Burnham1978' \ (line626) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dice1945' \ (line649) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hutchinson1953' \ (line671) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Keeney2007' \ (line678) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Li1993' \ (line717) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Preston1948' \ (line729) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Legendre1989' \ (line737) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1996' \ (line746) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line771) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line775) because:\\\#\# 	A bibentry of bibtype 'Book' has to specify the field: c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1984' \ (line796) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1996' \ (line805) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Whittaker1965' \ (line815) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Shannon1948' \ (line824) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Whittaker1960' \ (line831) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Lemmon1957' \ (line839) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line862) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line879) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line897) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dubeux2020' \ (line900) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the field: c("{}journaltitle"{}, "{}journal"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Vallan2002' \ (line905) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Lima2002' \ (line915) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the field: c("{}journaltitle"{}, "{}journal"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line924) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Cao1995' \ (line940) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line950) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line954) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Thrasher1917' \ (line957) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line966) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Jennings1999' \ (line969) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line989) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Walker1992' \ (line992) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hecnar1997' \ (line1002) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'rvore2007' \ (line1012) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1022) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1025) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1044) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Myers2000' \ (line1047) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1056) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1059) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1063) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Heger2003' \ (line1070) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dias2014' \ (line1080) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the field: c("{}journaltitle"{}, "{}journal"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line1699) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Lemmon1957' \ (line1918) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2027) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2030) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2061) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2207) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2310) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2383) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Faivovich2005' \ (line2416) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the field: c("{}journaltitle"{}, "{}journal"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Thrasher1917' \ (line2550) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2628) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2644) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2705) because:\\\#\# 	A bibentry of bibtype 'Book' has to specify the field: c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2711) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Lima2002' \ (line2730) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2739) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Menin2011' \ (line2781) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Walker1992' \ (line2835) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'rvore2007' \ (line2845) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hecnar1997' \ (line2855) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2865) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line2924) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3029) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Jennings1999' \ (line3125) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3148) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Colombo2010' \ (line3165) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3187) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3246) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Myers2000' \ (line3408) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Myers2000' \ (line3417) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3426) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Heger2003' \ (line3504) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3587) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3634) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Duellman1992' \ (line3694) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hutchinson1953' \ (line3838) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3845) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Keeney2007' \ (line3869) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dice1945' \ (line3907) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1996' \ (line3915) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dejong1975' \ (line3940) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Legendre1989' \ (line3950) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line3959) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1984' \ (line3964) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Macarthur2024' \ (line3973) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Li1993' \ (line4007) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Whittaker1965' \ (line4034) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Dejong1975' \ (line4099) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Pianka1973' \ (line4109) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4132) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Preston1948' \ (line4137) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4145) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Burnham1978' \ (line4162) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4197) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4202) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Whittaker1960' \ (line4206) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Tuomisto2012' \ (line4258) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the field: c("{}journaltitle"{}, "{}journal"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4265) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Shannon1948' \ (line4311) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Rosseel2012' \ (line4318) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Smith1996' \ (line4340) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4350) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Walker1992' \ (line4432) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'rvore2007' \ (line4442) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4452) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hecnar1997' \ (line4455) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4465) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4468) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4471) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Biodiversity1996' \ (line4478) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Menin2011' \ (line4577) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4588) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4677) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4737) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'WickhamRStudio2014' \ (line4816) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4895) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line4915) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'AndradeMaia2020' \ (line4932) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Campos2017' \ (line5028) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5086) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5117) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'SanchesMelo2008' \ (line5204) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Campos2017' \ (line5229) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5236) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'DeGroot2002' \ (line5254) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5383) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5387) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5390) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: author, institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Author1992' \ (line5394) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Lacy1993' \ (line5403) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Williamson1991' \ (line5412) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5417) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line5423) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the fields: institution, year}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Miyamoto1982' \ (line5457) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Miyamoto1982' \ (line5634) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'InternationUnionforConservationofNatureIUCN2024' \ (line5945) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Gauch1977' \ (line7065) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Hill1973' \ (line7075) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'NA' \ (line7160) because:\\\#\# 	A bibentry of bibtype 'Article' has to specify the fields: author, c("{}journaltitle"{}, "{}journal"{}), c("{}year"{}, "{}date"{})}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Ignoring entry 'Caldwell2010' \ (line7254) because:\\\#\# 	A bibentry of bibtype 'TechReport' has to specify the field: institution}}\begin{alltt}
+\hlcom{## Visualizando ----}
+
+\hldef{bib}
+\end{alltt}
+\begin{verbatim}
+## [1] I. B. D. M. A. E. D. R. N. R. (IBAMA). _Plano de erradicação e controle de
+## espécies vegetais exóticas invasoras: Restauração ambiental na reserva biológica
+## de saltinho_. 2010.
+## 
+## [2] I. B. D. M. A. E. D. R. N. R. (IBAMA). _Resumo executivo do plano de manejo
+## da Reserva Biológica de Saltinho_. 5 p., Brasília. 2003.
+## <https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/mata-atlantica/lista-de-ucs/rebio-de-saltinho/arquivos/pm_rebio_saltinho_encartes.pdf>.
+## 
+## [3] P. M. do A. Oliveira, J. L. L. Feitosa, and P. M. S. Nunes. "Seasonal
+## Influence on the Feeding Patterns of Three Sympatric Tropidurus Lizards
+## (Squamata: Tropiduridae) of the Caatinga, in the Brazilian Semi-Arid Region".
+## In: _South American Journal of Herpetology_ 31 (1 ago. 2024). ISSN: 1808-9798.
+## DOI: 10.2994/SAJH-D-21-00043.1.
+## 
+## [4] V. Abdala, M. L. Ponssa, J. Fratani, et al. "The role of hand, feet, and
+## digits during landing in anurans". In: _Zoologischer Anzeiger_ 296 (jan. 2022),
+## pp. 187-197. ISSN: 00445231. DOI: 10.1016/j.jcz.2022.01.002.
+## 
+## [5] R. C. R. de Abreu and P. J. F. P. Rodrigues. "Exotic tree Artocarpus
+## heterophyllus (Moraceae) invades the Brazilian Atlantic Rainforest". In:
+## _Rodriguésia_ 61 (4 dez. 2010), pp. 677-688. ISSN: 2175-7860. DOI:
+## 10.1590/2175-7860201061409.
+## 
+## [6] A. N. de Águas. _Agência Nacional de Águas e Saneamento Básico – Portal
+## Institucional_. Acesso em: 02 out. 2025. 2025.
+## 
+## [7] M. E. Aiello‐Lammens, R. A. Boria, A. Radosavljevic, et al. "spThin: an R
+## package for spatial thinning of species occurrence records for use in ecological
+## niche models". In: _Ecography_ 38 (5 mai. 2015), pp. 541-545. ISSN: 0906-7590.
+## DOI: 10.1111/ecog.01132.
+## 
+## [8] U. P. de Albuquerque and R. F. de Oliveira. "Is the use-impact on native
+## caatinga species in Brazil reduced by the high species richness of medicinal
+## plants?" In: _Journal of Ethnopharmacology_ 113 (1 ago. 2007), pp. 156-170.
+## ISSN: 03788741. DOI: 10.1016/j.jep.2007.05.025.
+## 
+## [9] W. L. Allen, S. E. Street, and I. Capellini. _Fast life history traits
+## promote invasion success in amphibians and reptiles_. fev. 2017. DOI:
+## 10.1111/ele.12728.
+## 
+## [10] O. Allouche, A. Tsoar, and R. Kadmon. "Assessing the accuracy of species
+## distribution models: Prevalence, kappa and the true skill statistic (TSS)". In:
+## _Journal of Applied Ecology_ 43 (6 dez. 2006), pp. 1223-1232. ISSN: 00218901.
+## DOI: 10.1111/j.1365-2664.2006.01214.x.
+## 
+## [11] M. Almeida-Gomes and C. F. D. Rocha. "Landscape connectivity may explain
+## anuran species distribution in an Atlantic forest fragmented area". In:
+## _Landscape Ecology_ 29 (1 jan. 2014), pp. 29-40. ISSN: 15729761. DOI:
+## 10.1007/s10980-013-9898-5.
+## 
+## [12] M. Almeida‐Gomes, N. J. Gotelli, C. F. D. Rocha, et al. "Random placement
+## models explain species richness and dissimilarity of frog assemblages within
+## Atlantic Forest fragments". In: _Journal of Animal Ecology_ 91 (3 mar. 2022),
+## pp. 618-629. ISSN: 0021-8790. DOI: 10.1111/1365-2656.13660.
+## 
+## [13] A. M. Almeida and A. F. Souza. "Northern Atlantic Forest: Conservation
+## Status and Perspectives". In: _Animal Biodiversity and Conservation in Brazil's
+## Northern Atlantic Forest_. Ed. by G. A. P. Filho, F. G. R. França, R. R. N.
+## Alves and A. Vasconcellos. Springer International Publishing, 2023, pp. 7-22.
+## DOI: 10.1007/978-3-031-21287-1_2.
+## 
+## [14] A. V. de Almeida. "Aspectos Históricos da Estação Ecológica do Tapacurá".
+## In: _A Biodiversidade da Estação Ecológica do Tapacurá_. Ed. by G. J. B. de
+## Moura, S. M. de Azevedo Júnior and A. C. A. El-Deir. 1st ed. Nuppea, 2012, pp.
+## 09-32.
+## 
+## [15] B. C. Almeida, R. S. Santos, T. F. dos Santos, et al. "Diet of five anuran
+## species in a forest remnant in eastern Acre state, Brazilian Amazonia". In:
+## _Herpetology Notes_ 12 (set. 2019), pp. 945-953.
+## 
+## [16] E. Álvarez-Grzybowska, N. Urbina-Cardona, F. Córdova-Tapia, et al.
+## "Amphibian communities in two contrasting ecosystems: functional diversity and
+## environmental filters". In: _Biodiversity and Conservation_ 29 (8 jul. 2020),
+## pp. 2457-2485. ISSN: 15729710. DOI: 10.1007/s10531-020-01984-w.
+## 
+## [17] T. F. S. Alves-Dos-santos, L. R. Forti, and M. F. Napoli. "Feeding habits
+## of the robber frog pristimantis paulodutrai (Bokermann, 1975) in northeastern
+## brazil". In: _Biota Neotropica_ 21 (2 2021). ISSN: 16760611. DOI:
+## 10.1590/1676-0611-bn-2020-1098.
+## 
+## [18] G. Alves-Ferreira, D. C. Talora, M. Solé, et al. "Unraveling global impacts
+## of climate change on amphibians distributions: A life-history and
+## biogeographic-based approach". In: _Frontiers in Ecology and Evolution_ 10 (nov.
+## 2022). ISSN: 2296-701X. DOI: 10.3389/fevo.2022.987237.
+## 
+## [19] I. S. D. Amaral, J. B. Pereira, M. H. Vancine, et al. "Where do they live?
+## Predictive geographic distribution of Tadarida brasiliensis brasiliensis
+## (Chiroptera, Molossidae) in South America". In: _Neotropical Biology and
+## Conservation_ 18 (3 2023), pp. 139-156. ISSN: 22363777. DOI:
+## 10.3897/neotropical.18.e101390.
+## 
+## [20] P. Amberkar and R. Mungikar. "More the merrier? influence of mango orchards
+## on the composition of the reptile communities of the lateritic plateaus,
+## Maharashtra, India". In: _Biotropica_ 56 (6 nov. 2024). ISSN: 0006-3606. DOI:
+## 10.1111/btp.13388.
+## 
+## [21] A. Amézquita, W. Hödl, A. P. Lima, et al. "MASKING INTERFERENCE AND THE
+## EVOLUTION OF THE ACOUSTIC COMMUNICATION SYSTEM IN THE AMAZONIAN DENDROBATID FROG
+## ALLOBATES FEMORALIS". In: _Evolution_ 60 (9 set. 2006), pp. 1874-1887. ISSN:
+## 0014-3820. DOI: 10.1111/j.0014-3820.2006.tb00531.x.
+## 
+## [22] M. J. Anderson, T. O. Crist, J. M. Chase, et al. "Navigating the multiple
+## meanings of β diversity: A roadmap for the practicing ecologist". In: _Ecology
+## Letters_ 14 (1 jan. 2011), pp. 19-28. ISSN: 1461023X. DOI:
+## 10.1111/J.1461-0248.2010.01552.X.
+## 
+## [23] J. H. Andrade Lima, M. J. K. B. Novo, and P. I. Simões. "Advertisement call
+## variation is related to environmental and geographic distances in two anuran
+## species inhabiting highland forests in northeastern Brazil". In: _Biotropica_
+## (2024). ISSN: 17447429. DOI: 10.1111/btp.13329.
+## 
+## [24] E. V. E. de Andrade. "Influência das Rodovias PE-060 e PE-076 Sobre a
+## Anurofauna de Solo da Reserva Biológica Saltinho". PhD thesis. Universidade
+## Federal de Pernambuco, jan. 2012.
+## 
+## [25] F. S. de ANDRADE, I. A. Haga, J. S. Ferreira, et al. "A new cryptic species
+## of pithecopus (Anura, phyllomedusidae) in north-eastern brazil". In: _European
+## Journal of Taxonomy_ 2020 (723 2020), pp. 108-134. ISSN: 21189773. DOI:
+## 10.5852/ejt.2020.723.1147.
+## 
+## [26] A. G. dos Anjos, M. Solé, and M. Benchimol. _Fire effects on anurans: What
+## we know so far?_ set. 2021. DOI: 10.1016/j.foreco.2021.119338.
+## 
+## [27] A. G. Anjos, R. N. Costa, D. Brito, et al. "Is there an association between
+## the ecological characteristics of anurans from the Brazilian Atlantic Forest and
+## their extinction risk?" In: _Ethology Ecology and Evolution_ 32 (4 jul. 2020),
+## pp. 336-350. ISSN: 18287131. DOI: 10.1080/03949370.2020.1711815.
+## 
+## [28] P. R. Anunciação, R. Ernst, F. Martello, et al. "Climate-driven loss of
+## taxonomic and functional richness in Brazilian Atlantic Forest anurans". In:
+## _Perspectives in Ecology and Conservation_ 21 (4 out. 2023), pp. 274-285. ISSN:
+## 25300644. DOI: 10.1016/j.pecon.2023.09.001.
+## 
+## [29] A. Araos, C. Cerda, O. Skewes, et al. "Estimated economic impacts of seven
+## invasive alien species in Chile". In: _Human Dimensions of Wildlife_ 25 (4 jul.
+## 2020), pp. 398-403. ISSN: 1533158X. DOI: 10.1080/10871209.2020.1740837.
+## 
+## [30] P. H. Asfora and A. R. M. Pontes. "The small mammals of the highly impacted
+## North-eastern Atlantic Forest of Brazil, Pernambuco Endemism Center". In: _Biota
+## Neotropica_ 9 (1 mar. 2009), pp. 31-35. ISSN: 1676-0603. DOI:
+## 10.1590/S1676-06032009000100004.
+## 
+## [31] A. C. R. Assunção, R. V. Alexandrino, A. N. Caiafa, et al. "The invasion of
+## Artocarpus heterophyllus, jackfruit, in protected areas under climate change and
+## across scales: from Atlantic Forest to a natural heritage private reserve". In:
+## _Biological Invasions_ 21 (2 fev. 2019), pp. 481-492. ISSN: 15731464. DOI:
+## 10.1007/s10530-018-1840-y.
+## 
+## [32] C. Ballesteros-Barrera, O. Tapia-Pérez, R. Zárate-Hernández, et al. "The
+## Potential Effect of Climate Change on the Distribution of Endemic Anurans from
+## Mexico’s Tropical Dry Forest". In: _Diversity_ 14 (8 ago. 2022). ISSN: 14242818.
+## DOI: 10.3390/d14080650.
+## 
+## [33] I. M. Barata, E. P. Silva, and R. A. Griffiths. "Predictors of abundance of
+## a rare bromeliad-dwelling frog (Crossodactylodes itambe) in the espinhaço
+## mountain range of Brazil". In: _Journal of Herpetology_ 52 (3 set. 2018), pp.
+## 321-326. ISSN: 00221511. DOI: 10.1670/17-183.
+## 
+## [34] A. D. Barnosky, N. Matzke, S. Tomiya, et al. _Has the Earth's sixth mass
+## extinction already arrived?_ mar. 2011. DOI: 10.1038/nature09678.
+## 
+## [35] P. S. Barton, S. A. Cunningham, A. D. Manning, et al. "The spatial scaling
+## of beta diversity". In: _Global Ecology and Biogeography_ 22 (6 jun. 2013), pp.
+## 639-647. ISSN: 1466822X. DOI: 10.1111/GEB.12031.
+## 
+## [36] A. Baselga. "Partitioning the turnover and nestedness components of beta
+## diversity". In: _Global Ecology and Biogeography_ 19 (1 jan. 2010), pp. 134-143.
+## ISSN: 1466822X. DOI: 10.1111/j.1466-8238.2009.00490.x.
+## 
+## [37] A. Baselga. "Separating the two components of abundance-based
+## dissimilarity: Balanced changes in abundance vs. abundance gradients". In:
+## _Methods in Ecology and Evolution_ 4 (6 jun. 2013), pp. 552-557. ISSN: 2041210X.
+## DOI: 10.1111/2041-210X.12029.
+## 
+## [38] A. Baselga. "The relationship between species replacement, dissimilarity
+## derived from nestedness, and nestedness". In: _Global Ecology and Biogeography_
+## 21 (12 dez. 2012), pp. 1223-1232. ISSN: 1466822X. DOI:
+## 10.1111/j.1466-8238.2011.00756.x.
+## 
+## [39] A. Baselga, D. Orme, S. Villeger, et al. _betapart: Partitioning Beta
+## Diversity into Turnover and Nestedness Components_. R package version 1.6. 2023.
+## <https://CRAN.R-project.org/package=betapart>.
+## 
+## [40] E. W. Basham, B. R. Scheffers, A. Nakamura, et al. "Vertical niche and
+## trait associations in Central African amphibians". In: _Biotropica_ 56 (4 jul.
+## 2024). ISSN: 0006-3606. DOI: 10.1111/btp.13349.
+## 
+## [41] D. Bates, M. Mächler, B. Bolker, et al. "Fitting Linear Mixed-Effects
+## Models Using lme4". In: _Journal of Statistical Software_ 67 (1 2015), pp. 1-48.
+## DOI: 10.18637/jss.v067.i01.
+## 
+## [42] D. Bates, M. Maechler, B. Bolker, et al. _lme4: Linear Mixed-Effects Models
+## using Eigen and S4_. R package version 1.1-37. 2025.
+## <https://github.com/lme4/lme4/>.
+## 
+## [43] L. J. Beaumont, L. Hughes, and A. J. Pitman. "Why is the choice of future
+## climate scenarios for species distribution modelling important?" In: _Ecology
+## Letters_ 11 (11 nov. 2008), pp. 1135-1146. ISSN: 1461-023X. DOI:
+## 10.1111/j.1461-0248.2008.01231.x.
+## 
+## [44] C. G. Becker, R. D. Loyola, C. F. Haddad, et al. "Integrating species
+## life-history traits and patterns of deforestation in amphibian conservation
+## planning". In: _Diversity and Distributions_ 16 (1 jan. 2010), pp. 10-19. ISSN:
+## 13669516. DOI: 10.1111/j.1472-4642.2009.00625.x.
+## 
+## [45] M. Behangana, P. M. Kasoma, and L. Luiselli. "Ecological correlates of
+## species richness and population abundance patterns in the amphibian communities
+## from the Albertine Rift, East Africa". In: _Biodiversity and Conservation_ 18
+## (11 set. 2009), pp. 2855-2873. ISSN: 09603115. DOI: 10.1007/s10531-009-9611-9.
+## 
+## [46] A. M. Belasen, K. R. Amses, R. A. Clemons, et al. "Habitat fragmentation in
+## the Brazilian Atlantic Forest is associated with erosion of frog immunogenetic
+## diversity and increased fungal infections". In: _Immunogenetics_ 74 (4 ago.
+## 2022), pp. 431-441. ISSN: 14321211. DOI: 10.1007/s00251-022-01252-x.
+## 
+## [47] L. Belbin and C. McDonald. "Comparing three classification strategies for
+## use in ecology". In: _Journal of Vegetation Science_ 4 (3 jun. 1993), pp.
+## 341-348. ISSN: 1100-9233. DOI: 10.2307/3235592.
+## 
+## [48] A. M. Bennett, D. Pereira, and D. L. Murray. "Investment into Defensive
+## Traits by Anuran Prey (Lithobates pipiens) Is Mediated by the
+## Starvation-Predation Risk Trade-Off". In: _PLoS ONE_ 8 (12 dez. 2013), p.
+## e82344. ISSN: 1932-6203. DOI: 10.1371/journal.pone.0082344.
+## 
+## [49] H. G. Bergallo, A. C. Bergallo, H. B. Rocha, et al. "Invasion by Artocarpus
+## heterophyllus (Moraceae) in an island in the Atlantic Forest Biome, Brazil:
+## distribution at the landscape level, density and need for control". In: _Journal
+## of Coastal Conservation_ 20 (3 jun. 2016), pp. 191-198. ISSN: 18747841. DOI:
+## 10.1007/s11852-016-0429-9.
+## 
+## [50] R. S. Bergamin, V. A. Bastazini, E. Vélez-Martin, et al. "Linking beta
+## diversity patterns to protected areas: lessons from the Brazilian Atlantic
+## Rainforest". In: _Biodiversity and Conservation_ 26 (7 jun. 2017), pp.
+## 1557-1568. ISSN: 15729710. DOI: 10.1007/s10531-017-1315-y.
+## 
+## [51] J. Bertoluci, R. A. Brassaloti, J. W. R. Júnior, et al. "Species
+## composition and similarities among anuran assemblages of forest sites in
+## southeastern Brazil". In: _Scientia Agricola_ 64 (4 ago. 2007), pp. 364-374.
+## ISSN: 0103-9016. DOI: 10.1590/S0103-90162007000400007.
+## 
+## [52] T. M. Blackburn, P. Pyšek, S. Bacher, et al. _A proposed unified framework
+## for biological invasions_. jul. 2011. DOI: 10.1016/j.tree.2011.03.023.
+## 
+## [53] C. Blair and T. M. Doan. "Patterns of community structure and microhabitat
+## usage in peruvian pristimantis (Anura: Strabomantidae)". In: _Copeia_ (2 jun.
+## 2009), pp. 303-312. ISSN: 00458511. DOI: 10.1643/CH-08-062.
+## 
+## [54] B. R. Blais, D. E. Velasco, M. E. Frackiewicz, et al. "Assessing thermal
+## ecology of herpetofauna across a heterogeneous microhabitat mosaic in a changing
+## aridland riparian system". In: _Environmental Research: Ecology_ 2 (3 set.
+## 2023), p. 035001. ISSN: 2752-664X. DOI: 10.1088/2752-664X/ace6a3.
+## 
+## [55] F. G. Blanchet, P. Legendre, and D. Borcard. "Modelling directional spatial
+## processes in ecological data". In: _Ecological Modelling_ 215 (4 jul. 2008), pp.
+## 325-336. ISSN: 03043800. DOI: 10.1016/j.ecolmodel.2008.04.001.
+## 
+## [56] A. Blasco-Moreno, M. Pérez-Casany, P. Puig, et al. "What does a zero mean?
+## Understanding false, random and structural zeros in ecology". In: _Methods in
+## Ecology and Evolution_ 10 (7 jul. 2019), pp. 949-959. ISSN: 2041210X. DOI:
+## 10.1111/2041-210X.13185.
+## 
+## [57] A. R. Blaustein, S. C. Walls, B. A. Bancroft, et al. "Direct and Indirect
+## Effects of Climate Change on Amphibian Populations". In: _Diversity_ 2 (2 fev.
+## 2010), pp. 281-313. ISSN: 1424-2818. DOI: 10.3390/d2020281.
+## 
+## [58] T. Boelter, F. M. dos Santos, L. F. B. Moreira, et al. "Effects of
+## hydroperiod on morphology of tadpoles from highland ponds". In: _Aquatic
+## Ecology_ 54 (4 dez. 2020), pp. 1145-1153. ISSN: 15735125. DOI:
+## 10.1007/s10452-020-09799-1.
+## 
+## [59] I. Bolon, L. Picek, A. M. Durso, et al. "An artificial intelligence model
+## to identify snakes from across the world: Opportunities and challenges for
+## global health and herpetology". In: _PLoS neglected tropical diseases_ 16 (8
+## ago. 2022), p. e0010647. ISSN: 19352735. DOI: 10.1371/journal.pntd.0010647.
+## 
+## [60] R. Boni, F. Z. Novelli, and A. G. Silva. "Um alerta para os riscos de
+## bioinvasão de jaqueiras, Artocarpus heterophyllus Lam., na Reserva Biológica
+## Paulo Fraga Rodrigues, antiga Reserva Biológica Duas Bocas, no Espírito Santo,
+## Sudeste do Brasil". In: _Natureza on line_ 7 (1 jan. 2009), pp. 51-55.
+## 
+## [61] D. Borcard, P. Legendre, and P. Drapeau. "Partialling out the spatial
+## component of ecological variation". In: _Ecology_ 73 (3 1992), pp. 1045-1055.
+## ISSN: 00129658. DOI: 10.2307/1940179.
+## 
+## [62] C. Both and A. S. Melo. "Diversity of anuran communities facing bullfrog
+## invasion in Atlantic Forest ponds". In: _Biological Invasions_ 17 (4 abr. 2015),
+## pp. 1137-1147. ISSN: 15731464. DOI: 10.1007/s10530-014-0783-1.
+## 
+## [63] E. Bowler, V. Lefebvre, M. Pfeifer, et al. "Optimising sampling designs for
+## habitat fragmentation studies". In: _Methods in Ecology and Evolution_ 13 (1
+## jan. 2022), pp. 217-229. ISSN: 2041210X. DOI: 10.1111/2041-210X.13731.
+## 
+## [64] BRASIL. _Lei do Sistema Nacional de Unidades de Conservação da Natureza
+## (SNUC)_. 2000.
+## 
+## [65] M. Brasil-Godinho, L. Diele-Viegas, B. E. Bolochio, et al. "Climate refugia
+## for Atlantic Forest widespread endemic anurans will persist in future climate
+## change scenarios". In: _Journal for Nature Conservation_ 79 (jun. 2024), p.
+## 126610. ISSN: 16171381. DOI: 10.1016/j.jnc.2024.126610.
+## 
+## [66] A. C. Brasileiro, R. A. Benício, J. G. Gonçalves-Sousa, et al. "Influence
+## of vegetation regeneration and agricultural land use on lizard composition,
+## taxonomic and functional diversity between different vegetation types in
+## Caatinga domain, Brazil". In: _Austral Ecology_ 48 (7 nov. 2023), pp. 1274-1291.
+## ISSN: 14429993. DOI: 10.1111/aec.13349.
+## 
+## [67] M. E. Brooks, K. Kristensen, K. J. van Benthem, et al. "glmmTMB Balances
+## Speed and Flexibility Among Packages for Zero-inflated Generalized Linear Mixed
+## Modeling". In: _The R Journal_ 9 (2 2017), pp. 378-400. DOI:
+## 10.32614/RJ-2017-066.
+## 
+## [68] M. Brooks, B. Bolker, K. Kristensen, et al. _glmmTMB: Generalized Linear
+## Mixed Models using Template Model Builder_. R package version 1.1.10. 2024.
+## <https://github.com/glmmTMB/glmmTMB>.
+## 
+## [69] C. A. Brühl, S. Pieper, and B. Weber. "Amphibians at risk? Susceptibility
+## of terrestrial amphibian life stages to pesticides". In: _Environmental
+## Toxicology and Chemistry_ 30 (11 nov. 2011), pp. 2465-2472. ISSN: 0730-7268.
+## DOI: 10.1002/etc.650.
+## 
+## [70] L. B. Buckley and W. Jetz. "Linking global turnover of species and
+## environments". In: _Proceedings of the National Academy of Sciences of the
+## United States of America_ 105 (46 nov. 2008), pp. 17836-17841. ISSN: 00278424.
+## DOI: 10.1073/PNAS.0803524105.
+## 
+## [71] P. Burraco and G. Orizaola. "Ionizing radiation and melanism in Chornobyl
+## tree frogs". In: _Evolutionary Applications_ 15 (9 set. 2022), pp. 1469-1479.
+## ISSN: 17524571. DOI: 10.1111/eva.13476.
+## 
+## [72] A. Burrow and J. Maerz. "How plants affect amphibian populations". In:
+## _Biological Reviews_ 97 (5 out. 2022), pp. 1749-1767. ISSN: 1469185X. DOI:
+## 10.1111/brv.12861.
+## 
+## [73] J. V. Buskirk. "Amphibian phenotypic variation along a gradient in canopy
+## cover: Species differences and plasticity". In: _Oikos_ 120 (6 jun. 2011), pp.
+## 906-914. ISSN: 00301299. DOI: 10.1111/j.1600-0706.2010.18845.x.
+## 
+## [74] M. N. de C. Kokubum and A. A. Giaretta. "Reproductive ecology and behaviour
+## of a species of Adenomera (Anura, Leptodactylinae) with endotrophic tadpoles:
+## Systematic implications". In: _Journal of Natural History_ 39 (20 set. 2005),
+## pp. 1745-1758. ISSN: 0022-2933. DOI: 10.1080/00222930400021515.
+## 
+## [75] M. N. de C. Kokubum and A. A. Giaretta. "Reproductive ecology and behaviour
+## of a species of Adenomera(Anura, Leptodactylinae) with endotrophic tadpoles:
+## Systematic implications". In: _Journal of Natural History_ 39 (20 set. 2005),
+## pp. 1745-1758. ISSN: 0022-2933. DOI: 10.1080/00222930400021515.
+## 
+## [76] E. Cabrera-Guzmán and V. H. Reynoso. "Amphibian and reptile communities of
+## rainforest fragments: Minimum patch size to support high richness and
+## abundance". In: _Biodiversity and Conservation_ 21 (12 2012), pp. 3243-3265.
+## ISSN: 15729710. DOI: 10.1007/s10531-012-0312-4.
+## 
+## [77] M. D. Cáceres, P. Legendre, S. K. Wiser, et al. "Using species combinations
+## in indicator value analyses". In: _Methods in Ecology and Evolution_ 3 (6 dez.
+## 2012), pp. 973-982. ISSN: 2041210X. DOI: 10.1111/j.2041-210X.2012.00246.x.
+## 
+## [78] F. L. S. Caldas, A. A. Garda, L. B. Q. Cavalcanti, et al. "Spatial and
+## Trophic Structure of Anuran Assemblages in Environments with Different Seasonal
+## Regimes in the Brazilian Northeast Region". In: _Copeia_ 107 (3 out. 2019), p.
+## 567. DOI: 10.1643/ch-18-109.
+## 
+## [79] C. Calenge. _adehabitatHR: Home Range Estimation_. R package version
+## 0.4.22. 2024. DOI: 10.32614/CRAN.package.adehabitatHR.
+## <https://CRAN.R-project.org/package=adehabitatHR>.
+## 
+## [80] M. Calmon, P. H. Brancalion, A. Paese, et al. "Emerging Threats and
+## Opportunities for Large-Scale Ecological Restoration in the Atlantic Forest of
+## Brazil". In: _Restoration Ecology_ 19 (2 mar. 2011), pp. 154-158. ISSN:
+## 10612971. DOI: 10.1111/j.1526-100X.2011.00772.x.
+## 
+## [81] F. S. Campos, D. Brito, and M. Solé. "Threatened amphibians and their
+## conservation status within the protected area network in Northeastern Brazil".
+## In: _Journal of Herpetology_ 47 (2 jun. 2013), pp. 277-285. ISSN: 00221511. DOI:
+## 10.1670/11-158.
+## 
+## [82] M. B. Carlucci, V. Marcilio-Silva, and J. M. Torezan. "The Southern
+## Atlantic Forest: Use, Degradation, and Perspectives for Conservation". In: _The
+## Atlantic Forest_. Springer International Publishing, 2021, pp. 91-111. DOI:
+## 10.1007/978-3-030-55322-7_5.
+## 
+## [83] A. C. O. D. Q. Carnaval, R. Puschendorf, O. L. Peixoto, et al. "Amphibian
+## chytrid fungus broadly distributed in the Brazilian Atlantic rain forest". In:
+## _EcoHealth_ 3 (1 mar. 2006), pp. 41-48. ISSN: 16129202. DOI:
+## 10.1007/s10393-005-0008-2.
+## 
+## [84] P. Cartwright, K. Scott, J. Stevens, et al. _A place to learn : developing
+## a stimulating learning environment_. LEARN (Lewisham Early Years Advice and
+## Resource Network), 2008, p. 81. ISBN: 0901637106.
+## 
+## [85] P. Cartwright, K. Scott, J. Stevens, et al. _A place to learn : developing
+## a stimulating learning environment_. LEARN (Lewisham Early Years Advice and
+## Resource Network), 2008, p. 81. ISBN: 0901637106.
+## 
+## [86] J. E. Carvajal-Cogollo and N. Urbina-Cardona. "Ecological grouping and edge
+## effects in tropical dry forest: reptile-microenvironment relationships". In:
+## _Biodiversity and Conservation_ 24 (5 mai. 2015), pp. 1109-1130. ISSN:
+## 0960-3115. DOI: 10.1007/s10531-014-0845-9.
+## 
+## [87] S. Castellano, V. Zanollo, V. Marconi, et al. "The mechanisms of sexual
+## selection in a lek-breeding anuran, Hyla intermedia". In: _Animal Behaviour_ 77
+## (1 jan. 2009), pp. 213-224. ISSN: 00033472. DOI: 10.1016/j.anbehav.2008.08.035.
+## 
+## [88] D. P. Castro, J. F. M. Rodrigues, M. J. Borges-Leite, et al. "Anuran
+## diversity indicates that Caatinga relictual Neotropical forests are more related
+## to the Atlantic Forest than to the Amazon". In: _PeerJ_ 2019 (1 2019). ISSN:
+## 21678359. DOI: 10.7717/peerj.6208.
+## 
+## [89] A. Chao. "Nonparametric Estimation of the Number of Classes in a
+## Population". In: _Scandinavian Journal of Statistics_ 11 (4 1984), pp. 265-270.
+## 
+## [90] A. Chao, R. L. Chazdon, R. K. Colwell, et al. "Abundance-based similarity
+## indices and their estimation when there are unseen species in samples". In:
+## _Biometrics_ 62 (2 2006), pp. 361-371. ISSN: 15410420. DOI:
+## 10.1111/j.1541-0420.2005.00489.x.
+## 
+## [91] A. Chao, R. L. Chazdon, and T. J. Shen. "A new statistical approach for
+## assessing similarity of species composition with incidence and abundance data".
+## In: _Ecology Letters_ 8 (2 fev. 2005), pp. 148-159. ISSN: 1461023X. DOI:
+## 10.1111/j.1461-0248.2004.00707.x.
+## 
+## [92] A. Chao and C. Chiu. "Bridging the variance and diversity decomposition
+## approaches to beta diversity via similarity and differentiation measures". In:
+## _Methods in Ecology and Evolution_ 7 (8 ago. 2016), pp. 919-928. ISSN:
+## 2041-210X. DOI: 10.1111/2041-210X.12551.
+## 
+## [93] A. Chao, N. J. Gotelli, T. C. Hsieh, et al. "Rarefaction and extrapolation
+## with Hill numbers: a framework for sampling and estimation in species diversity
+## studies". In: _Ecological Monographs_ 84 (2014), pp. 45-67.
+## 
+## [94] A. Chao and L. Jost. "Coverage-based rarefaction and extrapolation:
+## Standardizing samples by completeness rather than size". In: _Ecology_ 93 (12
+## dez. 2012), pp. 2533-2547. ISSN: 00129658. DOI: 10.1890/11-1952.1.
+## 
+## [95] A. Chao and S. Lee. "Estimating the Number of Classes via Sample Coverage".
+## In: _Journal of the American Statistical Association_ 87 (417 mar. 1992), pp.
+## 210-217. ISSN: 0162-1459. DOI: 10.1080/01621459.1992.10475194.
+## 
+## [96] V. Chaudhary and M. K. Oli. _A critical appraisal of population viability
+## analysis_. fev. 2020. DOI: 10.1111/cobi.13414.
+## 
+## [97] F. Chianucci, C. Ferrara, and N. Puletti. "coveR: an R package for
+## processing digital cover photography images to retrieve forest canopy
+## attributes". In: _Trees - Structure and Function_ 36 (6 dez. 2022), pp.
+## 1933-1942. ISSN: 09311890. DOI: 10.1007/s00468-022-02338-5.
+## 
+## [98] F. Chianucci and M. Macek. "hemispheR: an R package for fisheye canopy
+## image analysis". In: _Agricultural and Forest Meteorology_ 336 (jun. 2023), p.
+## 109470. ISSN: 01681923. DOI: 10.1016/j.agrformet.2023.109470.
+## 
+## [99] J. Cihlar, L. St.-Laurent, and J. Dyer. "Relation between the normalized
+## difference vegetation index and ecological variables". In: _Remote Sensing of
+## Environment_ 35 (2-3 fev. 1991), pp. 279-298. ISSN: 00344257. DOI:
+## 10.1016/0034-4257(91)90018-2.
+## 
+## [100] K. R. Clarke and R. M. Warwick. "A taxonomic distinctness index and its
+## statistical properties". In: _Journal of Applied Ecology_ 35 (4 1998), pp.
+## 523-531. ISSN: 00218901. DOI: 10.1046/j.1365-2664.1998.3540523.x.
+## 
+## [101] B. B. Cline and M. L. Hunter. "Different open‐canopy vegetation types
+## affect matrix permeability for a dispersing forest amphibian". In: _Journal of
+## Applied Ecology_ 51 (2 abr. 2014), pp. 319-329. ISSN: 0021-8901. DOI:
+## 10.1111/1365-2664.12197.
+## 
+## [102] B. B. Cline and M. L. Hunter. "Movement in the matrix: substrates and
+## distance‐to‐forest edge affect postmetamorphic movements of a forest amphibian".
+## In: _Ecosphere_ 7 (2 fev. 2016). ISSN: 2150-8925. DOI: 10.1002/ecs2.1202.
+## 
+## [103] V. D. Cola, O. Broennimann, B. Petitpierre, et al. "ecospat: an R package
+## to support spatial analyses and modeling of species niches and distributions".
+## In: _Ecography_ 40 (6 jun. 2017), pp. 774-787. ISSN: 16000587. DOI:
+## 10.1111/ecog.02671.
+## 
+## [104] R. I. Colautti and H. I. MacIsaac. "A neutral terminology to define
+## 'invasive' species". In: _Diversity and Distributions_ 10 (2 mar. 2004), pp.
+## 135-141. ISSN: 13669516. DOI: 10.1111/j.1366-9516.2004.00061.x.
+## 
+## [105] A. Colombo and C. Joly. "Brazilian Atlantic Forest lato sensu: the most
+## ancient Brazilian forest, and a biodiversity hotspot, is highly threatened by
+## climate change". In: _Brazilian Journal of Biology_ 70 (3 suppl out. 2010), pp.
+## 697-708. ISSN: 1519-6984. DOI: 10.1590/S1519-69842010000400002.
+## 
+## [106] I. U. for Conservation. _Action needed to conserve most threatened
+## vertebrate group - updated Amphibian Conservation Action Plan_. 2024.
+## 
+## [107] I. U. for Conservation. _Habitat loss blamed for more species decline_.
+## Acessado em 18 outubro 2025. 2025.
+## 
+## [108] I. U. for Conservation. _IUCN Red List of Threatened Species: search
+## results for “Anura”_. Acesso em: 04 out. 2025. 2025.
+## 
+## [109] L. P. Costa. "The historical bridge between the Amazon and the Atlantic
+## Forest of Brazil: A study of molecular phylogeography with small mammals". In:
+## _Journal of Biogeography_ 30 (1 jan. 2003), pp. 71-86. ISSN: 03050270. DOI:
+## 10.1046/j.1365-2699.2003.00792.x.
+## 
+## [110] L. P. Costa, Y. L. Leite, G. A. D. Fonseca, et al. "Biogeography of South
+## American forest mammals: Endemism and diversity in the Atlantic Forest". In:
+## _Biotropica_ 32 (4 B dez. 2000), pp. 872-881. ISSN: 00063606. DOI:
+## 10.1111/j.1744-7429.2000.tb00625.x.
+## 
+## [111] S. M. da Costa and E. J. R. Dias. "Territorial behavior, vocalization and
+## reproductive biology of allobates olfersioides (Anura: Aromobatidae)". In:
+## _Iheringia - Serie Zoologia_ 109 (2019). ISSN: 00734721. DOI:
+## 10.1590/1678-4766e2019031.
+## 
+## [112] R. M. P. Couto, M. C. Miguel, A. C. Branco, et al. "Reproductive behavior
+## of Phyllomedusa tetraploidea (Anura: Hylidae) Pombal &amp; Haddad, 1992 in the
+## Brazilian Atlantic Forest". In: _Cuadernos de Educación y Desarrollo_ 16 (6 jun.
+## 2024), p. e4522. ISSN: 1989-4155. DOI: 10.55905/cuadv16n6-105.
+## 
+## [113] S. L. Crowley, M. Cecchetti, and R. A. McDonald. "Hunting behaviour in
+## domestic cats: An exploratory study of risk and responsibility among cat
+## owners". In: _People and Nature_ 1 (1 mar. 2019), pp. 18-30. ISSN: 25758314.
+## DOI: 10.1002/pan3.6.
+## 
+## [114] M. L. Crump and N. J. J. Scott. "Visual Encounter Surveys". In: _Measuring
+## and monitoring biological diversity: Standard methods for amphibians_. Ed. by W.
+## R. Heyer, M. A. Donnelly, R. W. McDiardmid, L. C. Hayek and M. S. Foster.
+## Smithsonian Institution Press, 1994, pp. 84-92.
+## 
+## [115] L. Dabés, V. M. G. Bonfim, M. F. Napoli, et al. "Water balance and spatial
+## distribution of an anuran community from Brazil". In: _Herpetologica_ 68 (4 dez.
+## 2012), pp. 443-455. ISSN: 00180831. DOI: 10.1655/HERPETOLOGICA-D-10-00058.
+## 
+## [116] L. Dabés, V. M. G. Bonfim, M. F. Napoli, et al. "Water Balance and Spatial
+## Distribution of an Anuran Community from Brazil". In: _Herpetologica_ 68 (4 dez.
+## 2012), pp. 443-455. ISSN: 0018-0831. DOI: 10.1655/HERPETOLOGICA-D-10-00058.
+## 
+## [117] C. Dahl, S. J. Richards, I. Basien, et al. "Local and regional diversity
+## of frog communities along an extensive rainforest elevation gradient in Papua
+## New Guinea". In: _Biotropica_ 56 (1 jan. 2024), pp. 90-97. ISSN: 0006-3606. DOI:
+## 10.1111/btp.13283.
+## 
+## [118] D. A. Dalmolin, A. M. Tozetti, and M. J. R. Pereira. "Taxonomic and
+## functional anuran beta diversity of a subtropical metacommunity respond
+## differentially to environmental and spatial predictors". In: _PLoS ONE_ 14 (11
+## nov. 2019). ISSN: 19326203. DOI: 10.1371/journal.pone.0214902.
+## 
+## [119] A. K. S. De-Lima, C. H. de Oliveira, A. Pic-Taylor, et al. "Effects of
+## incubation temperature on development, morphology, and thermal physiology of the
+## emerging Neotropical lizard model organism Tropidurus torquatus". In:
+## _Scientific Reports_ 12 (1 dez. 2022). ISSN: 20452322. DOI:
+## 10.1038/s41598-022-21450-7.
+## 
+## [120] C. H. de-Oliveira-Nogueira, U. F. Souza, T. M. Machado, et al. "Between
+## fruits, flowers and nectar: The extraordinary diet of the frog Xenohyla
+## truncata". In: _Food Webs_ 35 (jun. 2023). ISSN: 23522496. DOI:
+## 10.1016/j.fooweb.2023.e00281.
+## 
+## [121] S. C. P. Decena, C. A. Avorque, I. C. P. Decena, et al. "Impact of habitat
+## alteration on amphibian diversity and species composition in a lowland tropical
+## rainforest in Northeastern Leyte, Philippines". In: _Scientific Reports_ 10 (1
+## dez. 2020). ISSN: 20452322. DOI: 10.1038/s41598-020-67512-6.
+## 
+## [122] D. M. Dehling and J. M. Dehling. "Elevated alpha diversity in disturbed
+## sites obscures regional decline and homogenization of amphibian taxonomic,
+## functional and phylogenetic diversity". In: _Scientific Reports_ 13 (1 dez.
+## 2023). ISSN: 20452322. DOI: 10.1038/s41598-023-27946-0.
+## 
+## [123] J. L. Deichmann, A. P. Lima, and G. B. Williamson. "Effects of
+## Geomorphology and Primary Productivity on Amazonian Leaf Litter Herpetofauna".
+## In: _Biotropica_ 43 (2 mar. 2011), pp. 149-156. ISSN: 00063606. DOI:
+## 10.1111/j.1744-7429.2010.00683.x.
+## 
+## [124] D. B. Delgado and C. F. Haddad. "Calling Activity and Vocal Repertoire of
+## <i>Hypsiboas prasinus</i> (Anura, Hylidae), a Treefrog from the Atlantic Forest
+## of Brazil". In: _Herpetologica_ 71 (2 jun. 2015), pp. 88-95. ISSN: 0018-0831.
+## DOI: 10.1655/HERPETOLOGICA-D-13-00071.
+## 
+## [125] P. G. Demaynadier and M. L. Hunter. "Effects of Silvicultural Edges on the
+## Distribution and Abundance of Amphibians in Maine". In: _Conservation Biology_
+## 12 (2 abr. 1998), pp. 340-352. ISSN: 0888-8892. DOI:
+## 10.1111/j.1523-1739.1998.96412.x.
+## 
+## [126] J. L. Devore and J. C. Maerz. "Grass invasion increases top-down pressure
+## on an amphibian via structurally mediated effects on an intraguild predator".
+## In: _Ecology_ 95 (7 2014), pp. 1724-1730. ISSN: 00129658. DOI:
+## 10.1890/13-1715.1.
+## 
+## [127] F. M. Dhorta, G. S. Cabanne, D. Meyer, et al. "The genetic effects of Late
+## Quaternary climatic changes over a tropical latitudinal gradient:
+## Diversification of an Atlantic Forest passerine". In: _Molecular Ecology_ 20 (9
+## mai. 2011), pp. 1923-1935. ISSN: 09621083. DOI:
+## 10.1111/j.1365-294X.2011.05063.x.
+## 
+## [128] R. G. Dias-Terceiro, I. L. Kaefer, R. de Fraga, et al. "A Matter of Scale:
+## Historical and Environmental Factors Structure Anuran Assemblages from the Upper
+## Madeira River, Amazonia". In: _Biotropica_ 47 (2 mar. 2015), pp. 259-266. ISSN:
+## 17447429. DOI: 10.1111/btp.12197.
+## 
+## [129] J. M. Díaz-García, E. Pineda, F. López-Barrera, et al. "Amphibian species
+## and functional diversity as indicators of restoration success in tropical
+## montane forest". In: _Biodiversity and Conservation_ 26 (11 out. 2017), pp.
+## 2569-2589. ISSN: 15729710. DOI: 10.1007/s10531-017-1372-2.
+## 
+## [130] M. F. Diniz, M. J. Andrade-Núñez, F. Dallmeier, et al. "Habitat assessment
+## for threatened species in the cross-border region of the Atlantic Forest". In:
+## _Landscape Ecology_ 38 (9 set. 2023), pp. 2241-2260. ISSN: 0921-2973. DOI:
+## 10.1007/s10980-023-01689-9.
+## 
+## [131] M. Dixo and M. Martins. "Are leaf-litter frogs and lizards affected by
+## edge effects due to forest fragmentation in Brazilian Atlantic forest?" In:
+## _Journal of Tropical Ecology_ 24 (5 set. 2008), pp. 551-554. ISSN: 0266-4674.
+## DOI: 10.1017/S0266467408005282.
+## 
+## [132] J. Dong, X. Xiao, B. Chen, et al. "Mapping deciduous rubber plantations
+## through integration of PALSAR and multi-temporal Landsat imagery". In: _Remote
+## Sensing of Environment_ 134 (jul. 2013), pp. 392-402. ISSN: 00344257. DOI:
+## 10.1016/j.rse.2013.03.014.
+## 
+## [133] T. A. F. Dória, C. C. Canedo, and M. F. Napoli. "Processes Influencing
+## Anuran Coexistence on a Local Scale: A Phylogenetic and Ecological Analysis in a
+## Restinga Environment". In: _South American Journal of Herpetology_ 13 (2 ago.
+## 2018), pp. 183-201. ISSN: 1982355X. DOI: 10.2994/SAJH-D-17-00044.1.
+## 
+## [134] T. A. F. Dória, W. Klein, R. O. de Abreu, et al. "Environmental Variables
+## Influence the Composition of Frog Communities in Riparian and Semi-Deciduous
+## Forests of the Brazilian Cerrado". In: _South American Journal of Herpetology_
+## 10 (2 ago. 2015), pp. 90-103. ISSN: 1808-9798. DOI: 10.2994/SAJH-D-14-00029.1.
+## 
+## [135] J. C. Douma and J. T. Weedon. "Analysing continuous proportions in ecology
+## and evolution: A practical introduction to beta and Dirichlet regression". In:
+## _Methods in Ecology and Evolution_ 10 (9 set. 2019), pp. 1412-1430. ISSN:
+## 2041-210X. DOI: 10.1111/2041-210X.13234.
+## 
+## [136] S. Dray, R. Pélissier, P. Couteron, et al. "Community ecology in the age
+## of multivariate multiscale spatial analysis". In: _Ecological Monographs_ 82 (3
+## ago. 2012), pp. 257-275. ISSN: 0012-9615. DOI: 10.1890/11-1183.1.
+## 
+## [137] D. P. Drucker, F. R. C. Costa, and W. E. Magnusson. "How wide is the
+## riparian zone of small streams in tropical forests? A test with terrestrial
+## herbs". In: _Journal of Tropical Ecology_ 24 (1 jan. 2008), pp. 65-74. ISSN:
+## 0266-4674. DOI: 10.1017/S0266467407004701.
+## 
+## [138] M. J. M. Dubeux, F. A. C. D. Nascimento, U. Gonçalves, et al.
+## "Identification key for anuran amphibians in a protected area in the
+## northeastern atlantic forest". In: _Papeis Avulsos de Zoologia_ 61 (2021). ISSN:
+## 18070205. DOI: 10.11606/1807-0205/2021.61.76.
+## 
+## [139] M. J. M. Dubeux, F. A. C. D. Nascimento, L. R. Lima, et al. "Morphological
+## characterization and taxonomic key of tadpoles (Amphibia: Anura) from the
+## northern region of the atlantic forest". In: _Biota Neotropica_ 20 (2 2020), pp.
+## 1-24. ISSN: 16760611. DOI: 10.1590/1676-0611-BN-2018-0718.
+## 
+## [140] N. Dubos, L. Morel, A. Crottini, et al. "High interannual variability of a
+## climate-driven amphibian community in a seasonal rainforest". In: _Biodiversity
+## and Conservation_ 29 (3 mar. 2020), pp. 893-912. ISSN: 15729710. DOI:
+## 10.1007/s10531-019-01916-3.
+## 
+## [141] M. Dueñas, D. J. Hemming, A. Roberts, et al. "The threat of invasive
+## species to IUCN-listed critically endangered species: A systematic review". In:
+## _Global Ecology and Conservation_ 26 (abr. 2021), p. e01476. ISSN: 23519894.
+## DOI: 10.1016/j.gecco.2021.e01476.
+## 
+## [142] M. Dufrêne and P. Legendre. "SPECIES ASSEMBLAGES AND INDICATOR SPECIES:THE
+## NEED FOR A FLEXIBLE ASYMMETRICAL APPROACH". In: _Ecological Monographs_ 67 (3
+## ago. 1997), pp. 345-366. ISSN: 0012-9615. DOI:
+## 10.1890/0012-9615(1997)067[0345:saaist]2.0.co;2.
+## 
+## [143] A. Dupoué, A. Rutschmann, J. F. L. Galliard, et al. "Water availability
+## and environmental temperature correlate with geographic variation in water
+## balance in common lizards". In: _Oecologia_ 185 (4 dez. 2017), pp. 561-571.
+## ISSN: 14321939. DOI: 10.1007/s00442-017-3973-6.
+## 
+## [144] A. M. Durso, G. K. Moorthy, S. P. Mohanty, et al. "Supervised Learning
+## Computer Vision Benchmark for Snake Species Identification From Photographs:
+## Implications for Herpetology and Global Health". In: _Frontiers in Artificial
+## Intelligence_ 4 (abr. 2021). ISSN: 26248212. DOI: 10.3389/frai.2021.582110.
+## 
+## [145] S. Dutta and S. K. Mukhopadhyay. "Habitat Preference and Diversity of
+## Anuran in Durgapur, an Industrial City of West Bengal, India". In: _Proceedings
+## of the Zoological Society_ 66 (1 jun. 2013), pp. 36-40. ISSN: 09746919. DOI:
+## 10.1007/s12595-012-0055-y.
+## 
+## [146] P. V. Eisenlohr. _Persisting challenges in multiple models: a note on
+## commonly unnoticed issues regarding collinearity and spatial structure of
+## ecological data_. set. 2014. DOI: 10.1007/s40415-014-0064-3.
+## 
+## [147] J. Elith and J. R. Leathwick. "Species distribution models: Ecological
+## explanation and prediction across space and time". In: _Annual Review of
+## Ecology, Evolution, and Systematics_ 40 (dez. 2009), pp. 677-697. ISSN:
+## 1543592X. DOI: 10.1146/annurev.ecolsys.110308.120159.
+## 
+## [148] R. Ernst and M. O. Rödel. "Anthropogenically induced changes of
+## predictability in tropical anuran assemblages". In: _Ecology_ 86 (11 2005), pp.
+## 3111-3118. ISSN: 00129658. DOI: 10.1890/04-0800.
+## 
+## [149] R. Ernst and M. O. Rödel. "Patterns of community composition in two
+## tropical tree frog assemblages: Separating spatial structure and environmental
+## effects in disturbed and undisturbed forests". In: _Journal of Tropical Ecology_
+## 24 (2 mar. 2008), pp. 111-120. ISSN: 02664674. DOI: 10.1017/S0266467407004737.
+## 
+## [150] A. Esparza-Orozco, A. Lira-Noriega, J. F. Martínez-Montoya, et al.
+## "Influences of environmental heterogeneity on amphibian composition at breeding
+## sites in a semiarid region of Mexico". In: _Journal of Arid Environments_ 182
+## (nov. 2020), p. 104259. ISSN: 01401963. DOI: 10.1016/j.jaridenv.2020.104259.
+## 
+## [151] J. R. Fabricante, K. C. T. de Araújo, L. A. de Andrade, et al. "Invasão
+## biológica de Artocarpus heterophyllus Lam. (Moraceae) em um fragmento de Mata
+## Atlântica no Nordeste do Brasil: impactos sobre a fitodiversidade e os solos dos
+## sítios invadidos". In: _Acta Botanica Brasilica_ 26 (2 jun. 2012), pp. 399-407.
+## ISSN: 0102-3306. DOI: 10.1590/S0102-33062012000200015.
+## 
+## [152] D. P. Faith, P. R. Minchin, and L. Belbin. "Compositional dissimilarity as
+## a robust measure of ecological distance". In: _Vegetatio_ 69 (1-3 abr. 1987),
+## pp. 57-68. ISSN: 0042-3106. DOI: 10.1007/BF00038687.
+## 
+## [153] Y. Fan, J. Chen, G. Shirkey, et al. _Applications of structural equation
+## modeling (SEM) in ecological studies: an updated review_. dez. 2016. DOI:
+## 10.1186/s13717-016-0063-3.
+## 
+## [154] A. Farina. "Communication Theories". In: _Soundscape Ecology_. Springer
+## Netherlands, 2014, pp. 63-105. DOI: 10.1007/978-94-007-7374-5_4.
+## 
+## [155] A. A. Fávero, M. D. P. Costa, M. Figueira, et al. "Distribuição de
+## abundância de espécies da comunidade arbórea do topo de um morro na floresta
+## estacional subtropical". In: _Ciencia Rural_ 45 (5 2015), pp. 806-813. ISSN:
+## 16784596. DOI: 10.1590/0103-8478cr20121238.
+## 
+## [156] R. M. Feitosa, M. S. de Castro Morini, A. C. Martins, et al. "Social
+## Insects of the Atlantic Forest". In: _The Atlantic Forest_. Ed. by M. C. M.
+## Marques and C. E. V. Grelle. Springer International Publishing, 2021, pp.
+## 151-183. DOI: 10.1007/978-3-030-55322-7_8.
+## 
+## [157] Z. I. FELIX, Y. WANG, and C. J. SCHWEITZER. "Effects of Experimental
+## Canopy Manipulation on Amphibian Egg Deposition". In: _The Journal of Wildlife
+## Management_ 74 (3 abr. 2010), pp. 496-503. ISSN: 0022-541X. DOI:
+## 10.2193/2008-181.
+## 
+## [158] L. Ferrante and P. M. Fearnside. _The Amazon's road to deforestation_.
+## ago. 2020. DOI: 10.1126/science.abd6977.
+## 
+## [159] S. Ferrari and F. Cribari-Neto. "Beta Regression for Modelling Rates and
+## Proportions". In: _Journal of Applied Statistics_ 31 (7 ago. 2004), pp. 799-815.
+## ISSN: 0266-4763. DOI: 10.1080/0266476042000214501.
+## 
+## [160] E. M. N. Ferraz, G. J. B. de Moura, C. C. de Castro, et al.
+## "Características Ambientais e Diversidade Florística da Estação Ecológica do
+## Tapacurá". In: _A Biodiversidade da Estação Ecológica do Tapacurá_. Ed. by G. J.
+## B. de Moura, S. M. de Azevedo Júnior and A. C. A. El-Deir. 1ª. Nuppea, 2012, pp.
+## 59-98.
+## 
+## [161] R. B. Ferreira, K. H. Beard, and M. L. Crump. "Breeding guild determines
+## frog distributions in response to edge effects and habitat conversion in the
+## Brazil's Atlantic Forest". In: _PLoS ONE_ 11 (6 jun. 2016). ISSN: 19326203. DOI:
+## 10.1371/journal.pone.0156781.
+## 
+## [162] R. B. Ferreira, R. Lourenço-de-Moraes, C. Zocca, et al. "Antipredator
+## mechanisms of post-metamorphic anurans: a global database and classification
+## system". In: _Behavioral Ecology and Sociobiology_ 73 (5 mai. 2019), p. 69.
+## ISSN: 0340-5443. DOI: 10.1007/s00265-019-2680-1.
+## 
+## [163] S. E. Fick and R. J. Hijmans. "WorldClim 2: new 1-km spatial resolution
+## climate surfaces for global land areas". In: _International Journal of
+## Climatology_ 37 (12 out. 2017), pp. 4302-4315. ISSN: 10970088. DOI:
+## 10.1002/joc.5086.
+## 
+## [164] A. Filazzola, M. Westphal, M. Powers, et al. "Non-trophic interactions in
+## deserts: Facilitation, interference, and an endangered lizard species". In:
+## _Basic and Applied Ecology_ 20 (mai. 2017), pp. 51-61. ISSN: 14391791. DOI:
+## 10.1016/j.baae.2017.01.002.
+## 
+## [165] L. M. C. Filho, B. T. de Carvalho, B. K. Azevedo, et al. "Natural history
+## predicts patterns of thermal vulnerability in amphibians from the Atlantic
+## Rainforest of Brazil". In: _Ecology and Evolution_ 11 (23 dez. 2021), pp.
+## 16462-16472. ISSN: 20457758. DOI: 10.1002/ece3.7961.
+## 
+## [166] F. M. Fischer, K. Chytrý, H. Chytrá, et al. "Seasonal beta-diversity of
+## dry grassland vegetation: Divergent peaks of above-ground biomass and species
+## richness". In: _Journal of Vegetation Science_ 34 (2 mar. 2023). ISSN: 16541103.
+## DOI: 10.1111/jvs.13182.
+## 
+## [167] L. A. Fitzgerald, F. B. Cruz, and G. Perotti. "Phenology of a Lizard
+## Assemblage in the Dry Chaco of Argentina". In: _Journal of Herpetology_ 33 (4
+## dez. 1999), p. 526. ISSN: 00221511. DOI: 10.2307/1565568.
+## 
+## [168] I. Flint, C. H. Wu, R. Valavi, et al. "Maximising the informativeness of
+## new records in spatial sampling design". In: _Methods in Ecology and Evolution_
+## 15 (1 jan. 2024), pp. 178-190. ISSN: 2041210X. DOI: 10.1111/2041-210X.14260.
+## 
+## [169] B. Folt and K. E. Reider. "Leaf-litter herpetofaunal richness, abundance,
+## and community assembly in mono-dominant plantations and primary forest of
+## northeastern Costa Rica". In: _Biodiversity and Conservation_ 22 (9 ago. 2013),
+## pp. 2057-2070. ISSN: 0960-3115. DOI: 10.1007/s10531-013-0526-0.
+## 
+## [170] L. R. Forti, C. G. Becker, L. Tacioli, et al. _Perspectives on invasive
+## amphibians in Brazil_. set. 2017. DOI: 10.1371/journal.pone.0184703.
+## 
+## [171] L. R. Forti, T. R. Á. da Silva, and L. F. Toledo. "The acoustic repertoire
+## of the atlantic forest rocket frog and its consequences for taxonomy and
+## conservation (Allobates, aromobatidae)". In: _ZooKeys_ 2017 (692 2017), pp.
+## 141-153. ISSN: 13132970. DOI: 10.3897/zookeys.692.12187.
+## 
+## [172] J. Fox and S. Weisberg. _An R Companion to Applied Regression_. Third.
+## Sage, 2019. <https://socialsciences.mcmaster.ca/jfox/Books/Companion/>.
+## 
+## [173] J. Fox, S. Weisberg, and B. Price. _car: Companion to Applied Regression_.
+## R package version 3.1-2. 2023. <https://r-forge.r-project.org/projects/car/>.
+## 
+## [174] F. G. R. França, A. Vasconcellos, R. R. N. Alves, et al. "An Introduction
+## to the Knowledge of Animal Diversity and Conservation in the Most Threatened
+## Forests of Brazil". In: _Animal Biodiversity and Conservation in Brazil's
+## Northern Atlantic Forest_. Springer International Publishing, 2023, pp. 1-5.
+## DOI: 10.1007/978-3-031-21287-1_1.
+## 
+## [175] R. C. França, M. Morais, F. G. R. França, et al. "Snakes of the Pernambuco
+## Endemism Center, Brazil: diversity, natural history and conservation". In:
+## _ZooKeys_ 1002 (dez. 2020), pp. 115-158. ISSN: 1313-2970. DOI:
+## 10.3897/zookeys.1002.50997.
+## 
+## [176] W. K. de Freitas, L. M. S. Magalhães, A. S. de Resende, et al. "Invasion
+## impact of Artocarpus heterophyllus LAM. (Moraceae) at the edge of an atlantic
+## forest fragment in the city of Rio de Janeiro, Brazil". In: _Bioscience Journal_
+## (2017), pp. 422-433. ISSN: 19813163. DOI: 10.14393/BJ-v33n2-33520.
+## 
+## [177] W. K. de Freitas, L. M. S. Magalhães, A. S. de Resende, et al. "Invasion
+## Impact of Artocarpus heterophyllus Lam. (Moraceae) at the Edge of an Atlantic
+## Forest Fragment in the Municipality of Rio de Janeiro, Brazil". In: _Biosci. J_
+## 33 (2 2017), pp. 422-433.
+## 
+## [178] E. Frichot and O. François. "LEA: An R package for landscape and
+## ecological association studies". In: _Methods in Ecology and Evolution_ 6 (8
+## ago. 2015), pp. 925-929. ISSN: 2041210X. DOI: 10.1111/2041-210X.12382.
+## 
+## [179] D. R. Frost. _Amphibian Species of the World: an Online Reference_. 2024.
+## 
+## [180] T. R. Fulgence, D. A. Martin, R. Randriamanantena, et al. "Differential
+## responses of amphibians and reptiles to land-use change in the biodiversity
+## hotspot of north-eastern Madagascar". In: _Animal Conservation_ 25 (4 ago.
+## 2022), pp. 492-507. ISSN: 14691795. DOI: 10.1111/acv.12760.
+## 
+## [181] R. Furtado and F. Nomura. "Visual signals or displacement activities? The
+## function of visual displays in agonistic interactions in nocturnal tree frogs".
+## In: _acta ethologica_ 17 (1 mar. 2014), pp. 9-14. ISSN: 0873-9749. DOI:
+## 10.1007/s10211-013-0160-6.
+## 
+## [182] E. J. Fusco, J. K. Balch, A. L. Mahood, et al. "The human–grass–fire
+## cycle: how people and invasives co‐occur to drive fire regimes". In: _Frontiers
+## in Ecology and the Environment_ 20 (2 mar. 2022), pp. 117-126. ISSN: 1540-9295.
+## DOI: 10.1002/fee.2432.
+## 
+## [183] M. Galetti, F. Gonçalves, N. Villar, et al. "Causes and Consequences of
+## Large-Scale Defaunation in the Atlantic Forest". In: _The Atlantic Forest_. Ed.
+## by M. C. M. Marques and C. E. V. Grelle. Springer International Publishing,
+## 2021, pp. 297-324. DOI: 10.1007/978-3-030-55322-7_14.
+## 
+## [184] C. Galindo-Leal, J. R. Cendo-Vazquez, R. Calderon, et al. "Arboreal frogs,
+## tank bromeliads and disturbed seasonal tropical forest". In: _Contemporary
+## Herpetology_ 1 (set. 2003), pp. 1-12. ISSN: 1094-2246. DOI:
+## 10.17161/ch.vi1.11966.
+## 
+## [185] R. Gama-Matos, Á. C. Ferreguetti, G. M. D. Nascimento, et al. "Can an
+## exotic tree (Jackfruit, Artocarpus heterophyllus Lam.) influence the non-volant
+## small mammals assemblage in a protected area of Atlantic Forest?" In: _Journal
+## of Tropical Ecology_ 36 (5 set. 2020), pp. 243-250. ISSN: 14697831. DOI:
+## 10.1017/S026646742000019X.
+## 
+## [186] E. Gangenova, G. A. Zurita, and F. Marangoni. "Changes to anuran diversity
+## following forest replacement by tree plantations in the southern Atlantic forest
+## of Argentina". In: _Forest Ecology and Management_ 424 (set. 2018), pp. 529-535.
+## ISSN: 03781127. DOI: 10.1016/j.foreco.2018.03.038.
+## 
+## [187] M. R. Gardener, R. O. Bustamante, I. Herrera, et al. "Plant invasions
+## research in Latin America: fast track to a more focused agenda". In: _Plant
+## Ecology & Diversity_ 5 (2 jun. 2012), pp. 225-232. ISSN: 1755-0874. DOI:
+## 10.1080/17550874.2011.604800.
+## 
+## [188] S. Geiseler. "Efeitos da população de Artocarpus heterophyllus Lam. sobre
+## a estrutura do componente arbóreo, na Reserva Biológica de Saltinho, Tamandaré –
+## PE". PhD thesis. Universidade Federal Rural de Pernambuco, 2014.
+## 
+## [189] P. L. Gimenez and T. S. Vasconcelos. "Macroecology of reproductive modes
+## in the diverse anuran fauna of the Brazilian Atlantic Forest". In:
+## _Phyllomedusa_ 21 (1 jun. 2022), pp. 17-30. ISSN: 23169079. DOI:
+## 10.11606/issn.2316-9079.v21i1p17-30.
+## 
+## [190] J. G. Gonçalves-Sousa, D. O. Mesquita, and R. W. Ávila. "Structure of a
+## Lizard Assemblage in a Semiarid Habitat of the Brazilian Caatinga". In:
+## _Herpetologica_ 75 (4 dez. 2019), p. 301. ISSN: 0018-0831. DOI:
+## 10.1655/Herpetologica-D-19-00026.1.
+## 
+## [191] A. González-Fernández, C. González-Salazar, A. Sunny, et al.
+## "Determination of priority areas for amphibian conservation in Guerrero
+## (Mexico), through systematic conservation planning tools". In: _Journal for
+## Nature Conservation_ 68 (ago. 2022), p. 126235. ISSN: 1617-1381. DOI:
+## 10.1016/J.JNC.2022.126235.
+## 
+## [192] S. F. Gouveia and I. Correia. "Geographical clines of body size in
+## terrestrial amphibians: water conservation hypothesis revisited". In: _Journal
+## of Biogeography_ 43 (10 out. 2016), pp. 2075-2084. ISSN: 0305-0270. DOI:
+## 10.1111/jbi.12842.
+## 
+## [193] J. B. Grace and M. Steiner. _A protocol for modelling generalised
+## biological responses using latent variables in structural equation models_.
+## 2021. DOI: 10.3897/oneeco.6.e67320.
+## 
+## [194] T. Grant, M. Rada, M. Anganoy-Criollo, et al. "Phylogenetic Systematics of
+## Dart-Poison Frogs and Their Relatives Revisited (Anura: Dendrobatoidea)". In:
+## _South American Journal of Herpetology_ 12 (set. 2017), pp. S1-S90. ISSN:
+## 1982355X. DOI: 10.2994/SAJH-D-17-00017.1.
+## 
+## [195] P. Grenat, M. Michelli, F. Pollo, et al. "Traffic noise and breeding site
+## characteristics influencing assemblage composition of anuran species associated
+## to roads". In: _Biodiversity and Conservation_ 32 (6 mai. 2023), pp. 1931-1947.
+## ISSN: 15729710. DOI: 10.1007/s10531-023-02584-0.
+## 
+## [196] M. Gross. "How to stop species invasions". In: _Current Biology_ 32 (24
+## dez. 2022), pp. R1325-R1328. ISSN: 09609822. DOI: 10.1016/j.cub.2022.11.065.
+## 
+## [197] R. Grundel, D. A. Beamer, G. A. Glowacki, et al. "Opposing responses to
+## ecological gradients structure amphibian and reptile communities across a
+## temperate grassland–savanna–forest landscape". In: _Biodiversity and
+## Conservation_ 24 (5 mai. 2015), pp. 1089-1108. ISSN: 0960-3115. DOI:
+## 10.1007/s10531-014-0844-x.
+## 
+## [198] C. Guerra and E. Aráoz. "Amphibian diversity increases in an heterogeneous
+## agricultural landscape". In: _Acta Oecologica_ 69 (nov. 2015), pp. 78-86. ISSN:
+## 1146609X. DOI: 10.1016/j.actao.2015.09.003.
+## 
+## [199] A. S. Hadi and R. F. Ling. "Some Cautionary Notes on the Use of Principal
+## Components Regression". In: _The American Statistician_ 52 (1 fev. 1998), pp.
+## 15-19. ISSN: 0003-1305. DOI: 10.1080/00031305.1998.10480530.
+## 
+## [200] T. M. Haff and R. D. Magrath. "Calling at a cost: Elevated nestling
+## calling attracts predators to active nests". In: _Biology Letters_ 7 (4 ago.
+## 2011), pp. 493-495. ISSN: 17449561. DOI: 10.1098/rsbl.2010.1125.
+## 
+## [201] W. Hallgren, L. Beaumont, A. Bowness, et al. "The Biodiversity and Climate
+## Change Virtual Laboratory: Where ecology meets big data". In: _Environmental
+## Modelling and Software_ 76 (fev. 2016), pp. 182-186. ISSN: 13648152. DOI:
+## 10.1016/j.envsoft.2015.10.025.
+## 
+## [202] A. J. Hamilton. "Species diversity or biodiversity?" In: _Journal of
+## Environmental Management_ 75 (1 2005), pp. 89-92. ISSN: 03014797. DOI:
+## 10.1016/j.jenvman.2004.11.012.
+## 
+## [203] T. Hartel, S. Nemes, D. Cogălniceanu, et al. "The effect of fish and
+## aquatic habitat complexity on amphibians". In: _Hydrobiologia_ 583 (1 jun.
+## 2007), pp. 173-182. ISSN: 0018-8158. DOI: 10.1007/s10750-006-0490-8.
+## 
+## [204] F. Hartig. _DHARMa: Residual Diagnostics for Hierarchical (Multi-Level /
+## Mixed) Regression Models_. R package version 0.4.7. 2024.
+## <http://florianhartig.github.io/DHARMa/>.
+## 
+## [205] F. Hartig. _DHARMa: Residual Diagnostics for Hierarchical (Multi-Level /
+## Mixed) Regression Models_. R package version 0.4.7. 2024.
+## <http://florianhartig.github.io/DHARMa/>.
+## 
+## [206] L. V. Hedges, J. Gurevitch, and P. S. Curtis. _The meta-analysis of
+## response ratios in experimental ecology_. 1999. DOI:
+## 10.1890/0012-9658(1999)080[1150:TMAORR]2.0.CO;2.
+## 
+## [207] L. U. Hepp and A. S. Melo. "Dissimilarity of stream insect assemblages:
+## effects of multiple scales and spatial distances". In: _Hydrobiologia_ 703 (1
+## fev. 2013), pp. 239-246. ISSN: 0018-8158. DOI: 10.1007/s10750-012-1367-7.
+## 
+## [208] H. Hernández-Yáñez, S. Y. Kim, and J. P. Che-Castaldo. "Demographic and
+## life history traits explain patterns in species vulnerability to extinction".
+## In: _PLoS ONE_ 17 (2 February fev. 2022). ISSN: 19326203. DOI:
+## 10.1371/journal.pone.0263504.
+## 
+## [209] M. H. K. Hesselbarth, M. Sciaini, J. Nowosad, et al. _landscapemetrics:
+## Landscape Metrics for Categorical Map Patterns_. R package version 2.1.4. 2024.
+## <https://r-spatialecology.github.io/landscapemetrics/>.
+## 
+## [210] M. H. K. Hesselbarth, M. Sciaini, K. A. With, et al. "landscapemetrics: an
+## open-source R tool to calculate landscape metrics". In: _Ecography_ 42 (2019),
+## pp. 1648-1657.
+## 
+## [211] M. H. Hesselbarth, J. Nowosad, J. Signer, et al. "Open-source Tools in R
+## for Landscape Ecology". In: _Current Landscape Ecology Reports_ 6 (3 set. 2021),
+## pp. 97-111. DOI: 10.1007/s40823-021-00067-y.
+## 
+## [212] R. J. Hijmans. _terra: Spatial Data Analysis_. R package version 1.7-83.
+## 2024. <https://rspatial.org/>.
+## 
+## [213] R. J. Hijmans, M. Barbosa, A. Ghosh, et al. _geodata: Download Geographic
+## Data_. R package version 0.6-2. 2024.
+## <https://CRAN.R-project.org/package=geodata>.
+## 
+## [214] M. O. Hill. "Diversity and Evenness: A Unifying Notation and Its
+## Consequences". In: _Ecology_ 54 (2 mar. 1973), pp. 427-432. ISSN: 0012-9658.
+## DOI: 10.2307/1934352.
+## 
+## [215] A. Hillers, M. Veith, and M. RÖDEL. "Effects of Forest Fragmentation and
+## Habitat Degradation on West African Leaf‐Litter Frogs". In: _Conservation
+## Biology_ 22 (3 jun. 2008), pp. 762-772. ISSN: 0888-8892. DOI:
+## 10.1111/j.1523-1739.2008.00920.x.
+## 
+## [216] A. Hillers, M. Veith, and M. O. Rödel. "Effects of forest fragmentation
+## and habitat degradation on West African leaf-litter frogs". In: _Conservation
+## Biology_ 22 (3 jun. 2008), pp. 762-772. ISSN: 08888892. DOI:
+## 10.1111/j.1523-1739.2008.00920.x.
+## 
+## [217] T. S. Hoffmeister, L. E. Vet, A. Biere, et al. "Ecological and
+## evolutionary consequences of biological invasion and habitat fragmentation". In:
+## _Ecosystems_ 8 (6 set. 2005), pp. 657-667. ISSN: 14329840. DOI:
+## 10.1007/s10021-003-0138-8.
+## 
+## [218] J. Hollister. _elevatr: Access Elevation Data from Various APIs_. R
+## package version 0.99.0. 2023. <https://github.com/jhollist/elevatr/>.
+## 
+## [219] M. Hölting, C. I. Bovolo, and R. Ernst. "Facing complexity in tropical
+## conservation: how reduced impact logging and climatic extremes affect beta
+## diversity in tropical amphibian assemblages". In: _Biotropica_ 48 (4 jul. 2016),
+## pp. 528-536. ISSN: 0006-3606. DOI: 10.1111/btp.12309.
+## 
+## [220] T. Hothorn, A. Zeileis, R. W. Farebrother, et al. _lmtest: Testing Linear
+## Regression Models_. R package version 0.9-40. 2022.
+## <https://CRAN.R-project.org/package=lmtest>.
+## 
+## [221] T. C. Hsieh, K. H. Ma, and A. Chao. _iNEXT: Interpolation and
+## Extrapolation for Species Diversity_. R package version 3.0.1. 2024.
+## <http://chao.stat.nthu.edu.tw/wordpress/software_download/>.
+## 
+## [222] Y. Hu, S. Magaton, G. Gillespie, et al. "Small reptile community responses
+## to rotational logging". In: _Biological Conservation_ 166 (out. 2013), pp.
+## 76-83. ISSN: 00063207. DOI: 10.1016/j.biocon.2013.05.019.
+## 
+## [223] A. Huete, K. Didan, T. Miura, et al. "Overview of the radiometric and
+## biophysical performance of the MODIS vegetation indices". In: _Remote Sensing of
+## Environment_ 83 (1-2 nov. 2002), pp. 195-213. ISSN: 00344257. DOI:
+## 10.1016/S0034-4257(02)00096-2.
+## 
+## [224] F. Husson, J. Josse, S. Le, et al. _FactoMineR: Multivariate Exploratory
+## Data Analysis and Data Mining_. R package version 2.11. 2024.
+## <http://factominer.free.fr>.
+## 
+## [225] P. Jaccard. "THE DISTRIBUTION OF THE FLORA IN THE ALPINE ZONE." In: _New
+## Phytologist_ 11 (2 1912), pp. 37-50. ISSN: 14698137. DOI:
+## 10.1111/j.1469-8137.1912.tb05611.x.
+## 
+## [226] C. M. Jacobi and T. Siqueira. "High compositional dissimilarity among
+## small communities is decoupled from environmental variation". In: _Oikos_ 2023
+## (8 ago. 2023). ISSN: 16000706. DOI: 10.1111/oik.09802.
+## 
+## [227] C. Jared, P. L. Mailho-Fontana, R. Marques-Porto, et al. "Skin gland
+## concentrations adapted to different evolutionary pressures in the head and
+## posterior regions of the caecilian Siphonops annulatus". In: _Scientific
+## Reports_ 8 (1 dez. 2018). ISSN: 20452322. DOI: 10.1038/s41598-018-22005-5.
+## 
+## [228] W. Jetz and R. A. Pyron. "The interplay of past diversification and
+## evolutionary isolation with present imperilment across the amphibian tree of
+## life". In: _Nature Ecology & Evolution_ 2 (5 mar. 2018), pp. 850-858. ISSN:
+## 2397-334X. DOI: 10.1038/s41559-018-0515-5.
+## 
+## [229] G. F. Jongsma, R. W. Hedley, R. Durães, et al. "Amphibian diversity and
+## species composition in relation to habitat type and alteration in the
+## mache-chindul reserve, northwest ecuador". In: _Herpetologica_ 70 (1 mar. 2014),
+## pp. 34-46. ISSN: 00180831. DOI: 10.1655/HERPETOLOGICA-D-12-00068.
+## 
+## [230] L. Jost. _Entropy and diversity_. mai. 2006. DOI:
+## 10.1111/j.2006.0030-1299.14714.x.
+## 
+## [231] L. Jost. "The relation between evenness and diversity". In: _Diversity_ 2
+## (2 2010), pp. 207-232. ISSN: 14242818. DOI: 10.3390/d2020207.
+## 
+## [232] F. A. Juncá. "Diversidade e uso de hábitat por anfíbios anuros em duas
+## localidades de Mata Atlântica, no norte do estado da Bahia". In: _Biota
+## Neotropica_ 6 (2 2006). ISSN: 1676-0603. DOI: 10.1590/S1676-06032006000200018.
+## 
+## [233] I. L. Kaefer, A. Montanarin, R. S. D. Costa, et al. "Temporal patterns of
+## reproductive activity and site attachment of the brilliant-thighed frog
+## allobates femoralis from Central Amazonia". In: _Journal of Herpetology_ 46 (4
+## dez. 2012), pp. 549-554. ISSN: 00221511. DOI: 10.1670/10-224.
+## 
+## [234] S. Karasiewicz, S. Dolédec, and S. Lefebvre. "Within outlying mean
+## indexes: Refining the OMI analysis for the realized niche decomposition". In:
+## _PeerJ_ 2017 (5 2017). ISSN: 21678359. DOI: 10.7717/peerj.3364.
+## 
+## [235] A. M. Kissel, W. J. Palen, M. E. Ryan, et al. "Compounding effects of
+## climate change reduce population viability of a montane amphibian". In:
+## _Ecological Applications_ 29 (2 mar. 2019), p. e01832. ISSN: 1051-0761. DOI:
+## 10.1002/eap.1832.
+## 
+## [236] P. D. Klawinski, B. Dalton, and A. B. Shiels. "Coqui frog populations are
+## negatively affected by canopy opening but not detritus deposition following an
+## experimental hurricane in a tropical rainforest". In: _Forest Ecology and
+## Management_ 332 (nov. 2014), pp. 118-123. ISSN: 03781127. DOI:
+## 10.1016/j.foreco.2014.02.010.
+## 
+## [237] C. R. Knapp, T. D. Grant, S. A. Pasachnik, et al. "The global need to
+## address threats from invasive alien iguanas". In: _Animal Conservation_ 24 (5
+## out. 2021), pp. 717-719. ISSN: 14691795. DOI: 10.1111/acv.12660.
+## 
+## [238] J. Köhler, M. Jansen, A. Rodríguez, et al. _The use of bioacoustics in
+## anuran taxonomy: Theory, terminology, methods and recommendations for best
+## practice_. abr. 2017. DOI: 10.11646/zootaxa.4251.1.1.
+## 
+## [239] K. P. K. Komanduri, G. Sreedharan, and K. Vasudevan. "Abundance and
+## composition of forest‐dwelling anurans in cashew plantations in a tropical
+## semi‐evergreen forest landscape". In: _Biotropica_ 55 (3 mai. 2023), pp.
+## 594-604. ISSN: 0006-3606. DOI: 10.1111/btp.13210.
+## 
+## [240] O. M. Kunakh, A. M. Volkova, G. F. Tutova, et al. "Diversity of diversity
+## indices: Which diversity measure is better?" In: _Biosystems Diversity_ 31 (2
+## ago. 2023), pp. 131-146. ISSN: 25202529. DOI: 10.15421/012314.
+## 
+## [241] D. J. Kurz, A. J. Nowakowski, M. W. Tingley, et al. "Forest-land use
+## complementarity modifies community structure of a tropical herpetofauna". In:
+## _Biological Conservation_ 170 (fev. 2014), pp. 246-255. ISSN: 00063207. DOI:
+## 10.1016/j.biocon.2013.12.027.
+## 
+## [242] A. S. Kutt, B. L. Bateman, and E. P. Vanderduys. "Lizard diversity on a
+## rainforest - savanna altitude gradient in north-eastern Australia". In:
+## _Australian Journal of Zoology_ 59 (2 2011), p. 86. ISSN: 0004-959X. DOI:
+## 10.1071/ZO11036.
+## 
+## [243] J. Lai, C. J. Lortie, R. A. Muenchen, et al. "Evaluating the popularity of
+## R in ecology". In: _Ecosphere_ 10 (1 jan. 2019). ISSN: 21508925. DOI:
+## 10.1002/ecs2.2567.
+## 
+## [244] C. Lambertini, C. G. Becker, A. M. Belasen, et al. "Biotic and abiotic
+## determinants of Batrachochytrium dendrobatidis infections in amphibians of the
+## Brazilian Atlantic Forest". In: _Fungal Ecology_ 49 (2021), p. 100995. ISSN:
+## 1754-5048. DOI: https://doi.org/10.1016/j.funeco.2020.100995.
+## <https://www.sciencedirect.com/science/article/pii/S1754504820301070>.
+## 
+## [245] J. D. Lara-Tufiño, L. M. Badillo-Saldaña, R. Hernández-Austria, et al.
+## "Effects of traditional agroecosystems and grazing areas on amphibian diversity
+## in a region of central Mexico". In: _PeerJ_ 2019 (2 2019). ISSN: 21678359. DOI:
+## 10.7717/peerj.6390.
+## 
+## [246] S. Lê, J. Josse, and F. Husson. "FactoMineR: A Package for Multivariate
+## Analysis". In: _Journal of Statistical Software_ 25 (1 2008), pp. 1-18. DOI:
+## 10.18637/jss.v025.i01.
+## 
+## [247] P. Legendre, D. Borcard, and P. R. Peres-Neto. "Analyzing beta diversity:
+## Partitioning the spatial variation of community composition data". In:
+## _Ecological Monographs_ 75 (4 2005), pp. 435-450. ISSN: 00129615. DOI:
+## 10.1890/05-0549.
+## 
+## [248] P. Legendre and L. Legendre. "Interpretation of ecological structures".
+## In: _Numerical Ecology_. 3rd ed. Elsevier, 2012, pp. 521-622.
+## 
+## [249] P. Legendre and L. Legendre. "Matrix algebra: a summary". In: _Numerical
+## Ecology_. 3rd ed. Elsevier, 2012, pp. 59-107.
+## 
+## [250] P. Legendre and L. Legendre. "Ordination in reduced space". In: _Numerical
+## Ecology_. 3rd ed. Elsevier, 2012, pp. 425-520.
+## 
+## [251] G. Legras, N. Loiseau, and J. C. Gaertner. "Functional richness: Overview
+## of indices and underlying concepts". In: _Acta Oecologica_ 87 (fev. 2018), pp.
+## 34-44. ISSN: 1146609X. DOI: 10.1016/j.actao.2018.02.007.
+## 
+## [252] R. M. Lehtinen, J. Ramanamanjato, and J. G. Raveloarison. "Edge effects
+## and extinction proneness in a herpetofauna from Madagascar". In: _Biodiversity &
+## Conservation_ 12 (7 jul. 2003), pp. 1357-1370. ISSN: 0960-3115. DOI:
+## 10.1023/A:1023673301850.
+## 
+## [253] Y. L. R. Leite, L. P. Costa, A. C. Loss, et al. "Neotropical forest
+## expansion during the last glacial period challenges refuge hypothesis". In:
+## _Proceedings of the National Academy of Sciences_ 113 (4 jan. 2016), pp.
+## 1008-1013. ISSN: 0027-8424. DOI: 10.1073/pnas.1513062113.
+## 
+## [254] D. Li. _hillR: Diversity Through Hill Numbers_. R package version 0.5.2.
+## 2023. <https://github.com/daijiang/hillR>.
+## 
+## [255] D. Li. "hillR: taxonomic, functional, and phylogenetic diversity and
+## similarity through Hill Numbers". In: _Journal of Open Source Software_ 3 (31
+## 2018), p. 1041. <https://doi.org/10.21105/joss.01041>.
+## 
+## [256] D. Li. "hillR: taxonomic, functional, and phylogenetic diversity and
+## similarity through Hill Numbers". In: _Journal of Open Source Software_ 3 (31
+## nov. 2018), p. 1041. ISSN: 2475-9066. DOI: 10.21105/joss.01041.
+## 
+## [257] J. W. Lichstein. "Multiple regression on distance matrices: a multivariate
+## spatial analysis tool". In: _Plant Ecology_ 188 (2 jan. 2007), pp. 117-131.
+## ISSN: 1385-0237. DOI: 10.1007/s11258-006-9126-3.
+## 
+## [258] A. P. Lima and W. E. Magnusson. "Partitioning seasonal time: interactions
+## among size, foraging activity and diet in leaf-litter frogs". In: _Oecologia_
+## 116 (1-2 ago. 1998), pp. 259-266. ISSN: 0029-8549. DOI: 10.1007/s004420050587.
+## 
+## [259] A. C. B. Lins-e-Silva, P. S. M. Ferreira, and M. J. N. Rodal. "The
+## North-Eastern Atlantic Forest: Biogeographical, Historical, and Current Aspects
+## in the Sugarcane Zone". In: _The Atlantic Forest_. Ed. by M. C. Marques and C.
+## E. Grelle. Springer International Publishing, 2021, pp. 45-61. DOI:
+## 10.1007/978-3-030-55322-7_3.
+## 
+## [260] M. B. Lion, A. A. Garda, and C. R. Fonseca. "Split distance: a key
+## landscape metric shaping amphibian populations and communities in forest
+## fragments". In: _Diversity and Distributions_ 20 (11 nov. 2014), pp. 1245-1257.
+## ISSN: 1366-9516. DOI: 10.1111/ddi.12228.
+## 
+## [261] P. K. Lira, R. de Cássia Quitete Portela, and L. R. Tambosi. "Land-Cover
+## Changes and an Uncertain Future: Will the Brazilian Atlantic Forest Lose the
+## Chance to Become a Hopespot?" In: _The Atlantic Forest_. Ed. by M. Marques and
+## C. Grelle. Springer International Publishing, 2021, pp. 233-251. DOI:
+## 10.1007/978-3-030-55322-7_11.
+## 
+## [262] E. B. F. Lisboa, G. J. B. de Moura, I. V. C. de Melo, et al. "Ecologia de
+## Hypsiboas Semilineatus (Spix, 1824) (Amphibia, Anura, Hylidae) em Remanescente
+## de Mata Atlântica, Nordeste do Brasil". In: _Revista Ibero-Americana de Ciências
+## Ambientais_ 2 (1 mai. 2011), pp. 21-30. ISSN: 2179-6858. DOI:
+## 10.6008/ESS2179-6858.2011.001.0002.
+## 
+## [263] G. Liu, J. J. Rowley, R. T. Kingsford, et al. "Species' traits drive
+## amphibian tolerance to anthropogenic habitat modification". In: _Global Change
+## Biology_ 27 (13 jul. 2021), pp. 3120-3132. ISSN: 13652486. DOI:
+## 10.1111/gcb.15623.
+## 
+## [264] G. LLC. _Google Earth Pro / Google Earth (versão web)_. Acesso em: 02 out.
+## 2025. 2025.
+## 
+## [265] D. Lôbo, T. Leão, F. P. L. Melo, et al. "Forest fragmentation drives
+## Atlantic forest of northeastern Brazil to biotic homogenization". In: _Diversity
+## and Distributions_ 17 (2 mar. 2011), pp. 287-296. ISSN: 1366-9516. DOI:
+## 10.1111/j.1472-4642.2010.00739.x.
+## 
+## [266] D. Lopera, K. C. Guo, B. J. Putman, et al. "Keeping it cool to take the
+## heat: tropical lizards have greater thermal tolerance in less disturbed
+## habitats". In: _Oecologia_ (2022). ISSN: 14321939. DOI:
+## 10.1007/s00442-022-05235-3.
+## 
+## [267] I. S. Lopes, A. L. P. Feliciano, L. C. Marangon, et al. "Dinâmica da
+## Regeneração Natural No Sub-Bosque de Pinus caribaea Morelet. Var. caribaea na
+## Reserva Biológica De Saltinho, Tamandaré - Pe". In: _Ciência Florestal_ 26 (1
+## mar. 2016), pp. 95-107. ISSN: 1980-5098. DOI: 10.5902/1980509821094.
+## 
+## [268] J. J. López-Rojas. "Vertical Segregation in Pristimantis Species from a
+## Bamboo Forest in Southeast of Amazonia, Brazil". In: _Folia Amazónica_ 27 (1
+## jun. 2018), pp. 47-54. ISSN: 2410-1184. DOI: 10.24841/fa.v27i1.457.
+## 
+## [269] J. J. López-Rojas, M. B. Souza, and E. F. Morato. "Influence of habitat
+## structure on Pristimantis species (Anura: Craugastoridae) in a bamboo-dominated
+## forest fragment in southwestern Amazonia". In: _Phyllomedusa: Journal of
+## Herpetology_ 14 (1 jun. 2015), p. 19. ISSN: 2316-9079. DOI:
+## 10.11606/issn.2316-9079.v14i1p19-31.
+## 
+## [270] C. J. Lortie, J. Braun, A. Filazzola, et al. "A checklist for choosing
+## between R packages in ecology and evolution". In: _Ecology and Evolution_ 10 (3
+## fev. 2020), pp. 1098-1105. ISSN: 20457758. DOI: 10.1002/ece3.5970.
+## 
+## [271] R. Lourenço-de-Moraes, F. S. Campos, R. B. Ferreira, et al. "Functional
+## traits explain amphibian distribution in the Brazilian Atlantic Forest". In:
+## _Journal of Biogeography_ 47 (1 jan. 2020), pp. 275-287. ISSN: 13652699. DOI:
+## 10.1111/jbi.13727.
+## 
+## [272] R. Lourenço-de-Moraes, F. S. Campos, R. B. Ferreira, et al. "Back to the
+## future: conserving functional and phylogenetic diversity in amphibian-climate
+## refuges". In: _Biodiversity and Conservation_ 28 (5 abr. 2019), pp. 1049-1073.
+## ISSN: 15729710. DOI: 10.1007/s10531-019-01706-x.
+## 
+## [273] X. Lu, X. Ma, Y. Li, et al. "Breeding behavior and mating system in
+## relation to body size in Rana chensinensis, a temperate frog endemic to northern
+## China". In: _Journal of Ethology_ 27 (3 set. 2009), pp. 391-400. ISSN:
+## 0289-0771. DOI: 10.1007/s10164-008-0132-x.
+## 
+## [274] D. Lüdecke. _sjPlot: Data Visualization for Statistics in Social Science_.
+## R package version 2.8.16. 2024. <https://strengejacke.github.io/sjPlot/>.
+## 
+## [275] D. Lüdecke, M. S. Ben-Shachar, I. Patil, et al. "performance: An R Package
+## for Assessment, Comparison and Testing of Statistical Models". In: _Journal of
+## Open Source Software_ 6 (60 2021), p. 3139. DOI: 10.21105/joss.03139.
+## 
+## [276] D. Lüdecke, D. Makowski, M. S. Ben-Shachar, et al. _performance:
+## Assessment of Regression Models Performance_. R package version 0.12.0. 2024.
+## <https://easystats.github.io/performance/>.
+## 
+## [277] O. J. Luiz, W. C. dos Santos, A. P. Marceniuk, et al. "Multiple lionfish
+## (Pterois spp.) new occurrences along the Brazilian coast confirm the invasion
+## pathway into the Southwestern Atlantic". In: _Biological Invasions_ 23 (10 out.
+## 2021), pp. 3013-3019. ISSN: 15731464. DOI: 10.1007/s10530-021-02575-8.
+## 
+## [278] A. G. de Luna, W. Hödl, and A. Amézquita. "Colour, size and movement as
+## visual subcomponents in multimodal communication by the frog Allobates
+## femoralis". In: _Animal Behaviour_ 79 (3 mar. 2010), pp. 739-745. ISSN:
+## 00033472. DOI: 10.1016/j.anbehav.2009.12.031.
+## 
+## [279] H. J. Lynch, J. T. Thorson, and A. O. Shelton. "Dealing with under‐ and
+## over‐dispersed count data in life history, spatial, and community ecology". In:
+## _Ecology_ 95 (11 nov. 2014), pp. 3173-3180. ISSN: 0012-9658. DOI:
+## 10.1890/13-1912.1.
+## 
+## [280] R. H. MacArthur and E. R. Pianka. "On Optimal Use of a Patchy
+## Environment". In: _The American Naturalist_ 100 (916 nov. 1966), pp. 603-609.
+## ISSN: 0003-0147. DOI: 10.1086/282454.
+## 
+## [281] C. Macfarlane, M. Hoffman, D. Eamus, et al. "Estimation of leaf area index
+## in eucalypt forest using digital photography". In: _Agricultural and Forest
+## Meteorology_ 143 (3-4 abr. 2007), pp. 176-188. ISSN: 01681923. DOI:
+## 10.1016/j.agrformet.2006.10.013.
+## 
+## [282] J. C. Maerz, B. Blossey, and V. Nuzzo. "Green frogs show reduced foraging
+## success in habitats invaded by Japanese knotweed". In: _Biodiversity and
+## Conservation_ 14 (12 nov. 2005), pp. 2901-2911. ISSN: 09603115. DOI:
+## 10.1007/s10531-004-0223-0.
+## 
+## [283] W. E. Magnusson, A. P. Lima, R. Luizão, et al. "RAPELD: a modification of
+## the Gentry method for biodiversity surveys in long-term ecological research
+## sites". In: _Biota Neotropica_ 5 (2 2005), pp. 19-24. ISSN: 1676-0603. DOI:
+## 10.1590/S1676-06032005000300002.
+## 
+## [284] A. E. Magurran and P. A. Henderson. "Explaining the excess of rare species
+## in natural species abundance distributions". In: _Nature_ 422 (6933 abr. 2003),
+## pp. 714-716. ISSN: 00280836. DOI: 10.1038/nature01547.
+## 
+## [285] S. Manel, H. C. Williams, and S. J. Ormerod. "Evaluating presence-absence
+## models in ecology: The need to account for prevalence". In: _Journal of Applied
+## Ecology_ 38 (5 2001), pp. 921-931. ISSN: 00218901. DOI:
+## 10.1046/j.1365-2664.2001.00647.x.
+## 
+## [286] A. S. Manzano, V. Abdala, and A. Herrel. "Morphology and function of the
+## forelimb in arboreal frogs: Specializations for grasping ability?" In: _Journal
+## of Anatomy_ 213 (3 2008), pp. 296-307. ISSN: 00218782. DOI:
+## 10.1111/j.1469-7580.2008.00929.x.
+## 
+## [287] L. C. Marangon, J. J. Soares, A. L. P. Feliciano, et al. "Regeneração
+## natural em um fragmento de floresta estacional semidecidual em Viçosa, Minas
+## Gerais". In: _Revista Árvore_ 32 (1 fev. 2008), pp. 183-191. ISSN: 0100-6762.
+## DOI: 10.1590/S0100-67622008000100020.
+## 
+## [288] M. C. M. Marques, W. Trindade, A. Bohn, et al. "The Atlantic Forest: An
+## Introduction to the Megadiverse Forest of South America". In: _The Atlantic
+## Forest_. Ed. by M. C. M. Marques and C. E. V. Grelle. Springer International
+## Publishing, 2021, pp. 3-23. DOI: 10.1007/978-3-030-55322-7_1.
+## 
+## [289] M. C. Marques, W. Trindade, A. Bohn, et al. "The Atlantic Forest: An
+## Introduction to the Megadiverse Forest of South America". In: _The Atlantic
+## Forest: History, Biodiversity, Threats and Opportunities of the Mega-Diverse
+## Forest_. Ed. by M. C. Marques and C. E. Grelle. Springer, 2021, pp. 3-23.
+## 
+## [290] L. J. Martin and B. R. Murray. _A predictive framework and review of the
+## ecological impacts of exotic plant invasions on reptiles and amphibians_. mai.
+## 2011. DOI: 10.1111/j.1469-185X.2010.00152.x.
+## 
+## [291] N. W. Mason, K. MacGillivray, J. B. Steel, et al. "An index of functional
+## diversity". In: _Journal of Vegetation Science_ 14 (4 2003), pp. 571-578. ISSN:
+## 11009233. DOI: 10.1111/j.1654-1103.2003.tb02184.x.
+## 
+## [292] N. W. Mason, D. Mouillot, W. G. Lee, et al. "Functional richness,
+## functional evenness and functional divergence: The primary components of
+## functional diversity". In: _Oikos_ 111 (1 out. 2005), pp. 112-118. ISSN:
+## 00301299. DOI: 10.1111/j.0030-1299.2005.13886.x.
+## 
+## [293] R. Matavelli, J. M. Oliveira, J. Soininen, et al. "Altitude and
+## temperature drive anuran community assembly in a Neotropical mountain region".
+## In: _Biotropica_ 54 (3 mai. 2022), pp. 607-618. ISSN: 0006-3606. DOI:
+## 10.1111/btp.13074.
+## 
+## [294] J. R. Mawdsley, R. O'Malley, and D. S. Ojima. _A review of climate-change
+## adaptation strategies for wildlife management and biodiversity conservation_.
+## out. 2009. DOI: 10.1111/j.1523-1739.2009.01264.x.
+## 
+## [295] C. M. McCain. "Global analysis of reptile elevational diversity". In:
+## _Global Ecology and Biogeography_ 19 (4 jul. 2010), pp. 541-553. ISSN:
+## 1466-822X. DOI: 10.1111/j.1466-8238.2010.00528.x.
+## 
+## [296] B. J. McGill, R. S. Etienne, J. S. Gray, et al. _Species abundance
+## distributions: Moving beyond single prediction theories to integration within an
+## ecological framework_. out. 2007. DOI: 10.1111/j.1461-0248.2007.01094.x.
+## 
+## [297] G. J. Measey, D. Rödder, S. L. Green, et al. "Ongoing invasions of the
+## African clawed frog, Xenopus laevis: A global review". In: _Biological
+## Invasions_ 14 (11 nov. 2012), pp. 2255-2270. ISSN: 13873547. DOI:
+## 10.1007/s10530-012-0227-8.
+## 
+## [298] L. G. Melchior, D. de C. Rossa-Feres, and F. R. da Silva. "Evaluating
+## multiple spatial scales to understand the distribution of anuran beta diversity
+## in the Brazilian Atlantic Forest". In: _Ecology and Evolution_ 7 (7 abr. 2017),
+## pp. 2403-2413. ISSN: 20457758. DOI: 10.1002/ece3.2852.
+## 
+## [299] I. Mella-Méndez, R. Flores-Peredo, J. D. Amaya-Espinel, et al. "Predation
+## of wildlife by domestic cats in a Neotropical city: a multi-factor issue". In:
+## _Biological Invasions_ 24 (5 mai. 2022), pp. 1539-1551. ISSN: 15731464. DOI:
+## 10.1007/s10530-022-02734-5.
+## 
+## [300] F. P. Melo, S. R. Pinto, P. H. Brancalion, et al. _Priority setting for
+## scaling-up tropical forest restoration projects: Early lessons from the Atlantic
+## forest restoration pact_. nov. 2013. DOI: 10.1016/j.envsci.2013.07.013.
+## 
+## [301] M. Menin, F. Waldez, and A. P. Lima. "Efects of environmental and spatial
+## factors on the distribution of anuran species with aquatic reproduction in
+## central Amazonia". In: _HERPETOLOGICAL JOURNAL_ 21 (4 2011), pp. 255-261.
+## <http://ppbio.inpa.gov.br/Eng/inventarios/ducke/anuros>.
+## 
+## [302] J. P. Metzger. "O que é ecologia de paisagens?" In: _Biota Neotropica_ 1
+## (1-2 2001), pp. 1-9. ISSN: 1676-0611. DOI: 10.1590/S1676-06032001000100006.
+## 
+## [303] J. R. Milanovich, W. E. Peterman, K. Barrett, et al. "Do species
+## distribution models predict species richness in urban and natural green spaces?
+## A case study using amphibians". In: _Landscape and Urban Planning_ 107 (4 set.
+## 2012), pp. 409-418. ISSN: 01692046. DOI: 10.1016/j.landurbplan.2012.07.010.
+## 
+## [304] C. V. de Mira-Mendes, D. S. Ruas, R. M. de Oliveira, et al. "Amphibians of
+## the Reserva Ecológica Michelin: a high diversity site in the lowland Atlantic
+## Forest of southern Bahia, Brazil". In: _ZooKeys_ 753 (abr. 2018), pp. 1-21.
+## ISSN: 1313-2970. DOI: 10.3897/zookeys.753.21438.
+## 
+## [305] A. Montanarin, I. L. Kaefer, and A. P. Lima. "Courtship and mating
+## behaviour of the brilliant-thighed frog Allobates femoralis from Central
+## Amazonia: Implications for the study of a species complex". In: _Ethology
+## Ecology and Evolution_ 23 (2 abr. 2011), pp. 141-150. ISSN: 03949370. DOI:
+## 10.1080/03949370.2011.554884.
+## 
+## [306] L. F. B. Moreira, H. Z. de Castilhos, and S. Castroviejo-Fisher.
+## "Something is not quite right: Effects of two land uses on anuran diversity in
+## subtropical grasslands". In: _Biotropica_ 52 (6 nov. 2020), pp. 1286-1297. ISSN:
+## 17447429. DOI: 10.1111/btp.12836.
+## 
+## [307] E. Moreno, P. Pequeno, S. Santorelli Junior, et al. "How environmental
+## factors affect the abundance and distribution of two congeneric species of
+## Amazonian frogs". In: _Biotropica_ 56 (1 jan. 2024), pp. 28-35. ISSN: 17447429.
+## DOI: 10.1111/btp.13272.
+## 
+## [308] M. A. Mouchet, S. Villéger, N. W. Mason, et al. "Functional diversity
+## measures: An overview of their redundancy and their ability to discriminate
+## community assembly rules". In: _Functional Ecology_ 24 (4 ago. 2010), pp.
+## 867-876. ISSN: 02698463. DOI: 10.1111/j.1365-2435.2010.01695.x.
+## 
+## [309] M. R. Moura, F. Villalobos, G. C. Costa, et al. "Disentangling the role of
+## climate, topography and vegetation in species richness gradients". In: _PloS
+## one_ 11 (3 2016), p. e0152468. ISSN: 1932-6203.
+## 
+## [310] R. L. Muylaert, M. H. Vancine, R. Bernardo, et al. "A note on the
+## territorial limits of the Atlantic forest". In: _Oecologia Australis_ 22 (3
+## 2018), pp. 302-311. ISSN: 21776199. DOI: 10.4257/oeco.2018.2203.09.
+## 
+## [311] N. Myers, R. A. Mittermeier, C. G. Mittermeier, et al. "Biodiversity
+## hotspots for conservation priorities". In: _Nature_ 403 (6772 fev. 2000), pp.
+## 853-858. ISSN: 0028-0836. DOI: 10.1038/35002501.
+## 
+## [312] B. Naimi and M. B. Araújo. "sdm: a reproducible and extensible R platform
+## for species distribution modelling". In: _Ecography_ 39 (4 abr. 2016), pp.
+## 368-375. ISSN: 0906-7590. DOI: 10.1111/ecog.01881.
+## 
+## [313] M. F. Napoli, F. Ananias, P. M. Fonseca, et al. "Morphological and
+## Karyotypic Contributions for a Better Taxonomic Definition of the Frog
+## <i>Ischnocnema ramagii</i> (Boulenger, 1888) (Anura, Brachycephalidae)". In:
+## _South American Journal of Herpetology_ 4 (2 ago. 2009), pp. 164-172. ISSN:
+## 1808-9798. DOI: 10.2994/057.004.0207.
+## 
+## [314] P. M. Narins, W. Hödl, and D. S. Grabul. "Bimodal signal requisite for
+## agonistic behavior in a dart-poison frog, <i>Epipedobates</i> <i>femoralis</i>".
+## In: _Proceedings of the National Academy of Sciences_ 100 (2 jan. 2003), pp.
+## 577-580. ISSN: 0027-8424. DOI: 10.1073/pnas.0237165100.
+## 
+## [315] A. R. T. Nascimento, J. M. F. Fagg, and C. W. Fagg. "Canopy openness and
+## lai estimates in two seasonally deciduous forests on limestone outcrops in
+## central Brazil using hemispherical photographs". In: _Revista Árvore_ 31 (1 fev.
+## 2007), pp. 167-176. ISSN: 0100-6762. DOI: 10.1590/S0100-67622007000100019.
+## 
+## [316] A. Nguyen, A. Tilker, Q. T. Le, et al. "Ecotones Shape Ground‐Dwelling
+## Mammal and Bird Diversity Along a Habitat Gradient in the Southern Coastal Dry
+## Forests of Vietnam". In: _Biotropica_ 57 (1 jan. 2025). ISSN: 0006-3606. DOI:
+## 10.1111/btp.13422.
+## 
+## [317] J. Nori, F. Villalobos, and R. Loyola. "Global priority areas for
+## amphibian research". In: _Journal of Biogeography_ 45 (11 nov. 2018), pp.
+## 2588-2594. ISSN: 13652699. DOI: 10.1111/jbi.13435.
+## 
+## [318] D. Nychka, R. Furrer, J. Paige, et al. _fields: Tools for Spatial Data_. R
+## package version 16.3. 2024. <https://github.com/dnychka/fieldsRPackage>.
+## 
+## [319] L. M. Ochoa-Ochoa, N. R. Mejía-Domínguez, J. A. Velasco, et al.
+## "Dimensions of amphibian alpha diversity in the New World". In: _Journal of
+## Biogeography_ 47 (11 nov. 2020), pp. 2293-2302. ISSN: 13652699. DOI:
+## 10.1111/jbi.13948.
+## 
+## [320] L. M. Ochoa-Ochoa, N. R. Mejía-Domínguez, J. A. Velasco, et al. "Amphibian
+## functional diversity is related to high annual precipitation and low
+## precipitation seasonality in the New World". In: _Global Ecology and
+## Biogeography_ 28 (9 2019), pp. 1219-1229. ISSN: 14668238. DOI:
+## 10.1111/geb.12926.
+## 
+## [321] J. Oksanen, G. L. Simpson, F. G. Blanchet, et al. _vegan: Community
+## Ecology Package_. R package version 2.6-6.1. 2024.
+## <https://CRAN.R-project.org/package=vegan>.
+## 
+## [322] I. S. de Oliveira, D. Rödder, C. Capinha, et al. "Assessing future habitat
+## availability for coastal lowland anurans in the Brazilian Atlantic rainforest".
+## In: _Studies on Neotropical Fauna and Environment_ 51 (1 jan. 2016), pp. 45-55.
+## ISSN: 17445140. DOI: 10.1080/01650521.2016.1160610.
+## 
+## [323] J. C. D. Oliveira, G. R. Winck, J. Pereira-Ribeiro, et al. "Local
+## environmental factors influence the structure of frog communities on the sandy
+## coastal plains of Southeastern Brazil". In: _Herpetologica_ 73 (4 dez. 2017),
+## pp. 307-312. ISSN: 00180831. DOI: 10.1655/Herpetologica-D-16-00075.1.
+## 
+## [324] J. C. Oliveira, E. Pralon, L. Coco, et al. "Environmental humidity and
+## leaf-litter depth affecting ecological parameters of a leaf-litter frog
+## community in an Atlantic Rainforest area". In: _Journal of Natural History_ 47
+## (31-32 ago. 2013), pp. 2115-2124. ISSN: 0022-2933. DOI:
+## 10.1080/00222933.2013.769641.
+## 
+## [325] J. C. Oliveira, E. Pralon, L. Coco, et al. "Environmental humidity and
+## leaf-litter depth affecting ecological parameters of a leaf-litter frog
+## community in an Atlantic Rainforest area". In: _Journal of Natural History_ 47
+## (31-32 ago. 2013), pp. 2115-2124. ISSN: 0022-2933. DOI:
+## 10.1080/00222933.2013.769641.
+## 
+## [326] M. de Oliveira, C. F. Moser, M. M. Rebelato, et al. "Trophic ecology of
+## two amphibian species in patches and core forest of Atlantic Forest: A dietary
+## and isotopic approach". In: _Austral Ecology_ 47 (2 abr. 2022), pp. 278-290.
+## ISSN: 14429993. DOI: 10.1111/aec.13107.
+## 
+## [327] P. M. D. A. Oliveira, A. V. A. de Mello, M. J. M. Dubeux, et al.
+## "Herpetofauna of matas de Água azul, an atlantic forest remnant in serra do
+## mascarenhas, pernambuco state, brazil". In: _Biota Neotropica_ 21 (2 2021).
+## ISSN: 16760611. DOI: 10.1590/1676-0611-bn-2020-1063.
+## 
+## [328] H. M. Ortega-Andrade, M. R. Blanco, D. F. Cisneros-Heredia, et al. "Red
+## List assessment of amphibian species of Ecuador: A multidimensional approach for
+## their conservation". In: _PLoS ONE_ 16 (5 May mai. 2021). ISSN: 19326203. DOI:
+## 10.1371/journal.pone.0251027.
+## 
+## [329] J. E. Ortega‐Chinchilla, L. C. Cabanzo‐Olarte, R. Vaz, et al. "Behavioral
+## models of hydrothermal regulation in anurans: A field study in the Atlantic
+## Forest, Brazil". In: _Biotropica_ 55 (2 mar. 2023), pp. 329-338. ISSN:
+## 0006-3606. DOI: 10.1111/btp.13187.
+## 
+## [330] A. A. Padial, A. P. L. Costa, C. C. Bonecker, et al. "Freshwater Studies
+## in the Atlantic Forest: General Overview and Prospects". In: _The Atlantic
+## Forest_. Ed. by M. C. M. Marques and C. E. V. Grelle. Springer International
+## Publishing, 2021, pp. 205-230. DOI: 10.1007/978-3-030-55322-7_10.
+## 
+## [331] A. F. Palmeirim, M. V. Vieira, and C. A. Peres. "Herpetofaunal responses
+## to anthropogenic forest habitat modification across the neotropics: insights
+## from partitioning β-diversity". In: _Biodiversity and Conservation_ 26 (12 nov.
+## 2017), pp. 2877-2891. ISSN: 0960-3115. DOI: 10.1007/s10531-017-1394-9.
+## 
+## [332] M. W. Palmer. "The Estimation of Species Richness by Extrapolation". In:
+## _Ecology_ 71 (3 jun. 1990), pp. 1195-1198. ISSN: 0012-9658. DOI:
+## 10.2307/1937387.
+## 
+## [333] A. Pansonato, T. Mott, and C. Strüssmann. "Anuran amphibians' diversity in
+## a northwestern area of the Brazilian Pantanal". In: _Biota Neotropica_ 11 (4
+## dez. 2011), pp. 77-86. ISSN: 1676-0603. DOI: 10.1590/S1676-06032011000400008.
+## 
+## [334] K. M. Parris. _Environmental and spatial variables influence the
+## composition of frog assemblages in sub-tropical eastern Australia_. jun. 2004.
+## DOI: 10.1111/j.0906-7590.2004.03711.x.
+## 
+## [335] K. M. Parris and M. A. McCarthy. "What influences the structure of frog
+## assemblages at forest streams?" In: _Australian Journal of Ecology_ 24 (5 out.
+## 1999), pp. 495-502. ISSN: 0307-692X. DOI: 10.1046/j.1442-9993.1999.00989.x.
+## 
+## [336] A. M. O. Paschoal, R. L. Massara, J. L. Santos, et al. "Is the domestic
+## dog becoming an abundant species in the Atlantic forest? A study case in
+## southeastern Brazil". In: _Mammalia_ 76 (1 fev. 2012), pp. 67-76. ISSN:
+## 00251461. DOI: 10.1515/mammalia-2012-0501.
+## 
+## [337] D. C. Passos, P. C. M. D. Mesquita, and D. M. Borges-Nojosa. "Diversity
+## and seasonal dynamic of a lizard assemblage in a Neotropical semiarid habitat".
+## In: _Studies on Neotropical Fauna and Environment_ 51 (1 jan. 2016), pp. 19-28.
+## ISSN: 17445140. DOI: 10.1080/01650521.2016.1149383.
+## 
+## [338] A. Pašukonis, M. C. Loretto, L. Landler, et al. "Homing trajectories and
+## initial orientation in a Neotropical territorial frog, Allobates femoralis
+## (Dendrobatidae)". In: _Frontiers in Zoology_ 11 (1 mar. 2014). ISSN: 17429994.
+## DOI: 10.1186/1742-9994-11-29.
+## 
+## [339] A. Pašukonis, M. Ringler, H. B. Brandl, et al. "The homing frog: High
+## homing performance in a territorial dendrobatid frog allobates femoralis
+## (dendrobatidae)". In: _Ethology_ 119 (9 set. 2013), pp. 762-768. ISSN: 01791613.
+## DOI: 10.1111/eth.12116.
+## 
+## [340] A. Pašukonis, I. Warrington, M. Ringler, et al. "Poison frogs rely on
+## experience to find the way home in the rainforest". In: _Biology Letters_ 10 (11
+## nov. 2014). ISSN: 1744957X. DOI: 10.1098/rsbl.2014.0642.
+## 
+## [341] E. Pebesma. _sf: Simple Features for R_. R package version 1.0-19. 2024.
+## <https://r-spatial.github.io/sf/>.
+## 
+## [342] E. Pebesma. _sf: Simple Features for R_. R package version 1.0-21. 2025.
+## <https://r-spatial.github.io/sf/>.
+## 
+## [343] E. Pebesma. _sf: Simple Features for R_. R package version 1.0-21. 2025.
+## <https://r-spatial.github.io/sf/>.
+## 
+## [344] E. Pebesma. "Simple Features for R: Standardized Support for Spatial
+## Vector Data". In: _The R Journal_ 10 (1 2018), pp. 439-446. DOI:
+## 10.32614/RJ-2018-009. <https://doi.org/10.32614/RJ-2018-009>.
+## 
+## [345] E. Pebesma and R. Bivand. _Spatial Data Science: With applications in R_.
+## Chapman and Hall/CRC, 2023. DOI: 10.1201/9780429459016.
+## <https://r-spatial.org/book/>.
+## 
+## [346] N. Pelegrin and E. Bucher. "Effects of habitat degradation on the lizard
+## assemblage in the Arid Chaco, central Argentina". In: _Journal of Arid
+## Environments_ 79 (abr. 2012), pp. 13-19. ISSN: 01401963. DOI:
+## 10.1016/j.jaridenv.2011.11.004.
+## 
+## [347] K. E. Peña-Joya, F. G. Cupul-Magaña, F. A. Rodríguez-Zaragoza, et al.
+## "Spatio-temporal discrepancies in lizard species and functional diversity". In:
+## _Community Ecology_ 21 (1 abr. 2020), pp. 1-12. ISSN: 1585-8553. DOI:
+## 10.1007/s42974-020-00005-8.
+## 
+## [348] W. Penar, A. Magiera, and C. Klocek. _Applications of bioacoustics in
+## animal ecology_. ago. 2020. DOI: 10.1016/j.ecocom.2020.100847.
+## 
+## [349] J. Pereira-Ribeiro, Á. C. Ferreguetti, H. G. Bergallo, et al. "A
+## three-year Herpetofauna survey from one of the largest remnants of the Atlantic
+## Rainforest Biome (Reserva Natural Vale)". In: _Papeis Avulsos de Zoologia_ 62
+## (2022). ISSN: 18070205. DOI: 10.11606/1807-0205/2022.62.005.
+## 
+## [350] J. Pereira-Ribeiro, Á. C. Ferreguetti, H. G. Bergallo, et al. "Changes in
+## the community structure of anurans in the Coastal plain forest, southeastern
+## Brazil". In: _Ecological Research_ 35 (3 mai. 2020), pp. 540-549. ISSN:
+## 14401703. DOI: 10.1111/1440-1703.12108.
+## 
+## [351] E. A. Pereira, K. Ceron, H. R. da Silva, et al. "The dispersal between
+## Amazonia and Atlantic Forest during the Early Neogene revealed by the
+## biogeography of the treefrog tribe Sphaenorhynchini (Anura, Hylidae)". In:
+## _Ecology and Evolution_ 12 (4 abr. 2022), p. e8754. ISSN: 2045-7758. DOI:
+## 10.1002/ece3.8754.
+## 
+## [352] E. B. Pereira, R. G. Collevatti, M. N. de Carvalho Kokubum, et al.
+## "Ancestral reconstruction of reproductive traits shows no tendency toward
+## terrestriality in leptodactyline frogs". In: _BMC Evolutionary Biology_ 15 (1
+## dez. 2015), p. 91. ISSN: 1471-2148. DOI: 10.1186/s12862-015-0365-6.
+## 
+## [353] A. T. Peterson and J. Soberón. "Species distribution modeling and
+## ecological niche modeling: Getting the Concepts Right". In: _Natureza a
+## Conservacao_ 10 (2 2012), pp. 102-107. ISSN: 16790073. DOI:
+## 10.4322/natcon.2012.019.
+## 
+## [354] B. A. Pettitt, G. R. Bourne, and M. A. Bee. "Predictors and benefits of
+## microhabitat selection for offspring deposition in golden rocket frogs". In:
+## _Biotropica_ 50 (6 nov. 2018), pp. 919-928. ISSN: 17447429. DOI:
+## 10.1111/btp.12609.
+## 
+## [355] J. M. Pfeiffer and R. A. Voeks. "Biological invasions and biocultural
+## diversity: Linking ecological and cultural systems". In: _Environmental
+## Conservation_ 35 (4 dez. 2008), pp. 281-293. ISSN: 03768929. DOI:
+## 10.1017/S0376892908005146.
+## 
+## [356] S. J. Phillips, R. P. Anderson, and R. E. Schapire. "Maximum entropy
+## modeling of species geographic distributions". In: _Ecological Modelling_ 190
+## (3-4 jan. 2006), pp. 231-259. ISSN: 03043800. DOI:
+## 10.1016/j.ecolmodel.2005.03.026.
+## 
+## [357] E. R. Pianka. "On Lizard Species Diversity: North American Flatland
+## Deserts". In: _Ecology_ 48 (3 mai. 1967), pp. 333-351. ISSN: 0012-9658. DOI:
+## 10.2307/1932670.
+## 
+## [358] M. Pichler and F. Hartig. _Machine learning and deep learning—A review for
+## ecologists_. abr. 2023. DOI: 10.1111/2041-210X.14061.
+## 
+## [359] B. C. Pijanowski, A. Farina, S. H. Gage, et al. "What is soundscape
+## ecology? An introduction and overview of an emerging new science". In:
+## _Landscape Ecology_ 26 (9 nov. 2011), pp. 1213-1232. ISSN: 09212973. DOI:
+## 10.1007/s10980-011-9600-8.
+## 
+## [360] E. Pineda and G. Halffter. "Species diversity and habitat fragmentation:
+## Frogs in a tropical montane landscape in Mexico". In: _Biological Conservation_
+## 117 (5 jun. 2004), pp. 499-508. ISSN: 00063207. DOI:
+## 10.1016/j.biocon.2003.08.009.
+## 
+## [361] P. Pintanel, M. Tejedo, S. R. Ron, et al. "Elevational and microclimatic
+## drivers of thermal tolerance in Andean Pristimantis frogs". In: _Journal of
+## Biogeography_ 46 (8 ago. 2019), pp. 1664-1675. ISSN: 13652699. DOI:
+## 10.1111/jbi.13596.
+## 
+## [362] P. Pintanel, M. Tejedo, S. R. Ron, et al. "Elevational and microclimatic
+## drivers of thermal tolerance in Andean Pristimantis frogs". In: _Journal of
+## Biogeography_ 46 (8 ago. 2019), pp. 1664-1675. ISSN: 0305-0270. DOI:
+## 10.1111/jbi.13596.
+## 
+## [363] S. J. Porras-Triana, V. H. S. Cardozo, and M. P. Ramírez-Pinilla. "Trophic
+## and spatial niches of a Pristimantis assemblage from remnants of cloud forests
+## in Yariguíes mountain range, Colombia". In: _Studies on Neotropical Fauna and
+## Environment_ (set. 2025), pp. 1-19. ISSN: 0165-0521. DOI:
+## 10.1080/01650521.2025.2517564.
+## 
+## [364] V. Posse-Sarmiento and C. Banks-Leite. "The effects of edge influence on
+## the microhabitat, diversity and life-history traits of amphibians in western
+## Ecuador". In: _Journal of Tropical Ecology_ 40 (mar. 2024). ISSN: 14697831. DOI:
+## 10.1017/S026646742400004X.
+## 
+## [365] K. N. Prestwich. "The Energetics of Acoustic Signaling in Anurans and
+## Insects". In: _American Zoologist_ 34 (6 dez. 1994), pp. 625-643. ISSN:
+## 0003-1569. DOI: 10.1093/icb/34.6.625.
+## 
+## [366] G. Preuss and A. A. Padial. "Increasing reality of species distribution
+## models of consumers by including its food resources". In: _Neotropical Biology
+## and Conservation_ 16 (3 2021), pp. 411-425. ISSN: 22363777. DOI:
+## 10.3897/NEOTROPICAL.16.E64892.
+## 
+## [367] J. F. Preuss and A. M. Tozetti. "A record of predation and ingestion of
+## Phyllomedusa tetraploidea (Anura, Hylidae) by Thamnodynastes strigatus
+## (Serpentes, Dipsadidae), in the municipality of São Miguel do Oeste, state of
+## Santa Catarina, Brazil". In: _Herpetology Notes_ 11 (2018), pp. 945-947.
+## 
+## [368] D. A. Prieto-Torres, O. R. Rojas-Soto, D. Santiago-Alarcon, et al.
+## "Diversity, Endemism, Species Turnover and Relationships among Avifauna of
+## Neotropical Seasonally Dry Forests". In: _Ardeola_ 66 (2 2019), pp. 257-277.
+## ISSN: 23410825. DOI: 10.13157/arla.66.2.2019.ra1.
+## 
+## [369] H. Pröhl. "Territorial Behavior in Dendrobatid Frogs". In: _Journal of
+## Herpetology_ 39 (3 set. 2005), pp. 354-365. ISSN: 0022-1511. DOI:
+## 10.1670/162-04A.1.
+## 
+## [370] D. B. Provete, T. Gonçalves-Souza, M. V. Garey, et al. "Broad-scale
+## spatial patterns of canopy cover and pond morphology affect the structure of a
+## Neotropical amphibian metacommunity". In: _Hydrobiologia_ 734 (1 2014), pp.
+## 69-79. ISSN: 15735117. DOI: 10.1007/s10750-014-1870-0.
+## 
+## [371] H. R. Pulliam. _On the relationship between niche and distribution_. 2000.
+## DOI: 10.1046/j.1461-0248.2000.00143.x.
+## 
+## [372] H. Qian, X. Wang, S. Wang, et al. "Environmental determinants of amphibian
+## and reptile species richness in China". In: _Ecography_ 30 (4 ago. 2007), pp.
+## 471-482. ISSN: 0906-7590. DOI: 10.1111/j.0906-7590.2007.05025.x.
+## 
+## [373] A. Radosavljevic and R. P. Anderson. "Making better M <scp>axent</scp>
+## models of species distributions: complexity, overfitting and evaluation". In:
+## _Journal of Biogeography_ 41 (4 abr. 2014), pp. 629-643. ISSN: 0305-0270. DOI:
+## 10.1111/jbi.12227.
+## 
+## [374] M. Rahbari, S. Rahlfs, E. Jortzik, et al. "H2O2 dynamics in the malaria
+## parasite Plasmodium falciparum". In: _PLoS ONE_ 12 (4 mar. 2017). ISSN:
+## 19326203. DOI: 10.1371/journal.
+## 
+## [375] M. S. Rahman, S. U. Sarker, and M. F. Jaman. "Ecological Status of the
+## Herpeto-Mammalian Fauna of the Padma River and its Adjacent Areas, Rajshahi and
+## their Conservation Issues". In: _Bangladesh Journal of Zoology_ 40 (1 dez.
+## 2012), pp. 135-145. ISSN: 2408-8455. DOI: 10.3329/bjz.v40i1.12903.
+## 
+## [376] Q. Ramalho, L. Tourinho, M. Almeida-Gomes, et al. "Reforestation can
+## compensate negative effects of climate change on amphibians". In: _Biological
+## Conservation_ 260 (ago. 2021). ISSN: 00063207. DOI:
+## 10.1016/j.biocon.2021.109187.
+## 
+## [377] M. P. Ramírez-Pinilla and Y. Granados-Pérez. "Fenología reproductiva de
+## tres especies de Pristimantis en un bosque de niebla andino". In: _Revista de la
+## Academia Colombiana de Ciencias Exactas, Físicas y Naturales_ 44 (173 dez.
+## 2020), pp. 1083-1098. ISSN: 2382-4980. DOI: 10.18257/raccefyn.1191.
+## 
+## [378] K. E. Reider, W. P. Carson, and M. A. Donnelly. "Effects of collared
+## peccary (Pecari tajacu) exclusion on leaf litter amphibians and reptiles in a
+## Neotropical wet forest, Costa Rica". In: _Biological Conservation_ 163 (jul.
+## 2013), pp. 90-98. ISSN: 00063207. DOI: 10.1016/j.biocon.2012.12.015.
+## 
+## [379] K. E. Reider, W. P. Carson, and M. A. Donnelly. "Effects of collared
+## peccary (Pecari tajacu) exclusion on leaf litter amphibians and reptiles in a
+## Neotropical wet forest, Costa Rica". In: _Biological Conservation_ 163 (jul.
+## 2013), pp. 90-98. ISSN: 00063207. DOI: 10.1016/j.biocon.2012.12.015.
+## 
+## [380] A. Réjaud, M. T. Rodrigues, A. J. Crawford, et al. "Historical
+## biogeography identifies a possible role of Miocene wetlands in the
+## diversification of the Amazonian rocket frogs (Aromobatidae: Allobates)". In:
+## _Journal of Biogeography_ 47 (11 nov. 2020), pp. 2472-2482. ISSN: 13652699. DOI:
+## 10.1111/jbi.13937.
+## 
+## [381] L. J. Revell and L. J. Harmon. "Phylogenetic generalized least squares".
+## In: _Phylogenetic Comparative Methods in R_. 1ª. Princeton University Press,
+## 2022, pp. 59-74.
+## 
+## [382] C. L. Rezende, F. R. Scarano, E. D. Assad, et al. "From hotspot to
+## hopespot: An opportunity for the Brazilian Atlantic Forest". In: _Perspectives
+## in Ecology and Conservation_ 16 (4 out. 2018), pp. 208-214. ISSN: 25300644. DOI:
+## 10.1016/j.pecon.2018.10.002.
+## 
+## [383] J. W. Ribeiro, A. P. Lima, and W. E. Magnusson. "The Effect of Riparian
+## Zones on Species Diversity of Frogs in Amazonian Forests". In: _Copeia_ 2012 (3
+## set. 2012), pp. 375-381. ISSN: 0045-8511. DOI: 10.1643/CE-11-117.
+## 
+## [384] J. W. Ribeiro, T. Siqueira, G. L. Brejão, et al. "Effects of agriculture
+## and topography on tropical amphibian species and communities". In: _Ecological
+## Applications_ 28 (6 set. 2018), pp. 1554-1564. ISSN: 19395582. DOI:
+## 10.1002/eap.1741.
+## 
+## [385] M. C. Ribeiro, J. P. Metzger, A. C. Martensen, et al. "The Brazilian
+## Atlantic Forest: How much is left, and how is the remaining forest distributed?
+## Implications for conservation". In: _Biological Conservation_ 142 (6 jun. 2009),
+## pp. 1141-1153. ISSN: 00063207. DOI: 10.1016/j.biocon.2009.02.021.
+## 
+## [386] C. Ricotta and E. Feoli. "Hill numbers everywhere. Does it make ecological
+## sense?" In: _Ecological Indicators_ 161 (abr. 2024), p. 111971. ISSN: 1470160X.
+## DOI: 10.1016/j.ecolind.2024.111971.
+## 
+## [387] C. Ricotta and J. Podani. "On some properties of the Bray-Curtis
+## dissimilarity and their ecological meaning". In: _Ecological Complexity_ 31
+## (set. 2017), pp. 201-205. ISSN: 1476945X. DOI: 10.1016/j.ecocom.2017.07.003.
+## 
+## [388] J. C. Riemann, S. H. Ndriantsoa, N. R. Raminosoa, et al. "The value of
+## forest fragments for maintaining amphibian diversity in Madagascar". In:
+## _Biological Conservation_ 191 (nov. 2015), pp. 707-715. ISSN: 00063207. DOI:
+## 10.1016/j.biocon.2015.08.020.
+## 
+## [389] C. R. Rievers, M. R. S. Pires, and P. C. Eterovick. "Habitat, food, and
+## climate affecting leaf litter anuran assemblages in an Atlantic Forest remnant".
+## In: _Acta Oecologica_ 58 (jul. 2014), pp. 12-21. ISSN: 1146609X. DOI:
+## 10.1016/j.actao.2014.04.003.
+## 
+## [390] M. Ringler, E. Ringler, D. Mendoza, et al. "Intrusion experiments to
+## measure territory size: Development of the method, tests through simulations,
+## and application in the frog Allobates femoralis". In: _PLoS ONE_ 6 (10 2011).
+## ISSN: 19326203. DOI: 10.1371/journal.pone.0025844.
+## 
+## [391] M. Ringler, E. Ursprung, and W. Hödl. "Site fidelity and patterns of
+## short- and long-term movement in the brilliant-thighed poison frog Allobates
+## femoralis (Aromobatidae)". In: _Behavioral Ecology and Sociobiology_ 63 (9 jul.
+## 2009), pp. 1281-1293. ISSN: 03405443. DOI: 10.1007/s00265-009-0793-7.
+## 
+## [392] M. F. -. Riveros, F. Silla, and F. Brusquetti. "Potential geographical
+## distribution of the tree frog Phyllomedusa tetraploidea Pombal & Haddad, 1992 in
+## Paraguay". In: _Reportes científicos de la FACEN_ 10 (2 dez. 2019), pp. 57-68.
+## ISSN: 2222145X. DOI: 10.18004/rcfacen.2019.10.2.57.
+## 
+## [393] I. J. Roberto, L. Brito, and P. Cascon. "Temporal and Spatial Patterns of
+## Reproductive Activity in Rhinella hoogmoedi (Anura: Bufonidae) from a Tropical
+## Rainforest in Northeastern Brazil, with the Description of It's Advertisement
+## Call". In: _South American Journal of Herpetology_ 6 (2 ago. 2011), pp. 87-97.
+## ISSN: 1808-9798. DOI: 10.2994/057.006.0207.
+## 
+## [394] C. Rocha, F. Hatano, D. Vrcibradic, et al. "Frog species richness,
+## composition and beta-diversity in coastal Brazilian restinga habitats". In:
+## _Brazilian Journal of Biology_ 68 (1 fev. 2008), pp. 101-107. ISSN: 1519-6984.
+## DOI: 10.1590/S1519-69842008000100014.
+## 
+## [395] S. M. C. D. Rocha, A. P. Lima, and I. L. Kaefer. "Reproductive behavior of
+## the amazonian nurse-frog allobates paleovarzensis (dendrobatoidea,
+## aromobatidae)". In: _South American Journal of Herpetology_ 13 (3 dez. 2018),
+## pp. 260-270. ISSN: 1982355X. DOI: 10.2994/SAJH-D-17-00076.1.
+## 
+## [396] C. Rodríguez, A. Amézquita, M. Ringler, et al. "Calling amplitude
+## flexibility and acoustic spacing in the territorial frog Allobates femoralis".
+## In: _Behavioral Ecology and Sociobiology_ 74 (6 jun. 2020). ISSN: 14320762. DOI:
+## 10.1007/s00265-020-02857-6.
+## 
+## [397] B. Rojas. "Mind the gap: Treefalls as drivers of parental trade-offs". In:
+## _Ecology and Evolution_ 5 (18 set. 2015), pp. 4028-4036. ISSN: 20457758. DOI:
+## 10.1002/ece3.1648.
+## 
+## [398] J. J. L. Rojas, M. B. Souza, and E. F. Morato. "Influence of habitat
+## structure on Pristimantis species (Anura: Craugastoridae)in a bamboodominated
+## forest fragmentin southwestern Amazonia". In: _Phyllomedusa_ 14 (1 jun. 2015),
+## pp. 19-31. ISSN: 15191397. DOI: 10.11606/issn.2316-9079.v14i1p19-31.
+## 
+## [399] J. P. Romanelli, P. Meli, J. P. B. Santos, et al. _Biodiversity responses
+## to restoration across the Brazilian Atlantic Forest_. mai. 2022. DOI:
+## 10.1016/j.scitotenv.2022.153403.
+## 
+## [400] M. V. da Rosa, M. Ferrão, P. A. C. L. Pequeno, et al. "How do tree density
+## and body size influence acoustic signals in Amazonian nurse frogs?" In:
+## _Bioacoustics_ 32 (5 2023), pp. 491-505. ISSN: 21650586. DOI:
+## 10.1080/09524622.2023.2204313.
+## 
+## [401] D. C. Rother, C. Y. Vidal, I. C. Fagundes, et al. "How Legal-Oriented
+## Restoration Programs Enhance Landscape Connectivity? Insights From the Brazilian
+## Atlantic Forest". In: _Tropical Conservation Science_ 11 (jan. 2018). ISSN:
+## 19400829. DOI: 10.1177/1940082918785076.
+## 
+## [402] L. A. Rueda-Solano, J. L. Pérez-González, M. Rivera-Correa, et al.
+## "Acoustic Signal Diversity in the Harlequin Toad Atelopus laetissimus (Anura:
+## Bufonidae)". In: _Copeia_ 108 (3 set. 2020), p. 503. ISSN: 0045-8511. DOI:
+## 10.1643/CE-19-251.
+## 
+## [403] K. Ruthsatz, M. L. Lyra, C. Lambertini, et al. "Skin microbiome correlates
+## with bioclimate and Batrachochytrium dendrobatidis infection intensity in
+## Brazil’s Atlantic Forest treefrogs". In: _Scientific Reports_ 10 (1 dez. 2020).
+## ISSN: 20452322. DOI: 10.1038/s41598-020-79130-3.
+## 
+## [404] M. J. Ryan and D. S. Barry. "Competitive interactions in phytotelmata -
+## Breeding pools of two poison-dart frogs (Anura: Dendrobatidae) in Costa Rica".
+## In: _Journal of Herpetology_ 45 (4 dez. 2011), pp. 438-443. ISSN: 00221511. DOI:
+## 10.1670/10-253.1.
+## 
+## [405] I. L. Sampaio, C. P. Santos, R. C. França, et al. "Ecological diversity of
+## a snake assemblage from the atlantic forest at the south coast of paraíba,
+## northeast Brazil". In: _ZooKeys_ 2018 (787 2018), pp. 107-125. ISSN: 13132970.
+## DOI: 10.3897/zookeys.787.26946.
+## 
+## [406] P. R. Sanches, F. P. Santos, and C. E. Costa-Campos. "Diet of the napo
+## tropical bullfrog Adenomera hylaedactyla (Cope, 1868) (Anura: Leptodactylidae)
+## from an urban area in southern Amapá, eastern Amazon". In: _Herpetology Notes_
+## 12 (2019), pp. 841-845.
+## 
+## [407] A. dos Santos Protázio, R. L. Albuquerque, L. M. Falkenberg, et al.
+## "Acoustic ecology of an anuran assemblage in the arid Caatinga of northeastern
+## Brazil". In: _Journal of Natural History_ 49 (15-16 abr. 2015), pp. 957-976.
+## ISSN: 14645262. DOI: 10.1080/00222933.2014.931482.
+## 
+## [408] A. dos Santos Protázio, A. dos Santos Protázio, E. de Siqueira Ribeiro, et
+## al. "O papel da arquitetura das bromélias e fatores abióticos na ocupação por
+## anuros". In: _Neotropical Biology and Conservation_ 8 (2 2013), pp. 88-95. ISSN:
+## 18099939. DOI: 10.4013/nbc.2013.82.04.
+## 
+## [409] J. C. Santos, M. Baquero, C. Barrio-Amorós, et al. "Aposematism increases
+## acoustic diversification and speciation in poison frogs". In: _Proceedings of
+## the Royal Society B: Biological Sciences_ 281 (1796 dez. 2014), p. 20141761.
+## ISSN: 0962-8452. DOI: 10.1098/rspb.2014.1761.
+## 
+## [410] J. S. Santos, C. C. C. Leite, J. C. C. Viana, et al. "Delimitation of
+## ecological corridors in the Brazilian Atlantic Forest". In: _Ecological
+## Indicators_ 88 (mai. 2018), pp. 414-424. ISSN: 1470160X. DOI:
+## 10.1016/j.ecolind.2018.01.011.
+## 
+## [411] L. Schneider-Maunoury, V. Lefebvre, R. M. Ewers, et al. "Abundance signals
+## of amphibians and reptiles indicate strong edge effects in Neotropical
+## fragmented forest landscapes". In: _Biological Conservation_ 200 (2016), pp.
+## 207-215. ISSN: 0006-3207. DOI: https://doi.org/10.1016/j.biocon.2016.06.011.
+## <https://www.sciencedirect.com/science/article/pii/S000632071630235X>.
+## 
+## [412] L. K. Schuck, C. F. Moser, R. K. Farina, et al. "Self-made home: how and
+## where does the anuran Rhinella dorbignyi build its retreat sites". In:
+## _Iheringia - Serie Zoologia_ 112 (2022). ISSN: 00734721. DOI:
+## 10.1590/1678-4766e2022021.
+## 
+## [413] R. D. Semlitsch, W. E. Peterman, T. L. Anderson, et al. "Intermediate pond
+## sizes contain the highest density, richness, and diversity of pond-breeding
+## amphibians". In: _PLoS ONE_ 10 (4 abr. 2015). ISSN: 19326203. DOI:
+## 10.1371/journal.pone.0123055.
+## 
+## [414] Z. K. Senturk. "Amphibian species detection in water reservoirs using
+## artificial neural networks for ecology-friendly city planning". In: _Ecological
+## Informatics_ 69 (jul. 2022). ISSN: 15749541. DOI: 10.1016/j.ecoinf.2022.101640.
+## 
+## [415] C. Seo, J. H. Thorne, L. Hannah, et al. "Scale effects in species
+## distribution models: Implications for conservation planning under climate
+## change". In: _Biology Letters_ 5 (1 fev. 2009), pp. 39-43. ISSN: 1744957X. DOI:
+## 10.1098/rsbl.2008.0476.
+## 
+## [416] M. Shcheglovitova and R. P. Anderson. "Estimating optimal complexity for
+## ecological niche models: A jackknife approach for species with small sample
+## sizes". In: _Ecological Modelling_ 269 (nov. 2013), pp. 9-17. ISSN: 03043800.
+## DOI: 10.1016/j.ecolmodel.2013.08.011.
+## 
+## [417] J. A. Sheridan and M. R. Kendrick. "Relationships of primary productivity
+## with anuran abundance, richness, and community composition in tropical streams".
+## In: _PLOS ONE_ 19 (5 mai. 2024), p. e0303886. ISSN: 1932-6203. DOI:
+## 10.1371/journal.pone.0303886.
+## 
+## [418] E. Sherratt, M. Anstis, and J. S. Keogh. "Ecomorphological diversity of
+## Australian tadpoles". In: _Ecology and Evolution_ 8 (24 dez. 2018), pp.
+## 12929-12939. ISSN: 20457758. DOI: 10.1002/ece3.4733.
+## 
+## [419] J. D. Shutt and A. C. Lees. _Killing with kindness: Does widespread
+## generalised provisioning of wildlife help or hinder biodiversity conservation
+## efforts?_ set. 2021. DOI: 10.1016/j.biocon.2021.109295.
+## 
+## [420] D. J. Silva, A. F. Palmeirim, M. Santos-Filho, et al. "Habitat Quality,
+## Not Patch Size, Modulates Lizard Responses to Habitat Loss and Fragmentation in
+## the Southwestern Amazon". In: _Journal of Herpetology_ 56 (1 mar. 2022). ISSN:
+## 0022-1511. DOI: 10.1670/20-145.
+## 
+## [421] F. P. D. Silva, H. Fernandes-Ferreira, M. A. Montes, et al. "Distribution
+## modeling applied to deficient data species assessment: A case study with
+## pithecopus nordestinus (anura, phyllomedusidae)". In: _Neotropical Biology and
+## Conservation_ 15 (2 2020), pp. 165-175. ISSN: 22363777. DOI:
+## 10.3897/NEOTROPICAL.15.E47426.
+## 
+## [422] F. R. D. Silva, M. Almeida-Neto, and M. V. N. Arena. "Amphibian beta
+## diversity in the brazilian atlantic forest: Contrasting the Roles of historical
+## events and contemporary conditions at different spatial scales". In: _PLoS ONE_
+## 9 (10 out. 2014). ISSN: 19326203. DOI: 10.1371/journal.pone.0109642.
+## 
+## [423] F. R. da Silva, D. B. Provete, and B. A. Hawkins. "Range maps and
+## checklists provide similar estimates of taxonomic and phylogenetic alpha
+## diversity, but less so for beta diversity, of Brazilian Atlantic Forest
+## anurans". In: _Natureza e Conservacao_ 14 (2 jul. 2016), pp. 99-105. ISSN:
+## 16790073. DOI: 10.1016/j.ncon.2016.07.001.
+## 
+## [424] F. R. Silva, T. A. Oliveira, J. P. Gibbs, et al. "An experimental
+## assessment of landscape configuration effects on frog and toad abundance and
+## diversity in tropical agro-savannah landscapes of southeastern Brazil". In:
+## _Landscape Ecology_ 27 (1 jan. 2012), pp. 87-96. ISSN: 09212973. DOI:
+## 10.1007/s10980-011-9670-7.
+## 
+## [425] I. E. Silva, L. Vilela, C. B. Oswald, et al. "Evidence of escalated
+## aggressive calling behavior in a male agonistic interaction of the reticulated
+## leaf frog <i>Pithecopus ayeaye</i>". In: _Ethology Ecology & Evolution_ 37 (1
+## jan. 2025), pp. 117-127. ISSN: 0394-9370. DOI: 10.1080/03949370.2024.2444270.
+## 
+## [426] R. G. da Silva, A. R. dos Santos, J. B. E. Pelúzio, et al. "Vegetation
+## trends in a protected area of the Brazilian Atlantic forest". In: _Ecological
+## Engineering_ 162 (abr. 2021), p. 106180. ISSN: 09258574. DOI:
+## 10.1016/j.ecoleng.2021.106180.
+## 
+## [427] A. P. Silvera, M. I. B. Loiola, V. dos Santos Gomes, et al. "Flora of
+## Baturité, Ceará: a Wet Island in the Brazilian Semiarid". In: _Floresta e
+## Ambiente_ 27 (4 2020), p. e20180320. ISSN: 2179-8087. DOI:
+## 10.1590/2179-8087.032018.
+## 
+## [428] P. I. Simões, A. P. Lima, and M. C. de Araújo. _Protocolo para
+## levantamentos de anuros diurnos em módulos RAPELD do PPBio_. v. 2014, “Roteiro
+## para Levantamentos e Monitoramento de anuros diurnos em grades e módulos RAPELD
+## do PPBio na Amazônia”. out. 2014.
+## <https://ppbio.inpa.gov.br/sites/default/files/ANUROS_DIURNOS_v2014.pdf>.
+## 
+## [429] P. I. Simões, A. P. Lima, W. E. Magnusson, et al. "Acoustic and
+## Morphological Differentiation in the Frog <i>Allobates femoralis</i> :
+## Relationships with the Upper Madeira River and Other Potential Geological
+## Barriers". In: _Biotropica_ 40 (5 set. 2008), pp. 607-614. ISSN: 0006-3606. DOI:
+## 10.1111/j.1744-7429.2008.00416.x.
+## 
+## [430] N. Simon, M. M. Top, M. Z. Hamzah, et al. "Microhabitat and Microclimate
+## Preferences of Anuran Species Inhabiting Restoration and Adjacent Forest of
+## Cameron Highlands, Pahang Darul Makmur, Malaysia". In: _Sains Malaysiana_ 51 (6
+## jun. 2022), pp. 1635-1651. ISSN: 01266039. DOI: 10.17576/jsm-2022-5106-03.
+## 
+## [431] D. S. Simpson, D. C. Forester, J. W. Snodgrass, et al. "Relationships
+## among Amphibian Assemblage Structure, Wetland pH, and Forest Cover". In:
+## _Journal of Wildlife Management_ 85 (3 abr. 2021), pp. 569-581. ISSN: 19372817.
+## DOI: 10.1002/jwmg.22016.
+## 
+## [432] E. H. SIMPSON. "Measurement of Diversity". In: _Nature_ 163 (4148 abr.
+## 1949), pp. 688-688. ISSN: 0028-0836. DOI: 10.1038/163688a0.
+## 
+## [433] U. Sinsch, K. Lümkemann, K. Rosar, et al. "Acoustic niche partitioning in
+## an anuran community inhabiting an afromontane Wetland (Butare, Rwanda)". In:
+## _African Zoology_ 47 (1 abr. 2012), pp. 60-73. ISSN: 15627020. DOI:
+## 10.3377/004.047.0122.
+## 
+## [434] C. C. Siqueira, D. Vrcibradic, P. Nogueira-Costa, et al. "Environmental
+## parameters affecting the structure of leaf-litter frog (Amphibia: Anura)
+## communities in tropical forests: a case study from an Atlantic Rainforest area
+## in southeastern Brazil". In: _Zoologia_ 31 (2 abr. 2014), pp. 147-152. ISSN:
+## 1984-4670. DOI: 10.1590/S1984-46702014000200005.
+## 
+## [435] C. C. Siqueira, D. Vrcibradic, P. Nogueira-Costa, et al. "Environmental
+## parameters affecting the structure of leaf-litter frog (Amphibia: Anura)
+## communities in tropical forests: a case study from an Atlantic Rainforest area
+## in southeastern Brazil". In: _Zoologia (Curitiba)_ 31 (2 abr. 2014), pp.
+## 147-152. ISSN: 1984-4670. DOI: 10.1590/S1984-46702014000200005.
+## 
+## [436] D. K. Skelly, S. R. Bolden, and L. K. Freidenburg. "Experimental canopy
+## removal enhances diversity of vernal pond amphibians". In: _Ecological
+## Applications_ 24 (2 mar. 2014), pp. 340-345. ISSN: 1051-0761. DOI:
+## 10.1890/13-1042.1.
+## <https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1042.1>.
+## 
+## [437] D. K. Skelly, M. A. Halverson, L. K. Freidenburg, et al. "Canopy closure
+## and amphibian diversity in forested wetlands". In: _Wetlands Ecology and
+## Management_ 13 (3 jun. 2005), pp. 261-268. ISSN: 09234861. DOI:
+## 10.1007/s11273-004-7520-y.
+## 
+## [438] M. V. Sluys, R. V. Marra, L. Boquimpani-Freitas, et al. "Environmental
+## factors affecting calling behavior of sympatric frog species at an Atlantic rain
+## forest area, southeastern Brazil". In: _Journal of Herpetology_ 46 (1 mar.
+## 2012), pp. 41-46. ISSN: 00221511. DOI: 10.1670/10-178.
+## 
+## [439] M. V. SLUYS, D. VRCIBRADIC, M. A. S. ALVES, et al. "Ecological parameters
+## of the leaf‐litter frog community of an Atlantic Rainforest area at Ilha Grande,
+## Rio de Janeiro state, Brazil". In: _Austral Ecology_ 32 (3 mai. 2007), pp.
+## 254-260. ISSN: 1442-9985. DOI: 10.1111/j.1442-9993.2007.01682.x.
+## 
+## [440] M. V. Sluys, D. Vrcibradic, M. A. Alves, et al. "Ecological parameters of
+## the leaf-litter frog community of an Atlantic Rainforest area at Ilha Grande,
+## Rio de Janeiro state, Brazil". In: _Austral Ecology_ 32 (3 mai. 2007), pp.
+## 254-260. ISSN: 14429985. DOI: 10.1111/j.1442-9993.2007.01682.x.
+## 
+## [441] J. Soberón. _Grinnellian and Eltonian niches and geographic distributions
+## of species_. dez. 2007. DOI: 10.1111/j.1461-0248.2007.01107.x.
+## 
+## [442] T. Sobral-Souza, M. H. Vancine, M. C. Ribeiro, et al. "Efficiency of
+## protected areas in Amazon and Atlantic Forest conservation: A spatio-temporal
+## view". In: _Acta Oecologica_ 87 (fev. 2018), pp. 1-7. ISSN: 1146609X. DOI:
+## 10.1016/j.actao.2018.01.001.
+## 
+## [443] A. Solórzano, L. S. C. de Assis Brasil, and R. R. de Oliveira. "The
+## Atlantic Forest Ecological History: From Pre-colonial Times to the
+## Anthropocene". In: _The Atlantic Forest_. Springer International Publishing,
+## 2021, pp. 25-44. DOI: 10.1007/978-3-030-55322-7_2.
+## 
+## [444] H. T. de Sousa Machado, C. F. da Silva, R. A. Benício, et al. "Feeding
+## ecology, reproductive biology, and sexual dimorphism of &lt;i&gt;Boana
+## raniceps&lt;/i&gt; (Anura: Hylidae) in an area of Caatinga, northeastern
+## Brazil". In: _Caldasia_ 46 (1 set. 2023), pp. 71-80. ISSN: 2357-3759. DOI:
+## 10.15446/caldasia.v46n1.99220.
+## 
+## [445] M. de Souza Lima Figueiredo, M. M. Weber, C. A. Brasileiro, et al.
+## "Tetrapod Diversity in the Atlantic Forest: Maps and Gaps". In: _The Atlantic
+## Forest_. Springer International Publishing, 2021, pp. 185-204. DOI:
+## 10.1007/978-3-030-55322-7_9.
+## 
+## [446] A. M. D. Souza and P. C. Eterovick. "Environmental factors related to
+## anuran assemblage composition, richness and distribution at four large rivers
+## under varied impact levels in southeastern Brazil". In: _River Research and
+## Applications_ 27 (8 out. 2011), pp. 1023-1036. ISSN: 1535-1459. DOI:
+## 10.1002/rra.1410.
+## 
+## [447] C. M. Souza, J. Z. Shimbo, M. R. Rosa, et al. "Reconstructing Three
+## Decades of Land Use and Land Cover Changes in Brazilian Biomes with Landsat
+## Archive and Earth Engine". In: _Remote Sensing_ 12 (17 ago. 2020), p. 2735.
+## ISSN: 2072-4292. DOI: 10.3390/rs12172735.
+## 
+## [448] R. Spake, D. E. Bowler, C. T. Callaghan, et al. "Understanding ‘it
+## depends’ in ecology: a guide to hypothesising, visualising and interpreting
+## statistical interactions". In: _Biological Reviews_ 98 (4 ago. 2023), pp.
+## 983-1002. ISSN: 1469185X. DOI: 10.1111/brv.12939.
+## 
+## [449] T. J. Stohlgren, M. B. Coughenour, G. W. Chong, et al. "Landscape analysis
+## of plant diversity". In: _Landscape Ecology_ 12 (3 1997), pp. 155-170. ISSN:
+## 09212973. DOI: 10.1023/A:1007986502230.
+## 
+## [450] A. B. Stoler, K. A. Berven, and T. R. Raffel. "Leaf Litter Inhibits Growth
+## of an Amphibian Fungal Pathogen". In: _EcoHealth_ 13 (2 jun. 2016), pp. 392-404.
+## ISSN: 1612-9202. DOI: 10.1007/s10393-016-1106-z.
+## 
+## [451] A. B. Stoler and R. A. Relyea. "Leaf litter quality induces morphological
+## and developmental changes in larval amphibians". In: _Ecology_ 94 (7 jul. 2013),
+## pp. 1594-1603. ISSN: 0012-9658. DOI: 10.1890/12-2087.1.
+## 
+## [452] M. L. Strangas, C. A. Navas, M. T. Rodrigues, et al. "Thermophysiology,
+## microclimates, and species distributions of lizards in the mountains of the
+## Brazilian Atlantic Forest". In: _Ecography_ 42 (2 fev. 2019), pp. 354-364. ISSN:
+## 16000587. DOI: 10.1111/ecog.03330.
+## 
+## [453] B. B. Strassburg, A. Iribarrem, H. L. Beyer, et al. "Global priority areas
+## for ecosystem restoration". In: _Nature_ 586 (7831 out. 2020), pp. 724-729.
+## ISSN: 14764687. DOI: 10.1038/s41586-020-2784-9.
+## 
+## [454] J. Sueur, T. Aubin, and C. Simonis. "Seewave: a free modular tool for
+## sound analysis and synthesis". In: _Bioacoustics_ 18 (2008), pp. 213-226.
+## 
+## [455] J. Sueur, T. Aubin, and C. Simonis. _seewave: Sound Analysis and
+## Synthesis_. R package version 2.2.3. 2023. <https://rug.mnhn.fr/seewave/>.
+## 
+## [456] J. SUEUR, T. AUBIN, and C. SIMONIS. "SEEWAVE, A FREE MODULAR TOOL FOR
+## SOUND ANALYSIS AND SYNTHESIS". In: _Bioacoustics_ 18 (2 jan. 2008), pp. 213-226.
+## ISSN: 0952-4622. DOI: 10.1080/09524622.2008.9753600.
+## 
+## [457] M. S. Syamili and P. O. Nameer. "The amphibian diversity of selected
+## agroecosystems in the southern Western Ghats, India". In: _Journal of Threatened
+## Taxa_ 10 (8 jul. 2018), p. 12027. ISSN: 0974-7907. DOI:
+## 10.11609/jott.3653.10.8.12027-12034.
+## 
+## [458] N. W. Synes and P. E. Osborne. "Choice of predictor variables as a source
+## of uncertainty in continental-scale species distribution modelling under climate
+## change". In: _Global Ecology and Biogeography_ 20 (6 nov. 2011), pp. 904-914.
+## ISSN: 1466822X. DOI: 10.1111/j.1466-8238.2010.00635.x.
+## 
+## [459] G. de T. Figueiredo, L. F. Storti, R. Lourenço-De-moraes, et al.
+## "Influence of microhabitat on the richness of anuran species: A case study of
+## different landscapes in the atlantic forest of southern Brazil". In: _Anais da
+## Academia Brasileira de Ciencias_ 91 (2 2019). ISSN: 16782690. DOI:
+## 10.1590/0001-3765201920171023.
+## 
+## [460] M. Tabarelli, A. V. Aguiar, M. C. Ribeiro, et al. "Prospects for
+## biodiversity conservation in the Atlantic Forest: Lessons from aging
+## human-modified landscapes". In: _Biological Conservation_ 143 (10 out. 2010),
+## pp. 2328-2340. ISSN: 00063207. DOI: 10.1016/j.biocon.2010.02.005.
+## 
+## [461] M. Tabarelli, L. P. Pinto, J. M. Silva, et al. _Challenges and
+## opportunities for biodiversity conservation in the Brazilian Atlantic Forest_.
+## jun. 2005. DOI: 10.1111/j.1523-1739.2005.00694.x.
+## 
+## [462] M. Tabarelli, J. M. C. da Silva, and C. Gascon. "Forest fragmentation,
+## synergisms and the impoverishment of neotropical forests". In: _Biodiversity and
+## Conservation_ 13 (7 jun. 2004), pp. 1419-1425. ISSN: 0960-3115. DOI:
+## 10.1023/B:BIOC.0000019398.36045.1b.
+## 
+## [463] S. Taconi and A. S. Pires. "Vertebrate frugivory on jackfruit Artocarpus
+## heterophyllus Lam. (Moraceae) in its native and exotic ranges". In: _Tropical
+## Ecology_ 62 (2 jun. 2021), pp. 153-162. ISSN: 0564-3295. DOI:
+## 10.1007/s42965-021-00145-6.
+## 
+## [464] B. Tang, H. A. Frye, A. E. Gelfand, et al. "Zero-Inflated Beta
+## Distribution Regression Modeling". In: _Journal of Agricultural, Biological and
+## Environmental Statistics_ 28 (1 mar. 2023), pp. 117-137. ISSN: 1085-7117. DOI:
+## 10.1007/s13253-022-00516-z.
+## 
+## [465] R. C. Team. _R: A Language and Environment for Statistical Computing_.
+## 2023. <https://www.R-project.org/>.
+## 
+## [466] R. C. Team. _R: A Language and Environment for Statistical Computing_.
+## 2024. <https://www.R-project.org/>.
+## 
+## [467] R. C. Team. _R: A Language and Environment for Statistical Computing_.
+## 2025. <https://www.R-project.org/>.
+## 
+## [468] R. C. Team. _R: A Language and Environment for Statistical Computing_.
+## 2025. <https://www.r-project.org/>.
+## 
+## [469] R. C. Team. _R: A Language and Environment for Statistical Computing_.
+## 2025. <https://www.R-project.org/>.
+## 
+## [470] B. Titon and F. R. Gomes. "Relation between Water Balance and Climatic
+## Variables Associated with the Geographical Distribution of Anurans". In: _PLOS
+## ONE_ 10 (10 out. 2015), p. e0140761. ISSN: 1932-6203. DOI:
+## 10.1371/journal.pone.0140761.
+## 
+## [471] E. Tjørve. "How to resolve the SLOSS debate: Lessons from
+## species-diversity models". In: _Journal of Theoretical Biology_ 264 (2 mai.
+## 2010), pp. 604-612. ISSN: 00225193. DOI: 10.1016/j.jtbi.2010.02.009.
+## 
+## [472] M. L. Tobias, C. Barnard, R. O'Hagan, et al. "Vocal communication between
+## male Xenopus laevis". In: _Animal Behaviour_ 67 (2 fev. 2004), pp. 353-365.
+## ISSN: 00033472. DOI: 10.1016/j.anbehav.2003.03.016.
+## 
+## [473] L. F. Toledo, S. P. de Carvalho-e-Silva, A. M. P. T. de Carvalho-e-Silva,
+## et al. "A retrospective overview of amphibian declines in Brazil's Atlantic
+## Forest". In: _Biological Conservation_ 277 (jan. 2023). ISSN: 00063207. DOI:
+## 10.1016/j.biocon.2022.109845.
+## 
+## [474] L. F. Toledo, R. S. Ribeiro, and C. F. B. Haddad. "Anurans as prey: an
+## exploratory analysis and size relationships between predators and their prey".
+## In: _Journal of Zoology_ 271 (2 fev. 2007), pp. 170-177. ISSN: 0952-8369. DOI:
+## 10.1111/j.1469-7998.2006.00195.x.
+## 
+## [475] C. R. Townsend, M. R. Scarsbrook, and S. Dolédec. "The intermediate
+## disturbance hypothesis, refugia, and biodiversity in streams". In: _Limnology
+## and Oceanography_ 42 (5 I 1997), pp. 938-949. ISSN: 00243590. DOI:
+## 10.4319/lo.1997.42.5.0938.
+## 
+## [476] A. T. Tredennick, G. Hooker, S. P. Ellner, et al. "A practical guide to
+## selecting models for exploration, inference, and prediction in ecology". In:
+## _Ecology_ 102 (6 jun. 2021). ISSN: 19399170. DOI: 10.1002/ecy.3336.
+## 
+## [477] C. C. Trevisan, H. Batalha-Filho, A. A. Garda, et al. "Cryptic diversity
+## and ancient diversification in the northern Atlantic Forest Pristimantis
+## (Amphibia, Anura, Craugastoridae)". In: _Molecular Phylogenetics and Evolution_
+## 148 (jul. 2020). ISSN: 10959513. DOI: 10.1016/j.ympev.2020.106811.
+## 
+## [478] J. Trindade-Filho, R. A. de Carvalho, D. Brito, et al. "How does the
+## inclusion of Data Deficient species change conservation priorities for
+## amphibians in the Atlantic Forest?" In: _Biodiversity and Conservation_ 21 (10
+## set. 2012), pp. 2709-2718. ISSN: 0960-3115. DOI: 10.1007/s10531-012-0326-y.
+## 
+## [479] H. Tukiainen, J. Alahuhta, R. Field, et al. "Spatial relationship between
+## biodiversity and geodiversity across a gradient of land-use intensity in
+## high-latitude landscapes". In: _Landscape Ecology_ 32 (5 mai. 2017), pp.
+## 1049-1063. ISSN: 0921-2973. DOI: 10.1007/s10980-017-0508-9.
+## 
+## [480] B. Vági, Z. Végvári, A. Liker, et al. "Climate and mating systems as
+## drivers of global diversity of parental care in frogs". In: _Global Ecology and
+## Biogeography_ 29 (8 ago. 2020), pp. 1373-1386. ISSN: 14668238. DOI:
+## 10.1111/geb.13113.
+## 
+## [481] N. Vagmaker, J. Pereira-Ribeiro, Á. C. Ferreguetti, et al. "Structure of
+## the leaf litter frog community in an area of Atlantic Forest in southeastern
+## Brazil". In: _Zoologia_ 37 (out. 2020), pp. 1-10. ISSN: 1984-4689. DOI:
+## 10.3897/zoologia.37.e38877.
+## 
+## [482] N. Vagmaker, J. Pereira-Ribeiro, Á. C. Ferreguetti, et al. "Structure of
+## the leaf litter frog community in an area of Atlantic Forest in southeastern
+## Brazil". In: _Zoologia_ 37 (out. 2020), pp. 1-10. ISSN: 1984-4689. DOI:
+## 10.3897/zoologia.37.e38877.
+## 
+## [483] J. W. Valdez, M. P. Stockwell, K. Klop-Toker, et al. "Factors driving the
+## distribution of an endangered amphibian toward an industrial landscape in
+## Australia". In: _Biological Conservation_ 191 (nov. 2015), pp. 520-528. ISSN:
+## 00063207. DOI: 10.1016/j.biocon.2015.08.010.
+## 
+## [484] P. H. Valdujo, A. C. O. Carnaval, and C. H. Graham. "Environmental
+## correlates of anuran beta diversity in the Brazilian Cerrado". In: _Ecography_
+## 36 (6 jun. 2013), pp. 708-717. ISSN: 09067590. DOI:
+## 10.1111/j.1600-0587.2012.07374.x.
+## 
+## [485] M. M. Vale, P. A. Arias, G. Ortega, et al. "Climate Change and
+## Biodiversity in the Atlantic Forest: Best Climatic Models, Predicted Changes and
+## Impacts, and Adaptation Options". In: _The Atlantic Forest_. Springer
+## International Publishing, 2021, pp. 253-267. DOI: 10.1007/978-3-030-55322-7_12.
+## 
+## [486] M. M. Vale, L. Tourinho, M. L. Lorini, et al. "Endemic birds of the
+## Atlantic Forest: traits, conservation status, and patterns of biodiversity". In:
+## _Journal of Field Ornithology_ 89 (3 set. 2018), pp. 193-206. ISSN: 15579263.
+## DOI: 10.1111/jofo.12256.
+## 
+## [487] J. H. Valencia and K. Garzon-Tello. "Reproductive behavior and development
+## in Spilotes sulphureus (Serpentes: Colubridae) from Ecuador". In: _Phyllomedusa_
+## 17 (1 2018), pp. 113-126.
+## 
+## [488] D. Valentim, Y. Silva, M. Furtado, et al. "Atividade Reprodutiva de
+## Rhinella gr. margaritifera (Anura; Bufonidae) em Poça Temporária no Município de
+## Serra do Navio, Amapá". In: _Biota Amazônia_ 3 (3 dez. 2013), pp. 188-192. ISSN:
+## 21795746. DOI: 10.18561/2179-5746/biotaamazonia.v3n3p188-192.
+## 
+## [489] L. M. Valério, T. F. Dorado-Rodrigues, T. F. Chupel, et al. "Vegetation
+## Structure and Hydroperiod Affect Anuran Composition in a Large Neotropical
+## Wetland". In: _Herpetologica_ 72 (3 set. 2016), pp. 181-188. ISSN: 00180831.
+## DOI: 10.1655/Herpetologica-D-14-00069.1.
+## 
+## [490] D. Vallan. "Influence of forest fragmentation on amphibian diversity in
+## the nature reserve of Ambohitantely, highland Madagascar". In: _Biological
+## Conservation_ 96 (1 nov. 2000), pp. 31-43. ISSN: 00063207. DOI:
+## 10.1016/S0006-3207(00)00041-0.
+## 
+## [491] M. H. Vancine, R. L. Muylaert, B. B. Niebuhr, et al. "The Atlantic Forest
+## of South America: Spatiotemporal dynamics of the vegetation and implications for
+## conservation". In: _Biological Conservation_ 291 (mar. 2024). ISSN: 00063207.
+## DOI: 10.1016/j.biocon.2024.110499.
+## 
+## [492] I. G. Varassin, K. Agostini, M. Wolowski, et al. "Pollination Systems in
+## the Atlantic Forest: Characterisation, Threats, and Opportunities". In: _The
+## Atlantic Forest_. Springer International Publishing, 2021, pp. 325-344. DOI:
+## 10.1007/978-3-030-55322-7_15.
+## 
+## [493] T. D. S. Vasconcelos, T. G. D. Santos, C. F. B. Haddad, et al. "Climatic
+## variables and altitude as predictors of anuran species richness and number of
+## reproductive modes in Brazil". In: _Journal of Tropical Ecology_ 26 (4 jul.
+## 2010), pp. 423-432. ISSN: 02664674. DOI: 10.1017/S0266467410000167.
+## 
+## [494] T. S. Vasconcelos, V. H. Prado, F. R. D. Silva, et al. "Biogeographic
+## distribution patterns and their correlates in the diverse frog fauna of the
+## atlantic forest hotspot". In: _PLoS ONE_ 9 (8 ago. 2014). ISSN: 19326203. DOI:
+## 10.1371/journal.pone.0104130.
+## 
+## [495] M. I. Vega‐Agavo, I. Suazo‐Ortuño, L. Lopez‐Toledo, et al. "Influence of
+## avocado orchard landscapes on amphibians and reptiles in the trans‐Mexican
+## volcanic belt". In: _Biotropica_ 53 (6 nov. 2021), pp. 1631-1645. ISSN:
+## 0006-3606. DOI: 10.1111/btp.13011.
+## 
+## [496] V. K. Verdade and M. T. Rodrigues. "Taxonomic review of Allobates (Anura,
+## Aromobatidae) from the Atlantic Forest, Brazil". In: _Journal of Herpetology_ 41
+## (4 dez. 2007), pp. 566-580. ISSN: 00221511. DOI: 10.1670/06-094.1.
+## 
+## [497] I. R. Viana, J. A. Prevedello, and J. J. Zocche. "Effects of landscape
+## composition on the occurrence of a widespread invasive bird species in the
+## Brazilian Atlantic Forest". In: _Perspectives in Ecology and Conservation_ 15 (1
+## jan. 2017), pp. 36-41. ISSN: 25300644. DOI: 10.1016/j.pecon.2016.11.004.
+## 
+## [498] W. L. S. Vieira, G. J. B. de Moura, F. V. M. Júnior, et al. "Species
+## Richness, Distribution Pattern, and Conservation of Amphibians in the Northern
+## Portion of the Brazilian Atlantic Forest". In: _Animal Biodiversity and
+## Conservation in Brazil's Northern Atlantic Forest_. Springer International
+## Publishing, 2023, pp. 147-167. DOI: 10.1007/978-3-031-21287-1_10.
+## 
+## [499] P. M. Villa, A. J. Pérez-Sánchez, F. Nava, et al. "Local-scale seasonality
+## shapes anuran community abundance in a cloud forest of the tropical Andes". In:
+## _Zoological Studies_ 58 (2019). ISSN: 1810522X. DOI: 10.6620/ZS.2019.58-17.
+## 
+## [500] N. Villar, C. Paz, V. Zipparro, et al. "Frugivory underpins the nitrogen
+## cycle". In: _Functional Ecology_ 35 (2 fev. 2021), pp. 357-368. ISSN: 13652435.
+## DOI: 10.1111/1365-2435.13707.
+## 
+## [501] L. J. Vitt and J. P. Caldwell. "Foraging Ecology and Diets". In:
+## _Herpetology: An Introductory Biology of Amphibians and Reptiles_. Ed. by L. J.
+## Vitt and J. P. Caldwell. 4th ed. Elsevier, 2014, pp. 291-315.
+## 
+## [502] L. J. Vitt and J. P. Caldwell. "Frogs". In: _Herpetology: An Introductory
+## Biology of Amphibians and Reptiles_. 4th ed. Elsevier, 2014, pp. 471-515.
+## 
+## [503] L. J. Vitt and J. P. Caldwell. "Resource utilization and guild structure
+## of small vertebrates in the Amazon forest leaf litter". In: _Journal of Zoology_
+## 234 (3 nov. 1994), pp. 463-476. ISSN: 0952-8369. DOI:
+## 10.1111/j.1469-7998.1994.tb04860.x.
+## 
+## [504] L. J. Vitt and J. P. Caldwell. "Water Balance and Gas Exchange". In:
+## _Herpetology: An Introductory Biology of Amphibians and Reptiles_. Ed. by L. J.
+## Vitt and J. P. Caldwell. 4th ed. Elsevier, 2014, pp. 181-201.
+## 
+## [505] L. Vitt and J. Caldwell. "Water Balance and Gas Exchange". In:
+## _Herpetology: An Introductionary Biology of Amphibians and Reptiles_. Ed. by L.
+## Vitt and J. Caldwell. 4th ed. Elsevier, 2013, pp. 181-201.
+## 
+## [506] J. R. S. Vitule, T. V. T. Occhi, L. Carneiro, et al. "Non-native Species
+## Introductions, Invasions, and Biotic Homogenization in the Atlantic Forest". In:
+## _The Atlantic Forest_. Springer International Publishing, 2021, pp. 269-295.
+## DOI: 10.1007/978-3-030-55322-7_13.
+## 
+## [507] S. Vogt, F. A. de Villiers, F. Ihlow, et al. "Competition and feeding
+## ecology in two sympatric <i>Xenopus</i> species (Anura: Pipidae)". In: _PeerJ_ 5
+## (abr. 2017), p. e3130. ISSN: 2167-8359. DOI: 10.7717/peerj.3130.
+## 
+## [508] J. R. Vonesh. "Patterns of Richness and Abundance in a Tropical African
+## Leaf‐litter Herpetofauna". In: _Biotropica_ 33 (3 set. 2001), pp. 502-510. ISSN:
+## 0006-3606. DOI: 10.1111/j.1744-7429.2001.tb00204.x.
+## 
+## [509] J. R. Vonesh. "Patterns of Richness and Abundance in a Tropical African
+## Leaf‐litter Herpetofauna". In: _Biotropica_ 33 (3 set. 2001), pp. 502-510. ISSN:
+## 0006-3606. DOI: 10.1111/j.1744-7429.2001.tb00204.x.
+## 
+## [510] F. Waldez, M. Menin, D. P. Rojas-Ahumada, et al. "Population Structure and
+## Reproductive Pattern of Pristimantis Aff. Fenestratus (Anura: Strabomantidae) in
+## Two Non-Flooded Forests of Central Amazonia, Brazil". In: _South American
+## Journal of Herpetology_ 6 (2 ago. 2011), pp. 119-126. ISSN: 1808-9798. DOI:
+## 10.2994/057.006.0202.
+## 
+## [511] T. C. Wanger, D. T. Iskandar, I. Motzke, et al. "Efectos del cambio de uso
+## de suelo sobre la composicíon de la comunidad de anfibios y reptiles en
+## Sulawesi, Indonesia". In: _Conservation Biology_ 24 (3 jun. 2010), pp. 795-802.
+## ISSN: 08888892. DOI: 10.1111/j.1523-1739.2009.01434.x.
+## 
+## [512] J. I. Watling and L. Braga. "Desiccation resistance explains amphibian
+## distributions in a fragmented tropical forest landscape". In: _Landscape
+## Ecology_ 30 (8 out. 2015), pp. 1449-1459. ISSN: 0921-2973. DOI:
+## 10.1007/s10980-015-0198-0.
+## 
+## [513] J. I. Watling, C. R. Hickman, and J. L. Orrock. "Invasive shrub alters
+## native forest amphibian communities". In: _Biological Conservation_ 144 (11 nov.
+## 2011), pp. 2597-2601. ISSN: 00063207. DOI: 10.1016/j.biocon.2011.07.005.
+## 
+## [514] C. Watts, H. Ranson, S. Thorpe, et al. "Invertebrate community turnover
+## following control of an invasive weed". In: _Arthropod-Plant Interactions_ 9 (6
+## dez. 2015), pp. 585-597. ISSN: 18728847. DOI: 10.1007/s11829-015-9396-6.
+## 
+## [515] E. E. Werner and K. S. Glennemeier. "Influence of Forest Canopy Cover on
+## the Breeding Pond Distributions of Several Amphibian Species". In: _Copeia_ 5 (1
+## fev. 1999), pp. 1-12. <https://about.jstor.org/terms>.
+## 
+## [516] E. E. Werner and K. S. Glennemeier. "Influence of Forest Canopy Cover on
+## the Breeding Pond Distributions of Several Amphibian Species". In: _Copeia_ 5 (1
+## fev. 1999), pp. 1-12. <https://about.jstor.org/terms>.
+## 
+## [517] E. E. Werner, D. K. Skelly, R. A. Relyea, et al. "Amphibian species
+## richness across environmental gradients". In: _Oikos_ 116 (10 out. 2007), pp.
+## 1697-1712. ISSN: 0030-1299. DOI: 10.1111/j.2007.0030-1299.15935.x.
+## 
+## [518] E. E. Werner, D. K. Skelly, R. A. Relyea, et al. "Amphibian species
+## richness across environmental gradients". In: _Oikos_ 116 (10 out. 2007), pp.
+## 1697-1712. ISSN: 0030-1299. DOI: 10.1111/j.0030-1299.2007.15935.x.
+## 
+## [519] E. E. Werner, K. L. Yurewicz, D. K. Skelly, et al. "Turnover in an
+## amphibian metacommunity: the role of local and regional factors". In: _Oikos_
+## 116 (10 out. 2007), pp. 1713-1725. ISSN: 0030-1299. DOI:
+## 10.1111/j.2007.0030-1299.16039.x.
+## 
+## [520] R. J. Whittaker, K. J. Willis, and R. Field. "Scale and species richness:
+## towards a general, hierarchical theory of species diversity". In: _Journal of
+## Biogeography_ 28 (4 abr. 2001), pp. 453-470. ISSN: 0305-0270. DOI:
+## 10.1046/j.1365-2699.2001.00563.x.
+## 
+## [521] J. J. Wiens. "Global patterns of diversification and species richness in
+## amphibians". In: _American Naturalist_. Vol. 170. ago. 2007. DOI:
+## 10.1086/519396.
+## 
+## [522] D. R. Williams, M. Clark, G. M. Buchanan, et al. "Proactive conservation
+## to prevent habitat losses to agricultural expansion". In: _Nature
+## Sustainability_ 4 (4 abr. 2021), pp. 314-322. ISSN: 23989629. DOI:
+## 10.1038/s41893-020-00656-5.
+## 
+## [523] M. Williamson, K. J. Gaston, and W. M. Lonsdale. "The species-area
+## relationship does not have an asymptote!" In: _Journal of Biogeography_ 28 (7
+## 2001), pp. 827-830. ISSN: 03050270. DOI: 10.1046/j.1365-2699.2001.00603.x.
+## 
+## [524] J. B. Wilson. "Methods for fitting dominance/diversity curves". In:
+## _Journal of Vegetation Science_ 2 (1 fev. 1991), pp. 35-46. ISSN: 1100-9233.
+## DOI: 10.2307/3235896.
+## 
+## [525] B. A. Woodcock. "Pitfall Trapping in Ecological Studies". In: _Insect
+## Sampling in Forest Ecosystems_. Ed. by S. R. Leather. 1st ed. Wiley, dez. 2005,
+## pp. 37-57. DOI: 10.1002/9780470750513.ch3.
+## 
+## [526] K. T. Yagi and D. M. Green. "Performance and Movement in Relation to
+## Postmetamorphic Body Size in a Pond-Breeding Amphibian". In: _Journal of
+## Herpetology_ 51 (4 dez. 2017), pp. 482-489. ISSN: 0022-1511. DOI:
+## 10.1670/17-058.
+## 
+## [527] J. Yu and M. Dennis. "A spatial ecological analysis of the reintroduction
+## of the Eurasian beaver". In: _IOP Conference Series: Earth and Environmental
+## Science_. Vol. 937. IOP Publishing Ltd, dez. 2021. DOI:
+## 10.1088/1755-1315/937/2/022003.
+## 
+## [528] C. Zank, M. Di-Bernardo, R. Lingnau, et al. "Calling activity and
+## agonistic behavior of Pseudis minuta Günther, 1858 (Anura, Hylidae, Hylinae) in
+## the Reserva Biológica do Lami, Porto Alegre, Brazil". In: _South American
+## Journal of Herpetology_ 3 (1 abr. 2008), pp. 51-57. ISSN: 1808-9798. DOI:
+## 10.2994/1808-9798(2008)3[51:caaabo]2.0.co;2.
+## 
+## [529] A. Zeileis and T. Hothorn. "Diagnostic Checking in Regression
+## Relationships". In: _R News_ 2 (3 2002), pp. 7-10.
+## <https://CRAN.R-project.org/doc/Rnews/>.
+## 
+## [530] D. Zhang. _rsq: R-Squared and Related Measures_. R package version 2.7.
+## 2024. <https://CRAN.R-project.org/package=rsq>.
+## 
+## [531] T. V. Zhuykova, E. V. Meling, and V. S. Bezel. "Dynamics of Alpha
+## Diversity During the Restoration Succession of Grass Communities of Fallow Lands
+## and Pits". In: _Russian Journal of Ecology_ 53 (3 jun. 2022), pp. 158-168. ISSN:
+## 16083334. DOI: 10.1134/S1067413622030134.
+## 
+## [532] L. Ziegler, M. Arim, and P. M. Narins. "Linking amphibian call structure
+## to the environment: The interplay between phenotypic flexibility and individual
+## attributes". In: _Behavioral Ecology_ 22 (3 mai. 2011), pp. 520-526. ISSN:
+## 10452249. DOI: 10.1093/beheco/arr011.
+## 
+## [533] D. Zurell, J. Franklin, C. König, et al. "A standard protocol for
+## reporting species distribution models". In: _Ecography_ 43 (9 set. 2020), pp.
+## 1261-1277. ISSN: 16000587. DOI: 10.1111/ecog.04960.
+## 
+## [534] V. P. Zwiener, R. A. F. de Lima, A. Sánchez-Tapia, et al. "Tree Diversity
+## in the Brazilian Atlantic Forest: Biases and General Patterns Using Different
+## Sources of Information". In: _The Atlantic Forest_. Ed. by M. C. M. Marques and
+## C. E. V. Grelle. Springer International Publishing, 2021, pp. 115-131. DOI:
+## 10.1007/978-3-030-55322-7_6.
+\end{verbatim}
+\begin{alltt}
+\hlcom{## Tratando ----}
+
+\hldef{bib_df} \hlkwb{<-} \hldef{bib |>}
+  \hldef{tibble}\hlopt{::}\hlkwd{as.tibble}\hldef{()}
+
+\hldef{bib_df}
+\end{alltt}
+\begin{verbatim}
+## # A tibble: 534 x 23
+##    bibtype author    issn  issue journal pages publisher title volume year  abstract isbn 
+##    <chr>   <chr>     <chr> <chr> <chr>   <chr> <chr>     <chr> <chr>  <chr> <chr>    <chr>
+##  1 Article Mario R ~ 1932~ 3     PloS o~ e015~ Public L~ Dise~ 11     2016  <NA>     <NA> 
+##  2 Book    Penny. C~ <NA>  <NA>  <NA>    81    LEARN (L~ A pl~ <NA>   2008  Cover t~ 0901~
+##  3 Misc    Lou Jost  0030~ 2     Oikos   363-~ <NA>      Entr~ 113    2006  Entropi~ <NA> 
+##  4 Article Paul Jac~ 1469~ 2     New Ph~ 37-50 <NA>      THE ~ 11     1912  <NA>     <NA> 
+##  5 Article Leildo M~ 2045~ 23    Ecolog~ 1646~ John Wil~ Natu~ 11     2021  In the ~ <NA> 
+##  6 Article Felícia ~ 1654~ 2     Journa~ <NA>  John Wil~ Seas~ 34     2023  Questio~ <NA> 
+##  7 Article Ana Caro~ 1442~ 7     Austra~ 1274~ John Wil~ Infl~ 48     2023  Anthrop~ <NA> 
+##  8 Article Anat M. ~ 1432~ 4     Immuno~ 431-~ Springer~ Habi~ 74     2022  Habitat~ <NA> 
+##  9 Article Marcelo ~ <NA>  4     HERPET~ 255-~ <NA>      Efec~ 21     2011  We eval~ <NA> 
+## 10 Article Lucas Ro~ 1313~ 692   ZooKeys 141-~ Pensoft ~ The ~ 2017   2017  The use~ <NA> 
+## # i 524 more rows
+## # i 11 more variables: doi <chr>, month <chr>, keywords <chr>, pmid <chr>, url <chr>,
+## #   city <chr>, editor <chr>, booktitle <chr>, edition <chr>, note <chr>, school <chr>
+\end{verbatim}
+\begin{alltt}
+\hldef{bib_df |> dplyr}\hlopt{::}\hlkwd{glimpse}\hldef{()}
+\end{alltt}
+\begin{verbatim}
+## Rows: 534
+## Columns: 23
+## $ bibtype   <chr> "Article", "Book", "Misc", "Article", "Article", "Article", "Article",~
+## $ author    <chr> "Mario R Moura and Fabricio Villalobos and Gabriel C Costa and Paulo C~
+## $ issn      <chr> "1932-6203", NA, "00301299", "14698137", "20457758", "16541103", "1442~
+## $ issue     <chr> "3", NA, "2", "2", "23", "2", "7", "4", "4", "692", "9", "787", "9", N~
+## $ journal   <chr> "PloS one", NA, "Oikos", "New Phytologist", "Ecology and Evolution", "~
+## $ pages     <chr> "e0152468", "81", "363-375", "37-50", "16462-16472", NA, "1274-1291", ~
+## $ publisher <chr> "Public Library of Science San Francisco, CA USA", "LEARN (Lewisham Ea~
+## $ title     <chr> "Disentangling the role of climate, topography and vegetation in speci~
+## $ volume    <chr> "11", NA, "113", "11", "11", "34", "48", "74", "21", "2017", "15", "20~
+## $ year      <chr> "2016", "2008", "2006", "1912", "2021", "2023", "2023", "2022", "2011"~
+## $ abstract  <chr> NA, "Cover title.", "Entropies such as the Shannon-Wiener and Gini-Sim~
+## $ isbn      <chr> NA, "0901637106", NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+## $ doi       <chr> NA, NA, "10.1111/j.2006.0030-1299.14714.x", "10.1111/j.1469-8137.1912.~
+## $ month     <chr> NA, NA, "5", NA, "12", "3", "11", "8", NA, NA, "9", NA, "7", "9", "2",~
+## $ keywords  <chr> NA, NA, NA, NA, "CTMax,climate changes,deforestation,future vulnerabil~
+## $ pmid      <chr> NA, NA, NA, NA, NA, NA, NA, "35080658", NA, NA, NA, NA, NA, NA, "35196~
+## $ url       <chr> NA, NA, NA, NA, NA, NA, NA, NA, "http://ppbio.inpa.gov.br/Eng/inventar~
+## $ city      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ editor    <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ booktitle <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ edition   <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ note      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA~
+## $ school    <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA~
+\end{verbatim}
+\begin{alltt}
+\hlcom{# Setando temas -----}
+
+\hlkwd{theme_set}\hldef{(}\hlkwd{theme_bw}\hldef{()} \hlopt{+}
+            \hlkwd{theme}\hldef{(}\hlkwc{axis.text} \hldef{=} \hlkwd{element_text}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{size} \hldef{=} \hlnum{15}\hldef{),}
+                  \hlkwc{axis.title} \hldef{=} \hlkwd{element_text}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{size} \hldef{=} \hlnum{15}\hldef{),}
+                  \hlkwc{legend.text} \hldef{=} \hlkwd{element_text}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{size} \hldef{=} \hlnum{15}\hldef{),}
+                  \hlkwc{legend.title} \hldef{=} \hlkwd{element_text}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{size} \hldef{=} \hlnum{15}\hldef{),}
+                  \hlkwc{panel.border} \hldef{=} \hlkwd{element_rect}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{linewidth} \hldef{=} \hlnum{1}\hldef{)))}
+
+\hlcom{# Análises ----}
+
+\hlcom{## Tipo de referência por ano ----}
+
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{summarise}\hldef{(}\hlkwc{quantidade} \hldef{= dplyr}\hlopt{::}\hlkwd{n}\hldef{(),}
+                   \hlkwc{.by} \hldef{=} \hlkwd{c}\hldef{(bibtype, year)) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{mutate}\hldef{(}\hlkwc{year} \hldef{= year |>}
+                  \hlkwd{as.numeric}\hldef{()) |>}
+  \hlkwd{ggplot}\hldef{(}\hlkwd{aes}\hldef{(year, quantidade,} \hlkwc{color} \hldef{= bibtype))} \hlopt{+}
+  \hlkwd{geom_line}\hldef{(}\hlkwc{linewidth} \hldef{=} \hlnum{1}\hldef{)} \hlopt{+}
+  \hlkwd{labs}\hldef{(}\hlkwc{x} \hldef{=} \hlsng{"Ano"}\hldef{,}
+       \hlkwc{y} \hldef{=} \hlsng{"Quantidade de trabalhos"}\hldef{,}
+       \hlkwc{color} \hldef{=} \hlsng{"Tipo de bibliografia"}\hldef{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/anallises-mendeley-Rnwauto-report-1} 
+
+}
+
+
+\begin{kframe}\begin{alltt}
+\hlcom{## Tipo de jornal por ano ----}
+
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{summarise}\hldef{(}\hlkwc{quantidade} \hldef{= dplyr}\hlopt{::}\hlkwd{n}\hldef{(),}
+                   \hlkwc{.by} \hldef{=} \hlkwd{c}\hldef{(journal)) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{arrange}\hldef{(quantidade|> dplyr}\hlopt{::}\hlkwd{desc}\hldef{()) |>}
+  \hldef{tidyr}\hlopt{::}\hlkwd{drop_na}\hldef{()}
+\end{alltt}
+\begin{verbatim}
+## # A tibble: 191 x 2
+##    journal                               quantidade
+##    <chr>                                      <int>
+##  1 Biotropica                                    19
+##  2 Biological Conservation                       16
+##  3 Biodiversity and Conservation                 15
+##  4 PLoS ONE                                      11
+##  5 Ecology                                       11
+##  6 Journal of Biogeography                       11
+##  7 Journal of Herpetology                        10
+##  8 Ecography                                      9
+##  9 South American Journal of Herpetology          9
+## 10 Methods in Ecology and Evolution               9
+## # i 181 more rows
+\end{verbatim}
+\begin{alltt}
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{summarise}\hldef{(}\hlkwc{quantidade} \hldef{= dplyr}\hlopt{::}\hlkwd{n}\hldef{(),}
+                   \hlkwc{.by} \hldef{=} \hlkwd{c}\hldef{(journal, year)) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{mutate}\hldef{(}\hlkwc{year} \hldef{= year |>} \hlkwd{as.numeric}\hldef{()) |>}
+  \hldef{tidyr}\hlopt{::}\hlkwd{drop_na}\hldef{() |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{filter}\hldef{(journal} \hlopt{%in%} \hlkwd{c}\hldef{(}\hlsng{"Biotropica"}\hldef{,}
+                               \hlsng{"Biodiversity and Conservation"}\hldef{,}
+                               \hlsng{"Biological Conservation"}\hldef{,}
+                               \hlsng{"Ecology"}\hldef{,}
+                               \hlsng{"PLoS ONE"}\hldef{))  |>}
+  \hlkwd{ggplot}\hldef{(}\hlkwd{aes}\hldef{(year, quantidade,} \hlkwc{color} \hldef{= journal))} \hlopt{+}
+  \hlkwd{geom_line}\hldef{(}\hlkwc{linewidth} \hldef{=} \hlnum{1}\hldef{)} \hlopt{+}
+  \hlkwd{labs}\hldef{(}\hlkwc{x} \hldef{=} \hlsng{"Ano"}\hldef{,}
+       \hlkwc{y} \hldef{=} \hlsng{"Quantidade de trabalhos"}\hldef{,}
+       \hlkwc{color} \hldef{=} \hlsng{"Revista científica"}\hldef{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/anallises-mendeley-Rnwauto-report-2} 
+
+}
+
+
+\begin{kframe}\begin{alltt}
+\hlcom{## Tamanho do título por ano ----}
+
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{summarise}\hldef{(}\hlkwc{quantidade} \hldef{= title |>}
+                     \hldef{stringr}\hlopt{::}\hlkwd{str_count}\hldef{(stringr}\hlopt{::}\hlkwd{boundary}\hldef{(}\hlsng{"word"}\hldef{)),}
+                   \hlkwc{.by} \hldef{= year) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{slice_max}\hldef{(quantidade,}
+                   \hlkwc{by} \hldef{= year,}
+                   \hlkwc{n} \hldef{=} \hlnum{1}\hldef{) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{mutate}\hldef{(}\hlkwc{year} \hldef{= year |>} \hlkwd{as.numeric}\hldef{()) |>}
+  \hlkwd{ggplot}\hldef{(}\hlkwd{aes}\hldef{(year, quantidade))} \hlopt{+}
+  \hlkwd{geom_line}\hldef{(}\hlkwc{linewidth} \hldef{=} \hlnum{1}\hldef{)} \hlopt{+}
+  \hlkwd{labs}\hldef{(}\hlkwc{x} \hldef{=} \hlsng{"Ano"}\hldef{,}
+       \hlkwc{y} \hldef{=} \hlsng{"Quantidade de palavras"}\hldef{)} \hlopt{+}
+  \hlkwd{scale_x_continuous}\hldef{(}\hlkwc{breaks} \hldef{=} \hlkwd{seq}\hldef{(}\hlnum{1910}\hldef{,} \hlnum{2025}\hldef{,} \hlnum{15}\hldef{))} \hlopt{+}
+  \hlkwd{scale_y_continuous}\hldef{(}\hlkwc{breaks} \hldef{=} \hlkwd{seq}\hldef{(}\hlnum{0}\hldef{,} \hlnum{30}\hldef{,} \hlnum{2}\hldef{))}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr\\\#\# 1.1.0.\\\#\# i Please use `reframe()` instead.\\\#\# i When switching from `summarise()` to `reframe()`, remember that `reframe()` always\\\#\# \ \ returns an ungrouped data frame and adjust accordingly.\\\#\# Call `lifecycle::last\_lifecycle\_warnings()` to see where this warning was generated.}}\end{kframe}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/anallises-mendeley-Rnwauto-report-3} 
+
+}
+
+
+\begin{kframe}\begin{alltt}
+\hlcom{## Histogrma da quantidade de palavras ----}
+
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{mutate}\hldef{(}\hlkwc{observado} \hldef{= title |>}
+                  \hldef{stringr}\hlopt{::}\hlkwd{str_count}\hldef{(stringr}\hlopt{::}\hlkwd{boundary}\hldef{(}\hlsng{"word"}\hldef{))) |>}
+  \hlkwd{ggplot}\hldef{(}\hlkwd{aes}\hldef{(observado))} \hlopt{+}
+  \hlkwd{geom_histogram}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{binwidth} \hldef{=} \hlnum{1}\hldef{)} \hlopt{+}
+  \hlkwd{scale_x_continuous}\hldef{(}\hlkwc{breaks} \hldef{=} \hlkwd{seq}\hldef{(}\hlnum{0}\hldef{,} \hlnum{30}\hldef{,} \hlnum{2}\hldef{))} \hlopt{+}
+  \hlkwd{labs}\hldef{(}\hlkwc{x} \hldef{=} \hlsng{"Quantidade de palavras"}\hldef{,}
+       \hlkwc{y} \hldef{=} \hlsng{"Contagem"}\hldef{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/anallises-mendeley-Rnwauto-report-4} 
+
+}
+
+
+\begin{kframe}\begin{alltt}
+\hlcom{## Tamanho do resumo por ano ----}
+
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{summarise}\hldef{(}\hlkwc{quantidade} \hldef{= abstract |>}
+                     \hldef{stringr}\hlopt{::}\hlkwd{str_count}\hldef{(stringr}\hlopt{::}\hlkwd{boundary}\hldef{(}\hlsng{"word"}\hldef{)),}
+                   \hlkwc{.by} \hldef{= year) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{slice_max}\hldef{(quantidade,}
+                   \hlkwc{by} \hldef{= year,}
+                   \hlkwc{n} \hldef{=} \hlnum{1}\hldef{) |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{mutate}\hldef{(}\hlkwc{year} \hldef{= year |>} \hlkwd{as.numeric}\hldef{()) |>}
+  \hlkwd{ggplot}\hldef{(}\hlkwd{aes}\hldef{(year, quantidade))} \hlopt{+}
+  \hlkwd{geom_line}\hldef{(}\hlkwc{linewidth} \hldef{=} \hlnum{1}\hldef{)} \hlopt{+}
+  \hlkwd{labs}\hldef{(}\hlkwc{x} \hldef{=} \hlsng{"Ano"}\hldef{,}
+       \hlkwc{y} \hldef{=} \hlsng{"Quantidade de palavras"}\hldef{)} \hlopt{+}
+  \hlkwd{scale_x_continuous}\hldef{(}\hlkwc{breaks} \hldef{=} \hlkwd{seq}\hldef{(}\hlnum{1910}\hldef{,} \hlnum{2025}\hldef{,} \hlnum{15}\hldef{))} \hlopt{+}
+  \hlkwd{scale_y_continuous}\hldef{(}\hlkwc{breaks} \hldef{=} \hlkwd{seq}\hldef{(}\hlnum{0}\hldef{,} \hlnum{30}\hldef{,} \hlnum{2}\hldef{))}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr\\\#\# 1.1.0.\\\#\# i Please use `reframe()` instead.\\\#\# i When switching from `summarise()` to `reframe()`, remember that `reframe()` always\\\#\# \ \ returns an ungrouped data frame and adjust accordingly.\\\#\# Call `lifecycle::last\_lifecycle\_warnings()` to see where this warning was generated.}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 3 rows containing missing values or values outside the scale range\\\#\# (`geom\_line()`).}}\end{kframe}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/anallises-mendeley-Rnwauto-report-5} 
+
+}
+
+
+\begin{kframe}\begin{alltt}
+\hlcom{## Histogrma da quantidade de palavras ----}
+
+\hldef{bib_df |>}
+  \hldef{dplyr}\hlopt{::}\hlkwd{mutate}\hldef{(}\hlkwc{observado} \hldef{= abstract |>}
+                  \hldef{stringr}\hlopt{::}\hlkwd{str_count}\hldef{(stringr}\hlopt{::}\hlkwd{boundary}\hldef{(}\hlsng{"word"}\hldef{))) |>}
+  \hlkwd{ggplot}\hldef{(}\hlkwd{aes}\hldef{(observado))} \hlopt{+}
+  \hlkwd{geom_histogram}\hldef{(}\hlkwc{color} \hldef{=} \hlsng{"black"}\hldef{,} \hlkwc{binwidth} \hldef{=} \hlnum{10}\hldef{)} \hlopt{+}
+  \hlkwd{labs}\hldef{(}\hlkwc{x} \hldef{=} \hlsng{"Quantidade de palavras"}\hldef{,}
+       \hlkwc{y} \hldef{=} \hlsng{"Contagem"}\hldef{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 83 rows containing non-finite outside the scale range (`stat\_bin()`).}}\end{kframe}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/anallises-mendeley-Rnwauto-report-6} 
+
+}
+
+
+\end{knitrout}
+
+The R session information (including the OS info, R version and all
+packages used):
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{sessionInfo}\hldef{()}
+\end{alltt}
+\begin{verbatim}
+## R version 4.5.2 RC (2025-10-27 r88973 ucrt)
+## Platform: x86_64-w64-mingw32/x64
+## Running under: Windows 11 x64 (build 26200)
+## 
+## Matrix products: default
+##   LAPACK version 3.12.1
+## 
+## locale:
+## [1] LC_COLLATE=Portuguese_Brazil.utf8  LC_CTYPE=Portuguese_Brazil.utf8   
+## [3] LC_MONETARY=Portuguese_Brazil.utf8 LC_NUMERIC=C                      
+## [5] LC_TIME=Portuguese_Brazil.utf8    
+## 
+## time zone: America/Sao_Paulo
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] lubridate_1.9.4  forcats_1.0.1    stringr_1.6.0    dplyr_1.1.4      purrr_1.1.0     
+##  [6] readr_2.1.5      tidyr_1.3.1      tibble_3.3.0     ggplot2_4.0.0    tidyverse_2.0.0 
+## [11] RefManageR_1.4.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] gtable_0.3.6       jsonlite_2.0.0     highr_0.11         crayon_1.5.3      
+##  [5] compiler_4.5.2     tidyselect_1.2.1   Rcpp_1.1.0         xml2_1.4.1        
+##  [9] scales_1.4.0       R6_2.6.1           plyr_1.8.9         labeling_0.4.3    
+## [13] generics_0.1.4     knitr_1.50         backports_1.5.0    tzdb_0.5.0        
+## [17] pillar_1.11.1      RColorBrewer_1.1-3 rlang_1.1.6        utf8_1.2.6        
+## [21] stringi_1.8.7      xfun_0.54          S7_0.2.0           bibtex_0.5.1      
+## [25] timechange_0.3.0   cli_3.6.5          withr_3.0.2        magrittr_2.0.4    
+## [29] grid_4.5.2         rstudioapi_0.17.1  hms_1.1.4          lifecycle_1.0.4   
+## [33] vctrs_0.6.5        evaluate_1.0.5     glue_1.8.0         farver_2.1.2      
+## [37] httr_1.4.7         tools_4.5.2        pkgconfig_2.0.3
+\end{verbatim}
+\begin{alltt}
+\hlkwd{Sys.time}\hldef{()}
+\end{alltt}
+\begin{verbatim}
+## [1] "2025-12-03 11:45:16 -03"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\end{document}
