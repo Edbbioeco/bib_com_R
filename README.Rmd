@@ -9,6 +9,11 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<<<<<<< HEAD
+=======
+> Analisando bibliografia com R
+
+>>>>>>> outro
 # Pacotes
 
 ```{r}
