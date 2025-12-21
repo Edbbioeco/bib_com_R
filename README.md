@@ -6,6 +6,7 @@ library(RefManageR)
 
 library(tidyverse)
 ```
+> Analisando bibliografia com R
 
 # Dados
 
