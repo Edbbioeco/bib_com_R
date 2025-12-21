@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+
+> Analisando bibliografia com R
+
 # Pacotes
 
 ``` r
@@ -6,7 +8,6 @@ library(RefManageR)
 
 library(tidyverse)
 ```
-> Analisando bibliografia com R
 
 # Dados
 
