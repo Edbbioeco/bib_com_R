@@ -1,0 +1,5 @@
+"0","bib_df |>"
+"0","  dplyr::summarise(quantidade = dplyr::n(),"
+"0","                   .by = c(journal)) |>"
+"0","  dplyr::arrange(quantidade|> dplyr::desc()) |>"
+"0","  tidyr::drop_na()"

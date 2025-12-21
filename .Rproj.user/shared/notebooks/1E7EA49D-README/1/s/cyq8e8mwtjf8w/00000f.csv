@@ -1,0 +1,5 @@
+"0","theme_set(theme_classic() +"
+"0","            theme(axis.text = element_text(color = ""black"", size = 15),"
+"0","                  axis.title = element_text(color = ""black"", size = 15),"
+"0","                  legend.text = element_text(color = ""black"", size = 15),"
+"0","                  legend.title = element_text(color = ""black"", size = 15)))"

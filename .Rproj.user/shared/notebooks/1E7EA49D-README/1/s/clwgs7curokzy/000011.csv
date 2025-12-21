@@ -1,0 +1,4 @@
+"0","bib_df <- bib |>"
+"0","  tibble::as.tibble()"
+"0",""
+"0","bib_df"

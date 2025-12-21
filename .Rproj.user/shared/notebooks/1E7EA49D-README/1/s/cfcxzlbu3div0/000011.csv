@@ -1,0 +1,7 @@
+"0","bib_df |>"
+"0","  dplyr::mutate(observado = abstract |>"
+"0","                  stringr::str_count(stringr::boundary(""word""))) |>"
+"0","  ggplot(aes(observado)) +"
+"0","  geom_histogram(color = ""black"", binwidth = 10) +"
+"0","  labs(x = ""Quantidade de palavras"","
+"0","       y = ""Contagem"")"
