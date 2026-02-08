@@ -1,15 +1,18 @@
 ---
-title: "My references"
+title: "Análise das referências"
 format: 
    dashboard:
       orientation: columns
       number-sections: false
+server: shiny
 ---
 
 ```{r}
 library(RefManageR)
 
 library(tidyverse)
+
+library(shiny)
 
 library(plotly)
 ```
@@ -37,13 +40,24 @@ quantidades <- bib |>
 
 # Artigos
 
-## Column {width = "25%"}
+## {.sidebar}
+
+```{r}
+sliderInput("Ano", 
+            "Ano", 
+            min = bib$year |> as.numeric() |> na.omit() |> min(), 
+            max = bib$year |> as.numeric() |> na.omit() |> max(),
+            value = bib |> nrow(), 
+            step = 15, round=0)
+```
+
+## Column {width = "10%"}
 
 ```{r}
 #| content: valuebox
 #| title: "Número de artigos"
-list(icon = "globe",
-     color = "forestgreen",
+list(icon = "book",
+     color = "primary",
      value = quantidades |> 
         dplyr::filter(bibtype == "Article") |> 
         dplyr::pull(n))
