@@ -1,0 +1,71 @@
+---
+title: "My references"
+format: 
+   dashboard:
+      orientation: columns
+      number-sections: false
+---
+
+```{r}
+library(RefManageR)
+
+library(tidyverse)
+```
+
+
+```{r}
+bib <- RefManageR::ReadBib("library.bib", check = FALSE) |> 
+   tibble::as_tibble()
+```
+
+```{r}
+theme_set(theme_bw() +
+            theme(axis.text = element_text(color = "black", size = 15),
+                  axis.title = element_text(color = "black", size = 15),
+                  legend.text = element_text(color = "black", size = 15),
+                  legend.title = element_text(color = "black", size = 15),
+                  panel.border = element_rect(color = "black", linewidth = 1)))
+```
+
+```{r, echo=FALSE}
+quantidades <- bib |> 
+   dplyr::summarise(n = dplyr::n(),
+                    .by = bibtype)
+```
+
+# Artigos
+
+## Column {width = "25%"}
+
+```{r}
+#| content: valuebox
+#| title: "Número de artigos"
+list(icon = "globe",
+     color = "primary",
+     value = quantidades |> 
+        dplyr::filter(bibtype == "Article") |> 
+        dplyr::pull(n))
+```
+
+## Column
+
+### Row {.tabset}
+
+```{r}
+bib |>
+   dplyr::filter(bibtype == "Article") |> 
+   dplyr::summarise(quantidade = dplyr::n(),
+                    .by = year) |>
+   dplyr::mutate(year = year |> as.numeric()) |>
+   ggplot(aes(year, quantidade)) +
+   geom_line(linewidth = 1) +
+   labs(x = "Ano",
+        y = "Quantidade de artigos") +
+   scale_x_continuous(breaks = seq(1910, 2026, 15))
+```
+
+# Capítulos e livros
+
+# Revistas
+
+# Áreas
