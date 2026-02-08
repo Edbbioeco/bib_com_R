@@ -65,8 +65,8 @@ ggplt1 <- bib |>
    dplyr::filter(bibtype == "Article") |> 
    dplyr::summarise(quantidade = dplyr::n(),
                     .by = year) |>
-   dplyr::mutate(year = year |> as.numeric()) |>
-   ggplot(aes(year, quantidade)) +
+   dplyr::mutate(Ano = year |> as.numeric()) |>
+   ggplot(aes(Ano, quantidade)) +
    geom_line(linewidth = 1) +
    labs(x = "Ano",
         y = "Quantidade de artigos") +
