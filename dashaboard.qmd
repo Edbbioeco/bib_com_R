@@ -43,7 +43,7 @@ quantidades <- bib |>
 #| content: valuebox
 #| title: "Número de artigos"
 list(icon = "globe",
-     color = "primary",
+     color = "forestgreen",
      value = quantidades |> 
         dplyr::filter(bibtype == "Article") |> 
         dplyr::pull(n))
