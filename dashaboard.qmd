@@ -4,7 +4,6 @@ format:
    dashboard:
       orientation: columns
       number-sections: false
-server: shiny
 ---
 
 ```{r}
@@ -39,17 +38,6 @@ quantidades <- bib |>
 ```
 
 # Artigos
-
-## {.sidebar}
-
-```{r}
-sliderInput("Ano", 
-            "Ano", 
-            min = bib$year |> as.numeric() |> na.omit() |> min(), 
-            max = bib$year |> as.numeric() |> na.omit() |> max(),
-            value = bib |> nrow(), 
-            step = 15, round=0)
-```
 
 ## Column {width = "10%"}
 
