@@ -51,6 +51,7 @@ list(icon = "globe",
 
 ### Row {.tabset}
 
+::: {.card tile = "Quantidade de artigos por ano"}
 ```{r}
 bib |>
    dplyr::filter(bibtype == "Article") |> 
@@ -63,6 +64,7 @@ bib |>
         y = "Quantidade de artigos") +
    scale_x_continuous(breaks = seq(1910, 2026, 15))
 ```
+:::
 
 # Capítulos e livros
 
